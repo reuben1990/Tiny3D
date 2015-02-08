@@ -9,19 +9,24 @@
 #ifndef proj_mac_TinyRoot_h
 #define proj_mac_TinyRoot_h
 
+#include "TinyObject.h"
+#include "TinyRenderSystem.h"
+#include "TinySingleton.h"
+#include "TinySceneManager.h"
+#include "TinyRenderWindow.h"
+
 namespace Tiny {
-    class TinyRoot
+    class TinyRoot : public TinyObject, public TinySingleton<TinyRoot>
     {
     public:
-        static TinyRoot *getSingleton();
         TinyRoot();
-        ~TinyRoot();
+        virtual ~TinyRoot();
         void renderOneFrame(float timeInterval);
         void updateAllRenderTargets();
-        void onWindowUpdate(float width, float height);
+        TinySceneManager *createSceneManager();
     private:
-        static TinyRoot *sSingleton;
-        
+        TinyRenderSystem *mRenderSystem;
+        TinySceneManager *mSceneMgr;
     };
 }
 

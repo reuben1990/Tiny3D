@@ -9,5 +9,23 @@
 #ifndef proj_mac_TinySceneNode_h
 #define proj_mac_TinySceneNode_h
 
+#include "TinyObject.h"
+#include "kazmath/kazmath.h"
+#include <string>
+#include <map>
+#include "TinyNode.h"
+#include "TinyMovableObject.h"
+
+namespace Tiny
+{
+    class TinySceneNode : public TinyNode
+    {
+    public:
+        void attachObject(TinyMovableObject* obj);
+        void detattchObject(obj);
+    protected:
+        std::map<std::string, TinyMovableObject*> mAttachedObjects;
+    };
+}
 
 #endif

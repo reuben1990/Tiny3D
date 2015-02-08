@@ -13,9 +13,10 @@
 
 #include "TinyObject.h"
 #include <map>
-#include <string>
 #include "TinyRenderTarget.h"
 #include "TinyGPUProgram.h"
+#include "TinyViewPort.h"
+#include "TinyRenderTarget.h"
 
 namespace Tiny
 {
@@ -24,17 +25,19 @@ namespace Tiny
     public:
         TinyRenderSystem();
         virtual ~TinyRenderSystem();
-        static TinyRenderSystem *getSingleton();
-        void initialize();
         void updateAllRenderTargets();
         void swapAllRenderTargetBuffers();
         void render();
         void bindGPUProgram(TinyGPUProgram *program);
         void bindGPUProgramParameters(GPUProgramParameters *params);
         void setRenderTarget(TinyRenderTarget *target);
+        void setViewPort(TinyViewPort *vp);
+        void attachRenderTarget(TinyRenderTarget *target);
+        void detachRenderTarget(TinyRenderTarget *target);
     private:
-        std::map<std::string, TinyRenderTarget *> mRenderTargets;
-        static TinyRenderSystem *sSingleton;
+        std::map<unsigned char, TinyRenderTarget *> mPrioritisedRenderTargets;
+        TinyViewPort *mActiveViewPort;
+        TinyRenderTarget *mActiveRenderTarget;
     };
 }
 

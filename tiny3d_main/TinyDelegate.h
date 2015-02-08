@@ -10,19 +10,17 @@
 #define __proj_mac__TinyDelegate__
 
 #include "TinyObject.h"
+#include "TinySingleton.h"
 
 namespace Tiny
 {
-    class TinyDelegate : public TinyObject
+    class TinyDelegate : public TinyObject, public TinySingleton<TinyDelegate>
     {
     public:
         TinyDelegate();
         virtual ~TinyDelegate();
-        static TinyDelegate *getSingleton();
         virtual void initialize();
     private:
-        bool mIsSchedule;
-        static TinyDelegate *sSingleTon;
     };
 }
 

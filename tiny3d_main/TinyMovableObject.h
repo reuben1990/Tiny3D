@@ -11,11 +11,24 @@
 
 #include <stdio.h>
 #include "TinyObject.h"
+#include <string>
+#include "kazmath/kazmath.h"
+
+class TinyNode;
 
 namespace Tiny {
     class TinyMovableObject : public TinyObject
     {
-        
+    public:
+        TinyMovableObject();
+        ~TinyMovableObject();
+        bool isAttached();
+        std::string& getName();
+        void setName(std::string& name);
+        void notifyAttached(TinyNode* node);
+    protected:
+        std::string mName;
+        TinyNode* mParentNode;
     };
 }
 

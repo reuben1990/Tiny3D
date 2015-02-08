@@ -75,8 +75,8 @@
     [[self openGLContext] makeCurrentContext];
     [[self openGLContext] update];
     
-    NSRect rect = [self bounds];
-    Tiny::TinyRoot::getSingleton()->onWindowUpdate(rect.size.width, rect.size.height);
+    //NSRect rect = [self bounds];
+    //Tiny::TinyRoot::getSingleton()->onWindowUpdate(rect.size.width, rect.size.height);
 }
 
 - (void)reshape
@@ -86,8 +86,8 @@
     [[self openGLContext] makeCurrentContext];
     [[self openGLContext] update];
     
-    NSRect rect = [self bounds];
-    Tiny::TinyRoot::getSingleton()->onWindowUpdate(rect.size.width, rect.size.height);
+    //NSRect rect = [self bounds];
+    //Tiny::TinyRoot::getSingleton()->onWindowUpdate(rect.size.width, rect.size.height);
 }
 
 - (BOOL)acceptsFirstResponder

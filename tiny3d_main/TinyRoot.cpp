@@ -10,26 +10,33 @@
 #include "TinySchedulerManager.h"
 #include "TinyRoot.h"
 #include "TinyRenderSystem.h"
+#include "TinyMemoryAlloc.h"
 
 namespace Tiny
 {
-    TinyRoot *TinyRoot::sSingleton = nullptr;
-    
-    TinyRoot *TinyRoot::getSingleton()
+    TinyRoot::TinyRoot():
+    mRenderSystem(nullptr),
+    mSceneMgr(nullptr)
     {
-        if (nullptr == sSingleton)
-        {
-            sSingleton = new TinyRoot();
-        }
-        return sSingleton;
-    }
-    
-    TinyRoot::TinyRoot()
-    {
+        //TODO only support one render window and render system now lol...
+        mRenderSystem = TINY_NEW TinyRenderSystem();
+        mRenderSystem->attachRenderTarget(TINY_NEW TinyRenderWindow());
     }
     
     TinyRoot::~TinyRoot()
     {
+        TINY_DELETE mSceneMgr;
+        TINY_DELETE mRenderSystem;
+    }
+    
+    TinySceneManager *TinyRoot::createSceneManager()
+    {
+        if (mSceneMgr)
+        {
+            TINY_DELETE mSceneMgr;
+        }
+        mSceneMgr = TINY_NEW TinySceneManager();
+        return mSceneMgr;
     }
     
     void TinyRoot::renderOneFrame(float timeInterval)
@@ -45,15 +52,16 @@ namespace Tiny
     void TinyRoot::updateAllRenderTargets()
     {
         //render all render target.
-        Tiny::TinyRenderSystem::getSingleton()->updateAllRenderTargets();
-        Tiny::TinyRenderSystem::getSingleton()->swapAllRenderTargetBuffers();
-    }
-    
-    void TinyRoot::onWindowUpdate(float width, float height)
-    {
-        //set all render target dirty.
+        if (mRenderSystem)
+        {
+            mRenderSystem->updateAllRenderTargets();
+            mRenderSystem->swapAllRenderTargetBuffers();
+        }
     }
 }
+
+
+
 
 
 

@@ -12,8 +12,6 @@
 
 namespace Tiny
 {
-    TinyDelegate *TinyDelegate::sSingleTon = NULL;
-
     TinyDelegate::TinyDelegate()
     {
         
@@ -27,15 +25,5 @@ namespace Tiny
     void TinyDelegate::initialize()
     {
         
-    }
-    
-    TinyDelegate *TinyDelegate::getSingleton()
-    {
-        if (sSingleTon == NULL)
-        {
-            sSingleTon = new TinyDelegate();
-            sSingleTon->initialize();
-        }
-        return sSingleTon;
     }
 }

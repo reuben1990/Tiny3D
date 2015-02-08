@@ -7,3 +7,11 @@
 //
 
 #include "TinyRenderWindow.h"
+
+namespace Tiny
+{
+    TinyRenderWindow::TinyRenderWindow()
+    {
+        mPriority = TINY_DEFAULT_RT_GROUP;
+    }
+}

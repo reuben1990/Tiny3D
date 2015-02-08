@@ -10,5 +10,18 @@
 #define __proj_mac__TinyRenderWindow__
 
 #include <stdio.h>
+#include "TinyRenderTarget.h"
+
+
+namespace Tiny
+{
+    class TinyRenderWindow : public TinyRenderTarget
+    {
+    public:
+        TinyRenderWindow();
+        ~TinyRenderWindow();
+        virtual void swapBuffers();
+    };
+}
 
 #endif /* defined(__proj_mac__TinyRenderWindow__) */

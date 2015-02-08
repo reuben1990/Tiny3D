@@ -7,3 +7,15 @@
 //
 
 #include "TinySceneNode.h"
+
+namespace Tiny
+{
+    void Tiny::attachObject(TinyMovableObject* obj)
+    {
+        assert(!obj->isAttached() && "Obj was already attached to an node.");
+        auto result = mAttachedObjects->insert(std::pair<std::string, TinyMovableObject*>(obj->getName(), obj));
+        assert(result.second && "Objects was not attached because an object of the same name was"
+               "already attached to this node.");
+        obj->notifyAttached(this);
+    }
+}

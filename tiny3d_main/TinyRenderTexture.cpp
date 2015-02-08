@@ -7,3 +7,11 @@
 //
 
 #include "TinyRenderTexture.h"
+
+namespace Tiny
+{
+    TinyRenderTexture::TinyRenderTexture()
+    {
+        mPriority = TINY_REND_TO_TEX_RT_GROUP;
+    }
+}

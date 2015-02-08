@@ -7,5 +7,54 @@
 //
 
 #include <stdio.h>
+#include "TinyViewPort.h"
 
-//glViewport(0, 0, (GLint) rect.size.width, (GLint) rect.size.height);
+namespace Tiny
+{
+    TinyViewPort::TinyViewPort(TinyCamera *cam, TinyRenderTarget *target, float left, float bottom, float width, float height, int zOrder)
+        : mCamera(cam)
+        , mTarget(target)
+        , mzOrder(zOrder)
+    {
+        mLeftBottomPosition.x = left;
+        mLeftBottomPosition.y = bottom;
+        mSize.x = width;
+        mSize.y = height;
+        
+        updateDimensions();
+        cam->notifyViewPort(this);
+    }
+    
+    TinyViewPort::~TinyViewPort()
+    {
+        
+    }
+    
+    TinyRenderTarget *TinyViewPort::getRenderTarget()
+    {
+        return mTarget;
+    }
+    
+    void TinyViewPort::update()
+    {
+        if (mCamera)
+        {
+            mCamera->renderScene(this);
+        }
+    }
+    
+    void TinyViewPort::updateDimensions()
+    {
+        //
+    }
+    
+    kmVec2 TinyViewPort::geViewPortLeftBottom()
+    {
+        return mLeftBottomPosition;
+    }
+    
+    kmVec2 TinyViewPort::getViewPortSize()
+    {
+        return mSize;
+    }
+}

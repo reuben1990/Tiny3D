@@ -9,6 +9,16 @@
 #ifndef __proj_mac__TinyRenderTexture__
 #define __proj_mac__TinyRenderTexture__
 
+#include "TinyRenderTarget.h"
+
 #include <stdio.h>
+
+namespace Tiny
+{
+    class TinyRenderTexture : public TinyRenderTarget
+    {
+        TinyRenderTexture();
+    };
+}
 
 #endif /* defined(__proj_mac__TinyRenderTexture__) */
