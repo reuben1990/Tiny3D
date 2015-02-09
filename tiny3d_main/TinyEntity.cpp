@@ -7,3 +7,22 @@
 //
 
 #include <stdio.h>
+#include "TinyMovableObject.h"
+
+namespace Tiny
+{
+    TinyEntity::TinyEntity()
+    {
+        
+    }
+    
+    TinyEntity::~TinyEntity()
+    {
+        
+    }
+    
+    void TinyEntity::updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue)
+    {
+        
+    }
+}

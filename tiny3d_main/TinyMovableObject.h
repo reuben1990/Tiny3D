@@ -26,6 +26,7 @@ namespace Tiny {
         std::string& getName();
         void setName(std::string& name);
         void notifyAttached(TinyNode* node);
+        void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue) = 0;
     protected:
         std::string mName;
         TinyNode* mParentNode;

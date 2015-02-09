@@ -9,5 +9,21 @@
 #ifndef proj_mac_TinyEntity_h
 #define proj_mac_TinyEntity_h
 
+#include "TinyObject.h"
+#include "TinyRenderQueue.h"
+#include "TinyMovableObject.h"
+#include <vector>
+
+namespace Tiny
+{
+    class TinyEntity : public TinyMovableObject
+    {
+    public:
+        TinyEntity();
+        ~TinyEntity();
+        void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue);
+    protected:
+    };
+}
 
 #endif

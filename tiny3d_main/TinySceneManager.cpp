@@ -45,12 +45,12 @@ namespace Tiny
     
     void TinySceneManager::updateSceneGraph()
     {
-        mSceneRoot->update();
+        getRootSceneNode()->update();
     }
     
     void TinySceneManager::findVisibleObjects()
     {
-        
+        getRootSceneNode()->findVisibleObjects();
     }
     
     void TinySceneManager::setViewPort(TinyViewPort* vp)

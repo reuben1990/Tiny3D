@@ -54,7 +54,6 @@
 		1BA22F2C1A8218350060733E /* TinySceneNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F2B1A8218350060733E /* TinySceneNode.cpp */; };
 		1BA22F2E1A8218490060733E /* TinySchedulerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F2D1A8218490060733E /* TinySchedulerManager.cpp */; };
 		1BA22F301A82185D0060733E /* TinyTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F2F1A82185D0060733E /* TinyTexture.cpp */; };
-		1BA22F391A8268440060733E /* TinyRenderQueueSortingQrouping.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F371A8268440060733E /* TinyRenderQueueSortingQrouping.cpp */; };
 		1BA22F3C1A82685B0060733E /* TinyRenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F3A1A82685B0060733E /* TinyRenderSystem.cpp */; };
 /* End PBXBuildFile section */
 
@@ -152,8 +151,6 @@
 		1BA22F2B1A8218350060733E /* TinySceneNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinySceneNode.cpp; path = ../../tiny3d_main/TinySceneNode.cpp; sourceTree = "<group>"; };
 		1BA22F2D1A8218490060733E /* TinySchedulerManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinySchedulerManager.cpp; path = ../../tiny3d_main/TinySchedulerManager.cpp; sourceTree = "<group>"; };
 		1BA22F2F1A82185D0060733E /* TinyTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyTexture.cpp; path = ../../tiny3d_main/TinyTexture.cpp; sourceTree = "<group>"; };
-		1BA22F371A8268440060733E /* TinyRenderQueueSortingQrouping.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyRenderQueueSortingQrouping.cpp; path = ../../tiny3d_main/TinyRenderQueueSortingQrouping.cpp; sourceTree = "<group>"; };
-		1BA22F381A8268440060733E /* TinyRenderQueueSortingQrouping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyRenderQueueSortingQrouping.h; path = ../../tiny3d_main/TinyRenderQueueSortingQrouping.h; sourceTree = "<group>"; };
 		1BA22F3A1A82685B0060733E /* TinyRenderSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyRenderSystem.cpp; path = ../../tiny3d_main/TinyRenderSystem.cpp; sourceTree = "<group>"; };
 		1BA22F3B1A82685B0060733E /* TinyRenderSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyRenderSystem.h; path = ../../tiny3d_main/TinyRenderSystem.h; sourceTree = "<group>"; };
 		1BA22F3D1A83552D0060733E /* tiny3d_main */ = {isa = PBXFileReference; lastKnownFileType = text; name = tiny3d_main; path = ../../tiny3d_main; sourceTree = "<group>"; };
@@ -243,8 +240,6 @@
 				1B4BB86E1A81C52500E97FB4 /* TinyRenderable.h */,
 				1BA22F1F1A8217B70060733E /* TinyRenderQueue.cpp */,
 				1B4BB86F1A81C52500E97FB4 /* TinyRenderQueue.h */,
-				1BA22F371A8268440060733E /* TinyRenderQueueSortingQrouping.cpp */,
-				1BA22F381A8268440060733E /* TinyRenderQueueSortingQrouping.h */,
 				1BA22F3A1A82685B0060733E /* TinyRenderSystem.cpp */,
 				1BA22F3B1A82685B0060733E /* TinyRenderSystem.h */,
 				1BA22F211A8217D10060733E /* TinyRenderTarget.cpp */,
@@ -415,7 +410,6 @@
 				1BA22F281A8218040060733E /* TinyRenderTexture.cpp in Sources */,
 				1BA22F1C1A8217760060733E /* TinyMesh.cpp in Sources */,
 				1BA22F301A82185D0060733E /* TinyTexture.cpp in Sources */,
-				1BA22F391A8268440060733E /* TinyRenderQueueSortingQrouping.cpp in Sources */,
 				1BA22F171A8216900060733E /* TinyEntity.cpp in Sources */,
 				1B4BB87E1A81C52500E97FB4 /* TinyDelegate.cpp in Sources */,
 				1BA22F0F1A82154A0060733E /* TinyInputObject.cpp in Sources */,

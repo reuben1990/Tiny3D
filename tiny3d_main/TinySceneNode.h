@@ -16,6 +16,7 @@
 #include "TinyNode.h"
 #include "TinyMovableObject.h"
 
+class TinyCamera;
 namespace Tiny
 {
     class TinySceneNode : public TinyNode
@@ -23,6 +24,7 @@ namespace Tiny
     public:
         void attachObject(TinyMovableObject* obj);
         void detattchObject(obj);
+        void findVisibleObjects(TinyCamera* cam, RenderQueue* queue);
     protected:
         std::map<std::string, TinyMovableObject*> mAttachedObjects;
     };
