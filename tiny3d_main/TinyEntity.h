@@ -12,7 +12,9 @@
 #include "TinyObject.h"
 #include "TinyRenderQueue.h"
 #include "TinyMovableObject.h"
+#include "TinySubEntity.h"
 #include <vector>
+#include "TinyPlatform.h"
 
 namespace Tiny
 {
@@ -22,7 +24,13 @@ namespace Tiny
         TinyEntity();
         ~TinyEntity();
         void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue);
+        void setRenderQueueGroupID(uint8 groupID);
+        void setRenderPriority(uint8 priority);
+        void setMaterial(TinyMaterial* material);
     protected:
+        std::vector<TinySubEntity*> mSubEntitys;
+        uint8 mRenderQueueGroupID;
+        uint8 mRenderPriority;
     };
 }
 

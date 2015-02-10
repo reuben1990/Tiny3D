@@ -7,3 +7,22 @@
 //
 
 #include "TinyRenderable.h"
+
+namespace Tiny
+{
+    TinyRenderable::TinyRenderable()
+        : mMaterial(nullptr)
+    {
+
+    }
+    
+    virtual TinyRenderable::~TinyRenderable()
+    {
+        
+    }
+    
+    void TinyEntity::setMaterial(TinyMaterial* material)
+    {
+        mMaterial = material;
+    }
+}

@@ -9,5 +9,18 @@
 #ifndef proj_mac_TinyRenderable_h
 #define proj_mac_TinyRenderable_h
 
+#include "TinyMaterial.h"
+
+namespace Tiny
+{
+    class TinyRenderable : public TinyObject
+    {
+    public:
+        TinyRenderable();
+        virtual ~TinyRenderable();
+    protected:
+        TinyMaterial* mMaterial;
+    };
+}
 
 #endif

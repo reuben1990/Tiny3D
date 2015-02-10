@@ -10,5 +10,19 @@
 #define __proj_mac__TinyMaterial__
 
 #include <stdio.h>
+#include "TinyObject.h"
+
+namespace Tiny
+{
+    class TinyMaterial : public TinyObject
+    {
+    public:
+        TinyMaterial();
+        ~TinyMaterial();
+        bool isTransParent();
+    protected:
+        mIsTransParent;
+    };
+}
 
 #endif /* defined(__proj_mac__TinyMaterial__) */

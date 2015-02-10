@@ -65,7 +65,7 @@ namespace Tiny
     
     void TinySceneManager::setViewMatrix(kmMat4& matrix)
     {
-        
+        mDestRenderSystem->setViewMatrix(matrix);
     }
 }
 

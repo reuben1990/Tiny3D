@@ -10,7 +10,10 @@
 #define proj_mac_TinyRenderQueue_h
 
 #include "TinyObject.h"
+#include "TinyPlatform.h"
 #include "TinyRenderable.h"
+#include <map>
+#include <vector>
 
 namespace Tiny
 {
@@ -42,19 +45,33 @@ namespace Tiny
     
     class TinyRenderableCollection : public TinyObject
     {
-        
+    public:
+        TinyRenderableCollection();
+        ~TinyRenderableCollection();
+        void addRenderable(TinyRenderable* renderable);
+    protected:
+        std::vector<TinyRenderable*> mRenderables;
     };
     
     class TinyRenderPriorityGroup : public TinyObject
     {
+    public:
+        TinyRenderPriorityGroup();
+        ~TinyRenderPriorityGroup();
+        void addRenderable(TinyRenderable* renderable);
     protected:
-        TinyRenderableCollection* mRenderableCollection;
+        TinyRenderableCollection* mSolidCollection;
+        TinyRenderableCollection* mTransParentCollection;
     };
     
     class TinyRenderQueueGroup : public TinyObject
     {
+        TinyRenderQueueGroup();
+        ~TinyRenderQueueGroup();
+        void addRenderable(TinyRenderable* renderable, uint8 priority = 0);
+        TinyRenderPriorityGroup* getPriorityGroup(uint8 priority);
     protected:
-        TinyRenderPriorityGroup* mRenderPriorityGroup;
+        std::map<uint8, TinyRenderPriorityGroup*> mRenderPriorityGroups;
     };
     
     class TinyRenderQueue : public TinyObject
@@ -62,9 +79,10 @@ namespace Tiny
     public:
         TinyRenderQueue();
         ~TinyRenderQueue();
-        void addRenderable(TinyRenderable* renderable, unsigned short groupID, unsigned short priority);
+        void addRenderable(TinyRenderable* renderable, uint8 groupID = RenderQueueGroupID::RENDER_QUEUE_MAIN, uint8 priority = 0);
+        TinyRenderQueueGroup* getQueueGroup(uint8 groupID);
     protected:
-        TinyRenderQueueGroup* mRenderQueueGroup;
+        std::map<uint8, TinyRenderQueueGroup*> mRenderQueueGroups;
     };
 }
 

@@ -50,6 +50,11 @@ namespace Tiny
         }
     }
     
+    void TinyRenderSystem::setViewMatrix(kmMat4& matrix)
+    {
+        kmMat4Fill(&mViewMatrix, matrix.kmScalar);
+    }
+    
     void TinyRenderSystem::updateAllRenderTargets()
     {
         std::map<unsigned char, TinyRenderTarget *> iter = mPrioritisedRenderTargets.begin();

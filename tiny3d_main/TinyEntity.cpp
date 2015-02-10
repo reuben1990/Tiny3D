@@ -23,6 +23,20 @@ namespace Tiny
     
     void TinyEntity::updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue)
     {
-        
+        auto iter = mSubEntitys.begin();
+        for (; iter <= mSubEntitys.end(); iter ++)
+        {
+            queue->addRenderable(iter->second, mRenderQueueGroupID, mRenderPriority);
+        }
+    }
+    
+    void TinyEntity::setRenderQueueGroupID(uint8 groupID)
+    {
+        mRenderQueueGroupID = groupID;
+    }
+    
+    void TinyEntity::setRenderPriority(uint8 priority)
+    {
+        mRenderPriority = priority;
     }
 }
