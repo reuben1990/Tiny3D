@@ -8,6 +8,7 @@
 
 #include "TinySceneManager.h"
 #include "TinyMemoryAlloc.h"
+#include "TinyIteratorWrapper.h"
 
 namespace Tiny
 {
@@ -17,12 +18,17 @@ namespace Tiny
         , mSceneRoot(nullptr)
         , mDestRenderSystem(nullptr)
         , mSceneRoot(nullptr)
+        , mRenderQueue(nullptr)
     {
         mDestRenderSystem = TINY_NEW TinyRenderSystem();
     }
     
     TinySceneManager::~TinySceneManager()
     {
+        if (nullptr != mRenderQueue)
+        {
+            TINY_DELETE mRenderQueue;
+        }
     }
     
     void TinySceneManager::renderScene(TinyCamera *cam)
@@ -50,7 +56,7 @@ namespace Tiny
     
     void TinySceneManager::findVisibleObjects()
     {
-        getRootSceneNode()->findVisibleObjects();
+        getRootSceneNode()->findVisibleObjects(mCameraInProgress, getRenderQueue());
     }
     
     void TinySceneManager::setViewPort(TinyViewPort* vp)
@@ -60,12 +66,55 @@ namespace Tiny
     
     void TinySceneManager::renderVisibleObjects()
     {
+        MapIterator<RenderQueueGroupMap > iter = getRenderQueue()->getQueueGroupIterator();
         
+        while (iter.hasMoreElements())
+        {
+            //uint8 qId = queueIt.peekNextKey();
+            TinyRenderQueueGroup* pGroup = iter.getNext();
+            renderQueueGroupObjects(pGroup);
+        }
+    }
+    void TinySceneManager::renderQueueGroupObjects(TinyRenderQueueGroup* group)
+    {
+        MapIterator<RenderPriorityGroupMap > iter = group->getPriorityGroupIterator();
+        
+        while (iter.hasMoreElements())
+        {
+            //uint8 priority = iter.peekNextKey();
+            TinyRenderPriorityGroup* pPriorityGroup = iter.getNext();
+            renderObjects(pPriorityGroup->getSolidCollection());
+            renderObjects(pPriorityGroup->getTransParentCollection());
+        }
+    }
+    
+    void TinySceneManager::renderObjects(TinyRenderableCollection* collection)
+    {
+        VectorIterator<RenderableArray > iter = collection->getRenderableIterator();
+        while (iter.hasMoreElements())
+        {
+            TinyRenderable pRenderable = iter.getNext();
+            renderSingleObject(pRenderable);
+        }
+    }
+    
+    void TinySceneManager::renderSingleObject(TinyRenderable* renderable)
+    {
+        //TODO set gpu param, bind vertex attr, set up renderOperation, call renderSystem render.
     }
     
     void TinySceneManager::setViewMatrix(kmMat4& matrix)
     {
         mDestRenderSystem->setViewMatrix(matrix);
+    }
+    
+    TinyRenderQueue* TinyRenderQueue::getRenderQueue()
+    {
+        if (nullptr == mRenderQueue)
+        {
+            mRenderQueue = TINY_NEW TinyRenderQueue();
+        }
+        return mRenderQueue;
     }
 }
 

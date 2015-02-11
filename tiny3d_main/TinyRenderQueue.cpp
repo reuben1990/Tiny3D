@@ -33,6 +33,11 @@ namespace Tiny
         group->addRenderable(renderable, priority);
     }
     
+    MapIterator<RenderQueueGroupMap> TinyRenderQueue::getQueueGroupIterator();
+    {
+        return MapIterator<RenderQueueGroupMap>(mRenderQueueGroups.begin(); mRenderQueueGroups.end());
+    }
+    
     TinyRenderQueueGroup* TinyRenderQueue::getQueueGroup(uint8 groupID)
     {
         auto iter = mRenderQueueGroups.find(groupID);
@@ -68,6 +73,11 @@ namespace Tiny
     {
         auto group = mRenderPriorityGroups->find(priority);
         gourp->addRenderable(renderable);
+    }
+    
+    MapIterator<RenderPriorityGroupMap > TinyRenderQueueGroup::getPriorityGroupIterator()
+    {
+        return MapIterator<RenderPriorityGroupMap >(mRenderPriorityGroups.begin(), mRenderPriorityGroups.end());
     }
     
     TinyRenderPriorityGroup* TinyRenderQueueGroup::getPriorityGroup(uint8 priority)
@@ -112,6 +122,16 @@ namespace Tiny
         }
     }
     
+    TinyRenderableCollection* TinyRenderPriorityGroup::getSolidCollection()
+    {
+        return mSolidCollection;
+    }
+    
+    TinyRenderableCollection* TinyRenderPriorityGroup::getTransParentCollection()
+    {
+        return mTransParentCollection;
+    }
+    
     TinyRenderableCollection::TinyRenderableCollection()
     {
         //
@@ -122,9 +142,14 @@ namespace Tiny
         //
     }
     
-    void addRenderable(TinyRenderable* renderable)
+    void TinyRenderableCollection::addRenderable(TinyRenderable* renderable)
     {
         mRenderables.push_back(renderable);
+    }
+    
+    VectorIterator<RenderableArray > TinyRenderableCollection::getRenderableIterator()
+    {
+        return VectorIterator<RenderableArray >(mRenderables.begin(), mRenderables.end());
     }
 }
 

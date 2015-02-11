@@ -43,14 +43,16 @@ namespace Tiny
         RENDER_QUEUE_MAX = 105
     };
     
+    typedef std::vector<TinyRenderable*> RenderableArray;
     class TinyRenderableCollection : public TinyObject
     {
     public:
         TinyRenderableCollection();
         ~TinyRenderableCollection();
         void addRenderable(TinyRenderable* renderable);
+        VectorIterator<RenderableArray > getRenderableIterator();
     protected:
-        std::vector<TinyRenderable*> mRenderables;
+        RenderableArray mRenderables;
     };
     
     class TinyRenderPriorityGroup : public TinyObject
@@ -59,21 +61,27 @@ namespace Tiny
         TinyRenderPriorityGroup();
         ~TinyRenderPriorityGroup();
         void addRenderable(TinyRenderable* renderable);
+        TinyRenderableCollection* getSolidCollection();
+        TinyRenderableCollection* getTransParentCollection();
     protected:
         TinyRenderableCollection* mSolidCollection;
         TinyRenderableCollection* mTransParentCollection;
     };
     
+    typedef std::map<uint8, TinyRenderPriorityGroup*> RenderPriorityGroupMap;
     class TinyRenderQueueGroup : public TinyObject
     {
+    public:
         TinyRenderQueueGroup();
         ~TinyRenderQueueGroup();
         void addRenderable(TinyRenderable* renderable, uint8 priority = 0);
         TinyRenderPriorityGroup* getPriorityGroup(uint8 priority);
+        MapIterator<RenderPriorityGroupMap > getPriorityGroupIterator();
     protected:
-        std::map<uint8, TinyRenderPriorityGroup*> mRenderPriorityGroups;
+        RenderPriorityGroupMap mRenderPriorityGroups;
     };
     
+    typedef std::map<uint8, TinyRenderQueueGroup*> RenderQueueGroupMap;
     class TinyRenderQueue : public TinyObject
     {
     public:
@@ -81,8 +89,9 @@ namespace Tiny
         ~TinyRenderQueue();
         void addRenderable(TinyRenderable* renderable, uint8 groupID = RenderQueueGroupID::RENDER_QUEUE_MAIN, uint8 priority = 0);
         TinyRenderQueueGroup* getQueueGroup(uint8 groupID);
+        MapIterator<RenderQueueGroupMap > getQueueGroupIterator();
     protected:
-        std::map<uint8, TinyRenderQueueGroup*> mRenderQueueGroups;
+        RenderQueueGroupMap mRenderQueueGroups;
     };
 }
 

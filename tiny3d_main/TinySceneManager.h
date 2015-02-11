@@ -16,6 +16,7 @@
 #include "TinyRenderTarget.h"
 #include "TinySingleton.h"
 #include "TinySceneNode.h"
+#include "TinyRenderQueue.h"
 
 namespace Tiny
 {
@@ -29,14 +30,19 @@ namespace Tiny
         void renderVisibleObjects();
         void updateSceneGraph();
         void renderVisibleObjects();
+        void renderQueueGroupObjects(TinyRenderQueueGroup* group);
+        void renderObjects(TinyRenderableCollection* collection);
+        void renderSingleObject(TinyRenderable* renderable);
         void setViewPort(TinyViewPort *vp);
         void setViewMatrix(kmMat4& matrix);
         TinySceneNode* getRootSceneNode();
+        TinyRenderQueue* getRenderQueue();
     private:
         TinyViewPort *mCurrentViewPort;
         TinyCamera *mCameraInProgress;
         TinySceneNode* mSceneRoot;
         TinyRenderSystem *mDestRenderSystem;
+        RenderQueue* mRenderQueue;
     };
 }
 
