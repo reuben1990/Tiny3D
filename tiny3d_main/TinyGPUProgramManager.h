@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+/*#import <Foundation/Foundation.h>
 #import <OpenGL/gl.h>
 #import <Cocoa/Cocoa.h>
 
@@ -18,3 +18,4 @@
 - (GLuint)programWithVertexShaderFile:(NSString *)vsfilePath FragmentShaderFile:(NSString *)fsFilePath;
 
 @end
+*/

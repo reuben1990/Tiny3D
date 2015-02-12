@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-#import "GSShaderController.h"
+/*#import "GSShaderController.h"
 #import <OpenGL/gl3.h>
 #import <OpenGL/gl3ext.h>
 
@@ -108,4 +108,4 @@
     return program;
 }
 
-@end
+@end*/

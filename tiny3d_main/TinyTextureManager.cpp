@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-#import "GSTextureController.h"
+/*#import "GSTextureController.h"
 #import "GSOpenGLInfoHelper.h"
 #import <OpenGL/gl3.h>
 #import <OpenGL/gl3ext.h>
@@ -217,4 +217,4 @@ unsigned long getNextPOT(unsigned long x)
     } while (isMapmap);
 }
 
-@end
+@end*/

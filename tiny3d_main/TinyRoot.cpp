@@ -58,6 +58,11 @@ namespace Tiny
             mRenderSystem->swapAllRenderTargetBuffers();
         }
     }
+    
+    void TinyRoot::addMovableObjectFactory(TinyMovableObjectFactory* factory)
+    {
+        
+    }
 }
 
 

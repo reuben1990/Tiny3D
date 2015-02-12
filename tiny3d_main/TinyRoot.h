@@ -14,8 +14,12 @@
 #include "TinySingleton.h"
 #include "TinySceneManager.h"
 #include "TinyRenderWindow.h"
+#incluee "TinyMovableObjectFactory.h"
+#include <map>
 
-namespace Tiny {
+
+namespace Tiny
+{
     class TinyRoot : public TinyObject, public TinySingleton<TinyRoot>
     {
     public:
@@ -24,9 +28,12 @@ namespace Tiny {
         void renderOneFrame(float timeInterval);
         void updateAllRenderTargets();
         TinySceneManager *createSceneManager();
-    private:
+        void addMovableObjectFactory(TinyMovableObjectFactory* factory);
+    protected:
+        typedef std::map<std::string, TinyMovableObjectFactory*> MovableObjectFactoryMap;
         TinyRenderSystem *mRenderSystem;
         TinySceneManager *mSceneMgr;
+        MovableObjectFactoryMap mMovableObjectFactoryMap;
     };
 }
 
