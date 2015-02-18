@@ -10,5 +10,21 @@
 #define __proj_mac__TinySubMesh__
 
 #include <stdio.h>
+#include "TinyObject.h"
+#include "TinyPlatform.h"
+#include "TinyVertexIndexData.h"
+
+namespace Tiny
+{
+    class TinySubMesh : public TinyObject
+    {
+    public:
+        TinySubMesh();
+        ~TinySubMesh();
+        uint32 load(uint8* data, uint32 offset);
+        TinyVertexData* mVertexData;
+        TinyIndexData* mIndexData;
+    };
+}
 
 #endif /* defined(__proj_mac__TinySubMesh__) */

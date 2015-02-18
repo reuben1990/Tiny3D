@@ -11,13 +11,32 @@
 
 namespace Tiny
 {
-    TinyEntity::TinyEntity()
+    TinyEntity::TinyEntity(std::string& name, TinyMesh* mesh)
+        : TinyMovableObject(name)
     {
-        
+        mName = name;
+        mMesh = mesh;
+        initialize();
     }
     
     TinyEntity::~TinyEntity()
     {
+        
+    }
+    
+    void TinyEntity::initialize()
+    {
+        buildSubEntityList(mMesh, &mSubEntitys);
+    }
+    
+    void TinyEntity::buildSubEntityList(TinyMesh* mesh, SubEntityList* list)
+    {
+        auto iter = mMesh->getSubmeshIterator();
+        while (iter.hasMoreElements())
+        {
+            TinySubMesh* subMesh = iter.getNext();
+            mSubEntitys.push_back(TINY_NEW TinySubEntity(subMesh));
+        }
         
     }
     

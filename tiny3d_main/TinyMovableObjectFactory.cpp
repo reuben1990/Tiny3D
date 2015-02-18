@@ -7,3 +7,21 @@
 //
 
 #include "MovableObjectFactory.h"
+
+namespace Tiny
+{
+    TinyMovableObjectFactory::TinyMovableObjectFactory()
+    {
+        
+    }
+    
+    TinyMovableObjectFactory::~TinyMovableObjectFactory()
+    {
+        
+    }
+    
+    TinyMovableObject* TinyMovableObjectFactory::createInstance()
+    {
+        return createInstanceImpl();
+    }
+}

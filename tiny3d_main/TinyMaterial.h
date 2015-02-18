@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "TinyObject.h"
+#include "TinyGPUProgram.h"
 
 namespace Tiny
 {
@@ -20,8 +21,11 @@ namespace Tiny
         TinyMaterial();
         ~TinyMaterial();
         bool isTransParent();
+        void setProgram(TinyGPUProgram* program);
+        TinyGPUProgram* getProgram();
     protected:
-        mIsTransParent;
+        bool mIsTransParent;
+        TinyGPUProgram* mProgram;
     };
 }
 

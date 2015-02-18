@@ -7,3 +7,16 @@
 //
 
 #include "TinyResourceManager.h"
+
+namespace Tiny
+{
+    TinyResourceManager::TinyResourceManager()
+    {
+        
+    }
+    
+    TinyResourceManager::~TinyResourceManager()
+    {
+        
+    }
+}

@@ -21,6 +21,7 @@ namespace Tiny
         //TODO only support one render window and render system now lol...
         mRenderSystem = TINY_NEW TinyRenderSystem();
         mRenderSystem->attachRenderTarget(TINY_NEW TinyRenderWindow());
+        addMovableObjectFactory(TINY_NEW TinyEntityFactory());
     }
     
     TinyRoot::~TinyRoot()
@@ -61,7 +62,18 @@ namespace Tiny
     
     void TinyRoot::addMovableObjectFactory(TinyMovableObjectFactory* factory)
     {
-        
+        mMovableObjectFactoryMap[factory->getType()] = factory;
+    }
+    
+    TinyMovableObjectFactory* TinyRoot::getMovableObjectFactory(std::string& name)
+    {
+        TinyMovableObjectFactory* ret = nullptr;
+        auto iter = mMovableObjectFactoryMap.find(name);
+        if (iter != mMovableObjectFactoryMap.end())
+        {
+            ret = iter->second;
+        }
+        return ret;
     }
 }
 

@@ -7,3 +7,23 @@
 //
 
 #include "TinySubEntity.h"
+
+namespace Tiny
+{
+    TinySubEntity::TinySubEntity(TinySubMesh* subMesh)
+    {
+        mSubMesh = subMesh;
+    }
+    
+    TinySubEntity::~TinySubEntity()
+    {
+        
+    }
+    
+    void getRenderOperation(TinyRenderOperation* ro)
+    {
+        ro->mVertexData = mSubMesh->mVertexData;
+        ro->mIndexData = mSubMesh->mIndexData;
+        ro->
+    }
+}

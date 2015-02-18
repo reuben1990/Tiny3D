@@ -20,7 +20,7 @@ namespace Tiny {
     class TinyMovableObject : public TinyObject
     {
     public:
-        TinyMovableObject();
+        TinyMovableObject(std::string& name);
         ~TinyMovableObject();
         bool isAttached();
         std::string& getName();

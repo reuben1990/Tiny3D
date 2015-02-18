@@ -14,6 +14,7 @@
 #include "TinyMovableObject.h"
 #include "TinySubEntity.h"
 #include <vector>
+#include <string>
 #include "TinyPlatform.h"
 
 namespace Tiny
@@ -21,16 +22,20 @@ namespace Tiny
     class TinyEntity : public TinyMovableObject
     {
     public:
-        TinyEntity();
+        typedef std::vector<TinySubEntity*> SubEntityList;
+        TinyEntity(std::string& name, TinyMesh* mesh);
         ~TinyEntity();
+        void initialize();
         void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue);
         void setRenderQueueGroupID(uint8 groupID);
         void setRenderPriority(uint8 priority);
         void setMaterial(TinyMaterial* material);
+        void buildSubEntityList(TinyMesh* mesh, SubEntityList* list);
     protected:
-        std::vector<TinySubEntity*> mSubEntitys;
+        SubEntityList mSubEntitys;
         uint8 mRenderQueueGroupID;
         uint8 mRenderPriority;
+        TinyMesh* mMesh;
     };
 }
 

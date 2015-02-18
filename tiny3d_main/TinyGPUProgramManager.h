@@ -6,16 +6,24 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-/*#import <Foundation/Foundation.h>
-#import <OpenGL/gl.h>
-#import <Cocoa/Cocoa.h>
+#ifndef __proj_mac__TinyGPUProgramManager__
+#define __proj_mac__TinyGPUProgramManager__
 
-@interface GSShaderController : NSObject
+#include "TinyResourceManager.h"
+#include "TinyGPUProgram.h"
+#include "TinySingleton.h"
+#include <string>
 
-+ (GSShaderController *)sharedShaderController;
+namespace Tiny
+{
+    class TinyGPUProgramManager : public TinyResourceManager, public TinySingleton<TinyMeshManager>
+    {
+    public:
+        TinyGPUProgramManager();
+        ~TinyGPUProgramManager();
+        TinyGPUProgram* load(std::string& vFileName, std::string& fFileName);
+    protected:
+    };
+}
 
-- (GLuint)programWithVertexShader:(NSString *)vsContent FragmentShader:(NSString *)fsContent;
-- (GLuint)programWithVertexShaderFile:(NSString *)vsfilePath FragmentShaderFile:(NSString *)fsFilePath;
-
-@end
-*/
+#endif

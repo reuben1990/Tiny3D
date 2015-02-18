@@ -10,8 +10,9 @@
 
 namespace Tiny
 {
-    TinyMovableObject::TinyMovableObject()
+    TinyMovableObject::TinyMovableObject(std::string& name)
         : mParentNode(nullptr)
+        : mName(name)
     {
         
     }

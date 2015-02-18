@@ -10,5 +10,21 @@
 #define __proj_mac__MovableObjectFactory__
 
 #include <stdio.h>
+#include <string>
+#include "TinyMovableObject.h"
+
+namespace Tiny
+{
+    class TinyMovableObjectFactory()
+    {
+    public:
+        TinyMovableObjectFactory();
+        virtual ~TinyMovableObjectFactory();
+        virtual std::string& getType() = 0;
+        virtual TinyMovableObject* createInstance();
+        virtual TinyMovableObject* createInstanceImpl() = 0;
+    protected:
+    }
+}
 
 #endif /* defined(__proj_mac__MovableObjectFactory__) */

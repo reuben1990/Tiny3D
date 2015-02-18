@@ -20,7 +20,7 @@
 
 namespace Tiny
 {
-    class TinySceneManager : public TinyObject, public TinySingleton
+    class TinySceneManager : public TinyObject, public TinySingleton<TinySceneManager>
     {
     public:
         TinySceneManager();

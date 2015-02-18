@@ -57,10 +57,13 @@
 		1BA22F2E1A8218490060733E /* TinySchedulerManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F2D1A8218490060733E /* TinySchedulerManager.cpp */; };
 		1BA22F301A82185D0060733E /* TinyTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F2F1A82185D0060733E /* TinyTexture.cpp */; };
 		1BA22F3C1A82685B0060733E /* TinyRenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA22F3A1A82685B0060733E /* TinyRenderSystem.cpp */; };
+		1BA6453F1A8DD9090094A70D /* TinyRenderOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6453D1A8DD9090094A70D /* TinyRenderOperation.cpp */; };
+		1BC0D6C01A8DED4400FC82E7 /* TinyVertexIndexData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D6BE1A8DED4400FC82E7 /* TinyVertexIndexData.cpp */; };
+		1BC0D6C31A8DF07500FC82E7 /* TinyMeshManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D6C11A8DF07500FC82E7 /* TinyMeshManager.cpp */; };
+		1BC0D6C61A8DF09D00FC82E7 /* TinyMaterialManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D6C41A8DF09D00FC82E7 /* TinyMaterialManager.cpp */; };
 		1BC845231A8C9CC200E57381 /* TinyMovableObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC845211A8C9CC200E57381 /* TinyMovableObjectFactory.cpp */; };
 		1BC845261A8C9D4700E57381 /* TinyEntityFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC845241A8C9D4700E57381 /* TinyEntityFactory.cpp */; };
 		1BC845291A8C9D8100E57381 /* TinyHardwareBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC845271A8C9D8100E57381 /* TinyHardwareBuffer.cpp */; };
-		1BC8452C1A8C9DDC00E57381 /* TinyHardwareIndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8452A1A8C9DDC00E57381 /* TinyHardwareIndexBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +166,15 @@
 		1BA22F2F1A82185D0060733E /* TinyTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyTexture.cpp; path = ../../tiny3d_main/TinyTexture.cpp; sourceTree = "<group>"; };
 		1BA22F3A1A82685B0060733E /* TinyRenderSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyRenderSystem.cpp; path = ../../tiny3d_main/TinyRenderSystem.cpp; sourceTree = "<group>"; };
 		1BA22F3B1A82685B0060733E /* TinyRenderSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyRenderSystem.h; path = ../../tiny3d_main/TinyRenderSystem.h; sourceTree = "<group>"; };
+		1BA6453D1A8DD9090094A70D /* TinyRenderOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyRenderOperation.cpp; path = ../../tiny3d_main/TinyRenderOperation.cpp; sourceTree = "<group>"; };
+		1BA6453E1A8DD9090094A70D /* TinyRenderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyRenderOperation.h; path = ../../tiny3d_main/TinyRenderOperation.h; sourceTree = "<group>"; };
+		1BC0D6BD1A8DED4400FC82E7 /* TinyCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyCommon.h; path = ../../tiny3d_main/TinyCommon.h; sourceTree = "<group>"; };
+		1BC0D6BE1A8DED4400FC82E7 /* TinyVertexIndexData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyVertexIndexData.cpp; path = ../../tiny3d_main/TinyVertexIndexData.cpp; sourceTree = "<group>"; };
+		1BC0D6BF1A8DED4400FC82E7 /* TinyVertexIndexData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyVertexIndexData.h; path = ../../tiny3d_main/TinyVertexIndexData.h; sourceTree = "<group>"; };
+		1BC0D6C11A8DF07500FC82E7 /* TinyMeshManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyMeshManager.cpp; path = ../../tiny3d_main/TinyMeshManager.cpp; sourceTree = "<group>"; };
+		1BC0D6C21A8DF07500FC82E7 /* TinyMeshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyMeshManager.h; path = ../../tiny3d_main/TinyMeshManager.h; sourceTree = "<group>"; };
+		1BC0D6C41A8DF09D00FC82E7 /* TinyMaterialManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyMaterialManager.cpp; path = ../../tiny3d_main/TinyMaterialManager.cpp; sourceTree = "<group>"; };
+		1BC0D6C51A8DF09D00FC82E7 /* TinyMaterialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyMaterialManager.h; path = ../../tiny3d_main/TinyMaterialManager.h; sourceTree = "<group>"; };
 		1BC8451B1A89F35800E57381 /* TinyPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TinyPlatform.h; path = ../../tiny3d_main/TinyPlatform.h; sourceTree = SOURCE_ROOT; };
 		1BC8451E1A8A173300E57381 /* TinyIteratorWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyIteratorWrapper.h; path = ../../tiny3d_main/TinyIteratorWrapper.h; sourceTree = "<group>"; };
 		1BC8451F1A8A173300E57381 /* TinyMemoryAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyMemoryAlloc.h; path = ../../tiny3d_main/TinyMemoryAlloc.h; sourceTree = "<group>"; };
@@ -173,8 +185,7 @@
 		1BC845251A8C9D4700E57381 /* TinyEntityFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyEntityFactory.h; path = ../../tiny3d_main/TinyEntityFactory.h; sourceTree = "<group>"; };
 		1BC845271A8C9D8100E57381 /* TinyHardwareBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyHardwareBuffer.cpp; path = ../../tiny3d_main/TinyHardwareBuffer.cpp; sourceTree = "<group>"; };
 		1BC845281A8C9D8100E57381 /* TinyHardwareBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyHardwareBuffer.h; path = ../../tiny3d_main/TinyHardwareBuffer.h; sourceTree = "<group>"; };
-		1BC8452A1A8C9DDC00E57381 /* TinyHardwareIndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TinyHardwareIndexBuffer.cpp; path = ../../tiny3d_main/TinyHardwareIndexBuffer.cpp; sourceTree = "<group>"; };
-		1BC8452B1A8C9DDC00E57381 /* TinyHardwareIndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TinyHardwareIndexBuffer.h; path = ../../tiny3d_main/TinyHardwareIndexBuffer.h; sourceTree = "<group>"; };
+		1BC8452D1A8CB68100E57381 /* TinyCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TinyCamera.cpp; path = ../../tiny3d_main/TinyCamera.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +238,7 @@
 			children = (
 				1B4BB8561A81C3C300E97FB4 /* TinyCamera.cpp */,
 				1B4BB8591A81C52500E97FB4 /* TinyCamera.h */,
+				1BC0D6BD1A8DED4400FC82E7 /* TinyCommon.h */,
 				1B4BB85A1A81C52500E97FB4 /* TinyDelegate.cpp */,
 				1B4BB85B1A81C52500E97FB4 /* TinyDelegate.h */,
 				1BA22F161A8216900060733E /* TinyEntity.cpp */,
@@ -239,8 +251,6 @@
 				1B4BB8611A81C52500E97FB4 /* TinyGPUProgramManager.h */,
 				1BC845271A8C9D8100E57381 /* TinyHardwareBuffer.cpp */,
 				1BC845281A8C9D8100E57381 /* TinyHardwareBuffer.h */,
-				1BC8452A1A8C9DDC00E57381 /* TinyHardwareIndexBuffer.cpp */,
-				1BC8452B1A8C9DDC00E57381 /* TinyHardwareIndexBuffer.h */,
 				1B4BB8621A81C52500E97FB4 /* TinyInputManager.cpp */,
 				1B4BB8631A81C52500E97FB4 /* TinyInputManager.h */,
 				1BA22F0D1A82154A0060733E /* TinyInputObject.cpp */,
@@ -252,11 +262,15 @@
 				1B4BB8651A81C52500E97FB4 /* TinyLight.h */,
 				1BA22F181A8217540060733E /* TinyMaterial.cpp */,
 				1BA22F191A8217540060733E /* TinyMaterial.h */,
+				1BC0D6C41A8DF09D00FC82E7 /* TinyMaterialManager.cpp */,
+				1BC0D6C51A8DF09D00FC82E7 /* TinyMaterialManager.h */,
 				1B4BB8661A81C52500E97FB4 /* TinyMath.cpp */,
 				1B4BB8671A81C52500E97FB4 /* TinyMath.h */,
 				1BC8451F1A8A173300E57381 /* TinyMemoryAlloc.h */,
 				1BA22F1B1A8217760060733E /* TinyMesh.cpp */,
 				1B4BB8691A81C52500E97FB4 /* TinyMesh.h */,
+				1BC0D6C11A8DF07500FC82E7 /* TinyMeshManager.cpp */,
+				1BC0D6C21A8DF07500FC82E7 /* TinyMeshManager.h */,
 				1BA22F101A8215E50060733E /* TinyMouse.cpp */,
 				1BA22F111A8215E50060733E /* TinyMouse.h */,
 				1B4BB86A1A81C52500E97FB4 /* TinyMovableObject.cpp */,
@@ -270,6 +284,8 @@
 				1BC8451B1A89F35800E57381 /* TinyPlatform.h */,
 				1BA22F1D1A82179C0060733E /* TinyRenderable.cpp */,
 				1B4BB86E1A81C52500E97FB4 /* TinyRenderable.h */,
+				1BA6453D1A8DD9090094A70D /* TinyRenderOperation.cpp */,
+				1BA6453E1A8DD9090094A70D /* TinyRenderOperation.h */,
 				1BA22F1F1A8217B70060733E /* TinyRenderQueue.cpp */,
 				1B4BB86F1A81C52500E97FB4 /* TinyRenderQueue.h */,
 				1BA22F3A1A82685B0060733E /* TinyRenderSystem.cpp */,
@@ -299,8 +315,11 @@
 				1B4BB8781A81C52500E97FB4 /* TinyTexture.h */,
 				1B4BB8791A81C52500E97FB4 /* TinyTextureManager.cpp */,
 				1B4BB87A1A81C52500E97FB4 /* TinyTextureManager.h */,
+				1BC0D6BE1A8DED4400FC82E7 /* TinyVertexIndexData.cpp */,
+				1BC0D6BF1A8DED4400FC82E7 /* TinyVertexIndexData.h */,
 				1B4BB87B1A81C52500E97FB4 /* TinyViewPort.cpp */,
 				1B4BB87C1A81C52500E97FB4 /* TinyViewPort.h */,
+				1BC8452D1A8CB68100E57381 /* TinyCamera.cpp */,
 			);
 			name = tiny3d_main;
 			path = proj_mac;
@@ -452,7 +471,7 @@
 				1BA22F0F1A82154A0060733E /* TinyInputObject.cpp in Sources */,
 				1B0760CA1A7F66E4007103F3 /* plane.c in Sources */,
 				1B0760CE1A7F66E4007103F3 /* vec2.c in Sources */,
-				1BC8452C1A8C9DDC00E57381 /* TinyHardwareIndexBuffer.cpp in Sources */,
+				1BA6453F1A8DD9090094A70D /* TinyRenderOperation.cpp in Sources */,
 				1B0760C91A7F66E4007103F3 /* mat4.c in Sources */,
 				1B0760CF1A7F66E4007103F3 /* vec3.c in Sources */,
 				1B4BB8831A81C52500E97FB4 /* TinyMath.cpp in Sources */,
@@ -464,6 +483,7 @@
 				1BA22F201A8217B70060733E /* TinyRenderQueue.cpp in Sources */,
 				1B0760C81A7F66E4007103F3 /* mat3.c in Sources */,
 				1B0760D01A7F66E4007103F3 /* vec4.c in Sources */,
+				1BC0D6C61A8DF09D00FC82E7 /* TinyMaterialManager.cpp in Sources */,
 				1B4BB8801A81C52500E97FB4 /* TinyGPUProgramManager.cpp in Sources */,
 				1B4BB8871A81C52500E97FB4 /* TinyRoot.cpp in Sources */,
 				1B0760C51A7F66E4007103F3 /* aabb.c in Sources */,
@@ -474,6 +494,7 @@
 				1BA22F2C1A8218350060733E /* TinySceneNode.cpp in Sources */,
 				1B4F26111A7FEAD200DABC42 /* AppDelegate.mm in Sources */,
 				1BA22F2A1A8218210060733E /* TinySceneManager.cpp in Sources */,
+				1BC0D6C31A8DF07500FC82E7 /* TinyMeshManager.cpp in Sources */,
 				1BA22F3C1A82685B0060733E /* TinyRenderSystem.cpp in Sources */,
 				1BA22F1A1A8217540060733E /* TinyMaterial.cpp in Sources */,
 				1B4BB8841A81C52500E97FB4 /* TinyMovableObject.cpp in Sources */,
@@ -488,6 +509,7 @@
 				1B8F75CA1A89100F000D25F8 /* TinySubEntity.cpp in Sources */,
 				1B0760CD1A7F66E4007103F3 /* utility.c in Sources */,
 				1B8F75C71A876409000D25F8 /* TinyNode.cpp in Sources */,
+				1BC0D6C01A8DED4400FC82E7 /* TinyVertexIndexData.cpp in Sources */,
 				1B4F26141A7FEAD200DABC42 /* main.m in Sources */,
 				1BC845261A8C9D4700E57381 /* TinyEntityFactory.cpp in Sources */,
 				1B4BB8861A81C52500E97FB4 /* TinyResourceManager.cpp in Sources */,

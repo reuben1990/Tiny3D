@@ -25,4 +25,9 @@ namespace Tiny
     {
         mMaterial = material;
     }
+    
+    TinyMaterial* TinyEntity::getMaterial()
+    {
+        return mMaterial;
+    }
 }

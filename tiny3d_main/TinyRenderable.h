@@ -10,6 +10,7 @@
 #define proj_mac_TinyRenderable_h
 
 #include "TinyMaterial.h"
+#include "TinyRenderOperation.h"
 
 namespace Tiny
 {
@@ -18,6 +19,9 @@ namespace Tiny
     public:
         TinyRenderable();
         virtual ~TinyRenderable();
+        virtual void getRenderOperation(TinyRenderOperation* ro) = 0;
+        virtual void setMaterial(TinyMaterial* material);
+        TinyMaterial* getMaterial();
     protected:
         TinyMaterial* mMaterial;
     };

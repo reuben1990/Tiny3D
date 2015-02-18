@@ -7,3 +7,40 @@
 //
 
 #include "TinyMaterial.h"
+
+namespace Tiny
+{
+    TinyMaterial::TinyMaterial()
+        : mIsTransParent(false);
+        : mProgram(nullptr)
+    {
+        
+    }
+    
+    TinyMaterial::~TinyMaterial()
+    {
+        if (mProgram != nullptr)
+        {
+            TINY_DELETE mProgram;
+        }
+    }
+    
+    bool TinyMaterial::isTransParent()
+    {
+        return mIsTransParent;
+    }
+    
+    void TinyMaterial::setProgram(TinyGPUProgram* program)
+    {
+        if (mProgram != nullptr)
+        {
+            TINY_DELETE mProgram;
+        }
+        mProgram = program;
+    }
+    
+    TinyGPUProgram* TinyMaterial::getProgram()
+    {
+        return mProgram;
+    }
+}

@@ -10,5 +10,20 @@
 #define __proj_mac__TinyHardWareBuffer__
 
 #include <stdio.h>
+#include "TinyObject.h"
+#include "TinyPlatform.h"
+
+namespace Tiny
+{
+    class TinyHardwareBuffer : public TinyObject
+    {
+    public:
+        TinyHardwareBuffer();
+        ~TinyHardwareBuffer();
+        virtual void readData(unsigned char* data, uint32 length, GLenum target, GLenum usage);
+    protected:
+        GLuint mHandler;
+    };
+}
 
 #endif /* defined(__proj_mac__TinyHardWareBuffer__) */
