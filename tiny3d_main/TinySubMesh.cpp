@@ -32,7 +32,7 @@ namespace Tiny
             {1, 0, 0}
         };
         GLushort idata[] = {0, 1, 2};
-        mVertexData->load(vdata, sizeof(vdata));
+        mVertexData->load(vdata, sizeof(vdata), VERTEX_LOCATION_POSITION);
         mIndexData->load(idata, sizeof(idata));
     }
 }

@@ -62,6 +62,7 @@ namespace Tiny
         void load();
         void useProgram();
         void setParameter(const TinyGPUProgramParameter& value);
+        GLuint getHandler();
     protected:
         TinyGPUProgramParameters* mParams;
         GLuint mHandler;

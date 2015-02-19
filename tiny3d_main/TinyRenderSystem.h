@@ -17,6 +17,7 @@
 #include "TinyGPUProgram.h"
 #include "TinyViewPort.h"
 #include "TinyRenderTarget.h"
+#include "TinyRenderOperation.h"
 
 namespace Tiny
 {
@@ -27,7 +28,7 @@ namespace Tiny
         virtual ~TinyRenderSystem();
         void updateAllRenderTargets();
         void swapAllRenderTargetBuffers();
-        void render();
+        void render(TinyRenderOperation* ro);
         void bindGPUProgram(TinyGPUProgram *program);
         void bindGPUProgramParameters(GPUProgramParameters *params);
         void setRenderTarget(TinyRenderTarget *target);

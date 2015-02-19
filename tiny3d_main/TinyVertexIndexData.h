@@ -12,17 +12,39 @@
 #include <stdio.h>
 #include "TinyObject.h"
 #include "TinyHardwareBuffer.h"
+#include "TinyIteratorWrapper.h"
+#include <map>
 
 namespace Tiny
 {
+    enum TinyVertexAttrLocation
+    {
+        VERTEX_LOCATION_POSITION = 0,
+        VERTEX_LOCATION_UV,
+        VERTEX_LOCATION_NORMAL,
+        VERTEX_LOCATION_TANGENT
+    };
+    
+    class TinyVertexElement : public TinyObject
+    {
+    public:
+        TinyVertexElement();
+        ~TinyVertexElement();
+        void load(uint8* data, uint32 length, uint32 size);
+        uint32 mSize;
+        TinyHardwareBuffer* mBuffer;
+    };
+    
+    typedef std::map<TinyVertexAttrLocation, TinyVertexElement*> TinyVertexElementMap;
     class TinyVertexData : public TinyObject
     {
     public:
         TinyVertexData();
         virtual ~TinyVertexData();
-        void load(uint8* data, uint32 length);
+        void load(uint8* data, uint32 length, uint32 size, TinyVertexAttrLocation location);
+        MapIterator<TinyVertexElementMap > getBufferIterator();
     protected:
-        TinyHardwareBuffer* mBuffer;
+        TinyVertexElementMap mVertexElements;
     };
     
     class TinyIndexData : public TinyObject
@@ -30,9 +52,12 @@ namespace Tiny
     public:
         TinyIndexData();
         virtual ~TinyIndexData();
-        void load(uint8* data, uint32 length);
+        void load(uint8* data, uint32 length, uint32 vertexSize);
+        uint32 getVertexSize();
+        TinyHardwareBuffer* getBuffer();
     protected:
         TinyHardwareBuffer* mBuffer;
+        uint32 mVertexSize;
     };
 }
 

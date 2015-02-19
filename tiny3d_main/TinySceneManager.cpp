@@ -9,6 +9,7 @@
 #include "TinySceneManager.h"
 #include "TinyMemoryAlloc.h"
 #include "TinyIteratorWrapper.h"
+#include "TinyRenderOperation.h"
 
 namespace Tiny
 {
@@ -100,7 +101,9 @@ namespace Tiny
     
     void TinySceneManager::renderSingleObject(TinyRenderable* renderable)
     {
-        //TODO set gpu param, bind vertex attr, set up renderOperation, call renderSystem render.
+        TinyRenderOperation ro;
+        renderable->getRenderOperation(&ro);
+        mDestRenderSystem->render(&ro);
     }
     
     void TinySceneManager::setViewMatrix(kmMat4& matrix)

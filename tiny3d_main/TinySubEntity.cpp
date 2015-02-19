@@ -24,6 +24,8 @@ namespace Tiny
     {
         ro->mVertexData = mSubMesh->mVertexData;
         ro->mIndexData = mSubMesh->mIndexData;
-        ro->
+        ro->mRenderable = this;
+        ro->mMaterial = getMaterial();
+        ro->mProgram = ro->mMaterial->getProgram();
     }
 }

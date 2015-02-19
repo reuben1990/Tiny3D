@@ -98,6 +98,11 @@ namespace Tiny
         mParams->setParameter(value);
     }
     
+    GLuint TinyGPUProgram::getHandler()
+    {
+        return mHandler;
+    }
+    
     TinyGPUProgramParameters::TinyGPUProgramParameters()
     {
         //

@@ -5,22 +5,24 @@
 //  Created by reuben chao on 2/3/15.
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
+#ifndef proj_mac_TinyTextureManager_h
+#define proj_mac_TinyTextureManager_h
 
-/*#import <Foundation/Foundation.h>
-#import <OpenGL/gl.h>
-#import <Cocoa/Cocoa.h>
+#include "TinyResourceManager.h"
+#include <string>
+#include <vector>
 
-@interface GSTextureController : NSObject
-
-@property (nonatomic, readonly) BOOL supportsNPOT;
-
-+ (GSTextureController *)sharedTextureController;
-
-- (GLuint)textureWithFileName:(NSString *)fileName useMipmap:(BOOL)isMapmap;
-
-- (GLuint)cubeTextureWithFileNameArr:(NSMutableArray *)fileNameArr useMipmap:(BOOL)isMapmap;
-
-- (void)getFileData:(NSString *)fileName useMipmap:(BOOL)isMapmap dataArr:(NSMutableArray*)dataArr sizeArr:(NSMutableArray*)sizeArr;
-
-@end
-*/
+namespace Tiny
+{
+    class TinyTextureManager : TinyResourceManager
+    {
+    public:
+        TinyResourceManager();
+        ~TinyResourceManager();
+        TinyTexture* load(std::string& fileName);
+        TinyTexture* load(std::vector<std::string>& fileNames)
+    protected:
+        
+    };
+}
+#endif

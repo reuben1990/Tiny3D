@@ -9,5 +9,27 @@
 #ifndef proj_mac_TinyTexture_h
 #define proj_mac_TinyTexture_h
 
+#include "TinyObject.h"
+#include <string>
+#include <vector>
+#include "TinyPlatform.h"
+#include "TinyImage.h"
+
+namespace Tiny
+{
+    class TinyTexture
+    {
+    public:
+        TinyTexture();
+        ~TinyTexture();
+        void load(uint8* data, uint32 length);
+        void load(vector<uint8*>& datas, vector<uint32>& lengths);
+        void initWithImage(TinyImage* image);
+        void initWithImages(std::vector<TinyImage*>& images);
+        GLuint getHandler();
+    protected:
+        GLuint mHandler;
+    };
+}
 
 #endif

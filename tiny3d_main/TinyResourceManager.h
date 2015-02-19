@@ -22,7 +22,7 @@ namespace Tiny
     public:
         TinyResourceManager();
         ~TinyResourceManager();
-        void getFileData(std::string& fileName, uint8** data, uint32& length);
+        static void getFileData(std::string& fileName, uint8** data, uint32& length);
     };
 }
 

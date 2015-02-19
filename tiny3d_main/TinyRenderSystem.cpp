@@ -8,6 +8,7 @@
 
 #include "TinyRenderSystem.h"
 #include "kazmath/kazmath.h"
+#include "TinyHardwareBuffer.h"
 
 namespace Tiny
 {
@@ -73,9 +74,32 @@ namespace Tiny
         }
     }
     
-    void TinyRenderSystem::render()
+    void TinyRenderSystem::render(TinyRenderOperation* ro)
     {
+        glUseProgram(ro->mProgram->getHandler());
         
+        //bind vertexAttr
+        auto iter = ro->mVertexData->getBufferIterator();
+        while (iter.hasMoreElements())
+        {
+            auto key = iter->first;
+            TinyVertexElement* element = iter->second;
+            TinyHardwareBuffer* hardwareBuffer = element->mBuffer;
+            glBindBuffer(GL_ARRAY_BUFFER, hardwareBuffer->getHandler());
+            glEnableVertexAttribArray(key);
+            glVertexAttribPointer(key, element->mSize, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+        }
+        
+        //bind index
+        TinyIndexData indexData = ro->mIndexData;
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexData->getBuffer());
+        
+        //bind uniform
+        TinyGPUProgram* program = ro->mProgram;
+        program->useProgram();
+        
+        //draw
+        glDrawElements(GL_TRIANGLES, indexData->getVertexSize(), GL_UNSIGNED_SHORT, 0);
     }
     
     void TinyRenderSystem::attachRenderTarget(TinyRenderTarget *target)

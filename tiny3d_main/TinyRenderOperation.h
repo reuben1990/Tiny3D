@@ -11,6 +11,9 @@
 
 #include <stdio.h>
 #include "TinyVertexIndexData.h"
+#include "TinyRenderable.h"
+#include "TinyGPUProgram.h"
+#include "TinyMaterial.h"
 
 namespace Tiny
 {
@@ -19,8 +22,12 @@ namespace Tiny
     public:
         TinyRenderOperation();
         virtual ~TinyRenderOperation();
+        
+        TinyRenderable* mRenderable;
         TinyVertexData* mVertexData;
         TinyIndexData* mIndexData;
+        TinyMaterial* mMaterial;
+        TinyGpuProgram* mProgram;
     };
 }
 
