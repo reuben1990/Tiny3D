@@ -32,4 +32,11 @@ namespace Tiny
             nodeIter->second->findVisibleObjects(cam, queue);
         }
     }
+    
+    TinySceneNode* TinySceneNode::createChildSceneNode()
+    {
+        auto child = TINY_NEW TinySceneNode();
+        addChild(node);
+        return node;
+    }
 }

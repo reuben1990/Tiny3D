@@ -25,7 +25,7 @@ namespace Tiny
     class TinyRenderTarget : public TinyObject
     {
     public:
-        TinyRenderTarget();
+        TinyRenderTarget(uint32 width, uint32 height);
         virtual ~TinyRenderTarget();
         
         //be called every frame, to update contens with viewports.
@@ -37,11 +37,10 @@ namespace Tiny
         //update all viewports.
         void updateViewPorts()
         
-        //update content by one viewport.
-        void updateViewPort(TinyViewPort *viewport, );
-        
         //swapBuffer.
-        virtual void swapBuffers();
+        virtual void swapBuffers() = 0;
+        
+        virtual kmVec2 getSize();
         
         //insert a viewport to viewport to viewport list.
         void addViewPort(TinyCamera *cam, int zOrder, float left, float bottom, float width, float height);
@@ -55,6 +54,8 @@ namespace Tiny
         GLuint getFBO();
         
         unsigned char getPriority();
+        
+        virtual void preRender() = 0;
         
     protected:
         float mWidth;

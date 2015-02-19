@@ -10,8 +10,13 @@
 
 namespace Tiny
 {
-    TinyRenderWindow::TinyRenderWindow()
+    TinyRenderWindow::TinyRenderWindow(uint32 width, uint32 height)
     {
         mPriority = TINY_DEFAULT_RT_GROUP;
+    }
+    
+    TinyRenderWindow::~TinyRenderWindow()
+    {
+        
     }
 }

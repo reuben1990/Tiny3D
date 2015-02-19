@@ -18,9 +18,8 @@ namespace Tiny
     mRenderSystem(nullptr),
     mSceneMgr(nullptr)
     {
-        //TODO only support one render window and render system now lol...
         mRenderSystem = TINY_NEW TinyRenderSystem();
-        mRenderSystem->attachRenderTarget(TINY_NEW TinyRenderWindow());
+        mRenderSystem->attachRenderTarget(tinyCreateRenderWindow(0, 0));
         addMovableObjectFactory(TINY_NEW TinyEntityFactory());
     }
     

@@ -14,4 +14,14 @@ namespace Tiny
     {
         mPriority = TINY_REND_TO_TEX_RT_GROUP;
     }
+    
+    TinyRenderTexture::~TinyRenderTexture()
+    {
+        //
+    }
+    
+    void TinyRenderTexture::swapBuffers()
+    {
+        //Nothing to do.
+    }
 }

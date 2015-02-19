@@ -129,4 +129,9 @@ namespace Tiny
     {
         return mHandler;
     }
+    
+    GLuint* getHandlerPtr()
+    {
+        return &mHandler;
+    }
 }

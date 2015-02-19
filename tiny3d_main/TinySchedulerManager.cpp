@@ -10,7 +10,6 @@
 
 namespace Tiny
 {
-    TinyScheduleManager *TinyScheduleManager::sSingleton = nullptr;
     
     TinyScheduleManager::TinyScheduleManager()
     {
@@ -20,16 +19,6 @@ namespace Tiny
     TinyScheduleManager::~TinyScheduleManager()
     {
         
-    }
-    
-    TinyScheduleManager *TinyScheduleManager::getSingleton()
-    {
-        if (sSingleton == nullptr)
-        {
-            sSingleton = new TinyScheduleManager();
-            sSingleton->initialize();
-        }
-        return sSingleton;
     }
     
     void TinyScheduleManager::initialize()

@@ -16,6 +16,7 @@
 #include "TinyObject.h"
 #include "TinyInputObject.h"
 #include "kazmath/kazmath.h"
+#include "TinySingleton.h"
 
 namespace Tiny
 {
@@ -25,10 +26,9 @@ namespace Tiny
         Keyboard
     };
 
-    class TinyInputManager : public TinyObject
+    class TinyInputManager : public TinyObject, public TinySingleton<TinyInputManager>
     {
     public:
-        static TinyInputManager *getSingleton();
         TinyInputManager();
         virtual ~TinyInputManager();
         TinyInputObject* getInputObject(InputDevice inputDevice, int index = 0);
@@ -37,7 +37,6 @@ namespace Tiny
     private:
         std::vector<TinyInputObject *> * checkInputObjectList(InputDevice inputDevice);
         std::map<InputDevice, std::vector<TinyInputObject*> *> mInputDevices;
-        static TinyInputManager *sSingleTon;
     };
 }
 

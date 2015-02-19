@@ -12,24 +12,12 @@
 
 namespace Tiny
 {
-    TinyInputManager *TinyInputManager::sSingleTon = nullptr;
-    
     TinyInputManager::TinyInputManager()
     {
     }
     
     TinyInputManager::~TinyInputManager()
     {
-    }
-
-    TinyInputManager *TinyInputManager::getSingleton()
-    {
-        if (sSingleTon == nullptr)
-        {
-            sSingleTon = new TinyInputManager();
-            sSingleTon->initialize();
-        }
-        return sSingleTon;
     }
 
     void TinyInputManager::initialize()

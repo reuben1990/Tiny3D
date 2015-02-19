@@ -11,9 +11,11 @@
 
 namespace Tiny
 {
-    TinyRenderTarget::TinyRenderTarget():
-    mPriority(TINY_DEFAULT_RT_GROUP),
-    mFbo(0)
+    TinyRenderTarget::TinyRenderTarget(uint32 width, uint32 height)
+        : mPriority(TINY_DEFAULT_RT_GROUP),
+        , mFbo(0)
+        , mWidth(width)
+        , mHeight(height)
     {
         
     }
@@ -30,6 +32,7 @@ namespace Tiny
     
     void TinyRenderTarget::update(bool swap)
     {
+        preRender();
         updateImpl();
         if (swap)
         {
@@ -37,14 +40,16 @@ namespace Tiny
         }
     }
     
+    kmVec2 TinyRenderTarget::getSize()
+    {
+        kmVec2 ret;
+        kmVec2Fill(&ret, mWidth, mHeight);
+        return ret;
+    }
+    
     void TinyRenderTarget::updateImpl()
     {
         updateViewPorts();
-    }
-
-    void TinyRenderTarget::swapBuffers()
-    {
-        //TODO nothing to do now
     }
     
     void TinyRenderTarget::addViewPort(TinyCamera *cam, int zOrder, float left, float bottom, float width, float height)

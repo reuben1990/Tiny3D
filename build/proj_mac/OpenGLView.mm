@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #import <OpenGL/gl3.h>
 #import "OpenGLView.h"
 #import "TinyInputManager.h"
@@ -41,31 +39,9 @@
     Tiny::TinyInputObject *inputObject_keyboard = Tiny::TinyInputManager::getSingleton()->getInputObject(Tiny::InputDevice::Keyboard);
     mKeyBoard = (Tiny::TinyKeyboard *)inputObject_keyboard;
     
-    //init TinyDelegate, which is the entry of custom application.
-    Tiny::TinyDelegate::getSingleton();
     
-    //schedule main loop
-    mTimer = [NSTimer timerWithTimeInterval:(1.0 / 60.0) target:self selector:@selector(visit:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop]addTimer:mTimer forMode:NSDefaultRunLoopMode];
     
     return self;
-}
-
-- (void)visit:(NSTimer*)timer
-{
-    if ([timer isEqual:mTimer] == YES)
-    {
-        [self drawRect:[self bounds]];
-    }
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    [[self openGLContext] makeCurrentContext];
-    
-    Tiny::TinyRoot::getSingleton()->renderOneFrame([mTimer timeInterval]);
-    
-    [[self openGLContext] flushBuffer];
 }
 
 - (void)update  // moved or resized
@@ -74,9 +50,6 @@
     
     [[self openGLContext] makeCurrentContext];
     [[self openGLContext] update];
-    
-    //NSRect rect = [self bounds];
-    //Tiny::TinyRoot::getSingleton()->onWindowUpdate(rect.size.width, rect.size.height);
 }
 
 - (void)reshape
@@ -85,9 +58,6 @@
     
     [[self openGLContext] makeCurrentContext];
     [[self openGLContext] update];
-    
-    //NSRect rect = [self bounds];
-    //Tiny::TinyRoot::getSingleton()->onWindowUpdate(rect.size.width, rect.size.height);
 }
 
 - (BOOL)acceptsFirstResponder

@@ -25,6 +25,7 @@ namespace Tiny
         void attachObject(TinyMovableObject* obj);
         void detattchObject(obj);
         void findVisibleObjects(TinyCamera* cam, RenderQueue* queue);
+        TinySceneNode* createChildSceneNode();
     protected:
         std::map<std::string, TinyMovableObject*> mAttachedObjects;
     };

@@ -21,9 +21,4 @@ namespace Tiny
     {
         
     }
-
-    void TinyDelegate::initialize()
-    {
-        
-    }
 }

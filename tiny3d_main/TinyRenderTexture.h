@@ -17,7 +17,10 @@ namespace Tiny
 {
     class TinyRenderTexture : public TinyRenderTarget
     {
+    public:
         TinyRenderTexture();
+        ~TinyRenderTexture();
+        virtual void swapBuffers();
     };
 }
 

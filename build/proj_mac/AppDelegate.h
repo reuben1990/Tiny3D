@@ -7,9 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+#import "OpenGLView.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+{
+    NSTimer *mTimer;
+}
 
 @property (weak) IBOutlet NSWindow *window;
 
+- (void)visit:(NSTimer*)timer;
+- (OpenGLView*)createGLView:(NSInteger)width height:(NSInteger)height;
++ (AppDelegate*)sharedDelegate;
 @end

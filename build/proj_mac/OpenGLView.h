@@ -11,20 +11,15 @@
 
 #import <OpenGL/gl.h>
 #import <Cocoa/Cocoa.h>
-#import "TinyDelegate.h"
+#import <Foundation/Foundation.h>
 #include "TinyMouse.h"
 #include "TinyKeyboard.h"
 
-@interface OpenGLView : NSOpenGLView {
-    NSTimer *mTimer;
+@interface OpenGLView : NSOpenGLView
+{
     Tiny::TinyMouse *mMouse;
     Tiny::TinyKeyboard *mKeyBoard;
-};
-
-- (void)visit:(NSTimer*)timer;
-
+}
 @end
-
-
 
 #endif

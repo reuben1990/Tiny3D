@@ -15,6 +15,9 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include "TinyRenderWindow.h"
+
+#define TINYLOG tinyLog
 
 namespace Tiny
 {
@@ -27,19 +30,8 @@ namespace Tiny
     
     static const int kMaxLogLen = 16*1024;
     
-    void TinyLog(const char * pszFormat, ...)
-    {
-        printf("Tiny3d: ");
-        char szBuf[kMaxLogLen + 1] = {0};
-        va_list ap;
-        va_start(ap, pszFormat);
-        vsnprintf(szBuf, kMaxLogLen, pszFormat, ap);
-        va_end(ap);
-        printf("%s", szBuf);
-        printf("\n");
-    }
-    
-#define TINYLOG TinyLog
+    void tinyLog(const char * pszFormat, ...);
+    TinyRenderWindow* tinyCreateRenderWindow(uint32 width, uint32 height);
 }
 
 #endif

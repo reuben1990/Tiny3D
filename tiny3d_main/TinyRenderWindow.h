@@ -18,9 +18,8 @@ namespace Tiny
     class TinyRenderWindow : public TinyRenderTarget
     {
     public:
-        TinyRenderWindow();
+        TinyRenderWindow(uint32 width, uint32 height);
         ~TinyRenderWindow();
-        virtual void swapBuffers();
     };
 }
 

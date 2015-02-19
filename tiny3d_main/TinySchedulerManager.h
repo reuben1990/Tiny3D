@@ -10,19 +10,18 @@
 #define proj_mac_TinySchedulerManager_h
 
 #include "TinyObject.h"
+#include "TinySingleton.h"
 
 namespace Tiny
 {
-    class TinyScheduleManager : public TinyObject
+    class TinyScheduleManager : public TinyObject, public TinySingleton<TinyScheduleManager>
     {
     public:
         TinyScheduleManager();
         virtual ~TinyScheduleManager();
-        static TinyScheduleManager *getSingleton();
         void initialize();
         void timeStep(float timeInterval);
     private:
-        static TinyScheduleManager *sSingleton;
         
     };
 }
