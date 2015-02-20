@@ -6,32 +6,17 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
+#ifndef proj_mac_TinyCamera_h
+#define proj_mac_TinyCamera_h
+
 #include "kazmath/kazmath.h"
-#include "GSInputController.h"
 #include "TinyObject.h"
-
-//@interface GSCameraController : NSObject<GSInputDelegate>
-//
-//@property (nonatomic, readonly) kmVec3 eye;
-//@property (nonatomic, readonly) kmVec3 center;
-//@property (nonatomic, readonly) kmVec3 up;
-//@property (nonatomic, readwrite) float moveSpeed;
-//@property (nonatomic, readwrite) float rotateSpeed;
-//@property (nonatomic, readwrite) float fov;
-//@property (nonatomic, readwrite) float aspect;
-//@property (nonatomic, readwrite) float near;
-//@property (nonatomic, readwrite) float far;
-//
-//- (id)initWithEye:(kmVec3)eye Center:(kmVec3)center Up:(kmVec3)up;
-//
-//- (kmMat4)viewMatrix;
-//- (kmMat4)perspectiveMatrix;
-//
-//@end
-
 #include "TinySceneManager.h"
 #include "TinyMovableObject.h"
+#include "TinyViewPort.h"
 #include <string>
+
+class TinySceneManager;
 
 namespace Tiny
 {
@@ -43,8 +28,8 @@ namespace Tiny
         void renderScene(TinyViewPort *viewPort);
         void notifyViewPort(TinyViewPort *vp);
         TinyViewPort *getViewPort();
-        kmMat4& getViewMatrix();
-        kmMat4& getProjectionMatrix();
+        void getViewMatrix(kmMat4& ret);
+        void getProjectionMatrix(kmMat4& ret);
     private:
         TinyViewPort *mLastViewPort;
         TinySceneManager *mSceneMgr;
@@ -56,6 +41,6 @@ namespace Tiny
     };
 }
 
-
+#endif
 
 

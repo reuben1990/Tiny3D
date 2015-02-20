@@ -30,14 +30,15 @@ namespace Tiny
         void swapAllRenderTargetBuffers();
         void render(TinyRenderOperation* ro);
         void bindGPUProgram(TinyGPUProgram *program);
-        void bindGPUProgramParameters(GPUProgramParameters *params);
+        void bindGPUProgramParameters(TinyGPUProgramParameters *params);
         void setRenderTarget(TinyRenderTarget *target);
         void setViewPort(TinyViewPort *vp);
         void setViewMatrix(kmMat4& matrix);
         void attachRenderTarget(TinyRenderTarget *target);
         void detachRenderTarget(TinyRenderTarget *target);
     private:
-        std::map<unsigned char, TinyRenderTarget *> mPrioritisedRenderTargets;
+        typedef std::map<unsigned char, TinyRenderTarget *> TinyRenderTargetMap;
+        TinyRenderTargetMap mPrioritisedRenderTargets;
         TinyViewPort *mActiveViewPort;
         TinyRenderTarget *mActiveRenderTarget;
         kmMat4 mViewMatrix;

@@ -15,16 +15,19 @@
 #include <map>
 #include "TinyNode.h"
 #include "TinyMovableObject.h"
-
+#include "TinyRenderQueue.h"
 class TinyCamera;
+
 namespace Tiny
 {
     class TinySceneNode : public TinyNode
     {
     public:
+        TinySceneNode(std::string& name);
+        virtual ~TinySceneNode();
         void attachObject(TinyMovableObject* obj);
-        void detattchObject(obj);
-        void findVisibleObjects(TinyCamera* cam, RenderQueue* queue);
+        void detattchObject(TinyMovableObject* obj);
+        void findVisibleObjects(TinyCamera* cam, TinyRenderQueue* queue);
         TinySceneNode* createChildSceneNode();
     protected:
         std::map<std::string, TinyMovableObject*> mAttachedObjects;

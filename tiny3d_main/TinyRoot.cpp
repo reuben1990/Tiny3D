@@ -11,6 +11,7 @@
 #include "TinyRoot.h"
 #include "TinyRenderSystem.h"
 #include "TinyMemoryAlloc.h"
+#include "TinyEntityFactory.h"
 
 namespace Tiny
 {
@@ -19,7 +20,6 @@ namespace Tiny
     mSceneMgr(nullptr)
     {
         mRenderSystem = TINY_NEW TinyRenderSystem();
-        mRenderSystem->attachRenderTarget(tinyCreateRenderWindow(0, 0));
         addMovableObjectFactory(TINY_NEW TinyEntityFactory());
     }
     
@@ -37,6 +37,11 @@ namespace Tiny
         }
         mSceneMgr = TINY_NEW TinySceneManager();
         return mSceneMgr;
+    }
+    
+    void TinyRoot::attachRenderTarget(TinyRenderTarget* target)
+    {
+        mRenderSystem->attachRenderTarget(target);
     }
     
     void TinyRoot::renderOneFrame(float timeInterval)

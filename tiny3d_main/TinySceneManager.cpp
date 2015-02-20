@@ -18,7 +18,6 @@ namespace Tiny
         , mCameraInProgress(nullptr)
         , mSceneRoot(nullptr)
         , mDestRenderSystem(nullptr)
-        , mSceneRoot(nullptr)
         , mRenderQueue(nullptr)
     {
         mDestRenderSystem = TINY_NEW TinyRenderSystem();
@@ -34,10 +33,12 @@ namespace Tiny
     
     void TinySceneManager::renderScene(TinyCamera *cam)
     {
-        setViewPort();
-        setViewMatrix(cam->getViewMatrix());
+        kmMat4 viewMatrix;
+        cam->getViewMatrix(viewMatrix);
+        setViewPort(cam->getViewPort());
+        setViewMatrix(viewMatrix);
         updateSceneGraph();
-        findVisibleObjects();
+        findVisibleObjects(cam);
         renderVisibleObjects();
     }
     
@@ -45,7 +46,8 @@ namespace Tiny
     {
         if (! mSceneRoot)
         {
-            mSceneRoot = TINY_NEW TinySceneNode("Tiny/SceneRoot");
+            std::string name = "Tiny/SceneRoot";
+            mSceneRoot = TINY_NEW TinySceneNode(name);
         }
         return mSceneRoot;
     }
@@ -55,9 +57,9 @@ namespace Tiny
         getRootSceneNode()->update();
     }
     
-    void TinySceneManager::findVisibleObjects()
+    void TinySceneManager::findVisibleObjects(TinyCamera *cam)
     {
-        getRootSceneNode()->findVisibleObjects(mCameraInProgress, getRenderQueue());
+        getRootSceneNode()->findVisibleObjects(cam, getRenderQueue());
     }
     
     void TinySceneManager::setViewPort(TinyViewPort* vp)
@@ -94,7 +96,7 @@ namespace Tiny
         VectorIterator<RenderableArray > iter = collection->getRenderableIterator();
         while (iter.hasMoreElements())
         {
-            TinyRenderable pRenderable = iter.getNext();
+            TinyRenderable* pRenderable = iter.getNext();
             renderSingleObject(pRenderable);
         }
     }
@@ -111,7 +113,7 @@ namespace Tiny
         mDestRenderSystem->setViewMatrix(matrix);
     }
     
-    TinyRenderQueue* TinyRenderQueue::getRenderQueue()
+    TinyRenderQueue* TinySceneManager::getRenderQueue()
     {
         if (nullptr == mRenderQueue)
         {

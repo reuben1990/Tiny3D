@@ -37,8 +37,8 @@ namespace Tiny
             setRenderTarget(renderTarget);
             kmVec2 vpPosition = vp->geViewPortLeftBottom();
             kmVec2 vpSize = vp->getViewPortSize();
-            glViewport(vpPosition.x, vpPosition.y vpSize.x, vpSize.y);
-            glScissor(vpPosition.x, vpPosition.y vpSize.x, vpSize.y);
+            glViewport(vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
+            glScissor(vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
         }
     }
     
@@ -53,12 +53,12 @@ namespace Tiny
     
     void TinyRenderSystem::setViewMatrix(kmMat4& matrix)
     {
-        kmMat4Fill(&mViewMatrix, matrix.kmScalar);
+        mViewMatrix = matrix;
     }
     
     void TinyRenderSystem::updateAllRenderTargets()
     {
-        std::map<unsigned char, TinyRenderTarget *> iter = mPrioritisedRenderTargets.begin();
+        TinyRenderTargetMap::iterator iter = mPrioritisedRenderTargets.begin();
         for (; iter != mPrioritisedRenderTargets.end(); iter ++)
         {
             iter->second->update(false);
@@ -67,7 +67,7 @@ namespace Tiny
     
     void TinyRenderSystem::swapAllRenderTargetBuffers()
     {
-        std::map<unsigned char, TinyRenderTarget *> iter = mPrioritisedRenderTargets.begin();
+        TinyRenderTargetMap::iterator iter = mPrioritisedRenderTargets.begin();
         for (; iter != mPrioritisedRenderTargets.end(); iter ++)
         {
             iter->second->swapBuffers();

@@ -10,8 +10,8 @@
 #define proj_mac_TinyViewPort_h
 
 #include "TinyObject.h"
-#include "TinyCamera.h"
 #include "kazmath/kazmath.h"
+class TinyCamera;
 
 namespace Tiny
 {
@@ -32,7 +32,6 @@ namespace Tiny
         kmVec2 mSize;
         TinyCamera *mCamera;
         int mZorder;
-        mTarget;
     };
 }
 

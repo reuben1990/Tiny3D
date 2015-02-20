@@ -13,6 +13,7 @@
 #include "TinyObject.h"
 #include <string>
 #include <map>
+#include "TinyPlatform.h"
 
 namespace Tiny
 {
@@ -46,7 +47,7 @@ namespace Tiny
     class TinyGPUProgramParameters : public TinyObject
     {
     public:
-        TinyGPUProgramParameters()
+        TinyGPUProgramParameters();
         ~TinyGPUProgramParameters();
         void setParameter(const TinyGPUProgramParameter& value);
         void bindParametersToProgram(GLuint program);

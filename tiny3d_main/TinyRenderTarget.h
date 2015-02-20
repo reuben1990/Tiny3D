@@ -13,6 +13,7 @@
 #include "TinyCamera.h"
 #include <map>
 #include "TinyViewPort.h"
+#include "TinyPlatform.h"
 
 #ifndef TINY_NUM_RENDERTARGET_GROUPS
 #define TINY_NUM_RENDERTARGET_GROUPS 10
@@ -35,7 +36,7 @@ namespace Tiny
         void updateImpl();
         
         //update all viewports.
-        void updateViewPorts()
+        void updateViewPorts();
         
         //swapBuffer.
         virtual void swapBuffers() = 0;

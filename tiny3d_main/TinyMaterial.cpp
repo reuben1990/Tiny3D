@@ -7,12 +7,13 @@
 //
 
 #include "TinyMaterial.h"
+#include "TinyMemoryAlloc.h"
 
 namespace Tiny
 {
     TinyMaterial::TinyMaterial()
-        : mIsTransParent(false);
-        : mProgram(nullptr)
+        : mIsTransParent(false)
+        , mProgram(nullptr)
     {
         
     }

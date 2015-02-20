@@ -30,6 +30,7 @@ namespace Tiny
         TinySceneManager *createSceneManager();
         void addMovableObjectFactory(TinyMovableObjectFactory* factory);
         TinyMovableObjectFactory* getMovableObjectFactory(std::string& name);
+        void attachRenderTarget(TinyRenderTarget* target);
     protected:
         typedef std::map<std::string, TinyMovableObjectFactory*> MovableObjectFactoryMap;
         TinyRenderSystem *mRenderSystem;

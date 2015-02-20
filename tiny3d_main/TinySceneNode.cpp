@@ -10,6 +10,17 @@
 
 namespace Tiny
 {
+    TinySceneNode::TinySceneNode(std::string& name)
+        : TinyNode(name)
+    {
+        
+    }
+    
+    TinySceneNode::~TinySceneNode()
+    {
+        
+    }
+    
     void TinySceneNode::attachObject(TinyMovableObject* obj)
     {
         assert(!obj->isAttached() && "Obj was already attached to an node.");

@@ -13,6 +13,7 @@
 #include "TinyObject.h"
 #include <string>
 #include "kazmath/kazmath.h"
+#include "TinyCamera.h"
 
 class TinyNode;
 
@@ -26,7 +27,7 @@ namespace Tiny {
         std::string& getName();
         void setName(std::string& name);
         void notifyAttached(TinyNode* node);
-        void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue) = 0;
+        virtual void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue) = 0;
     protected:
         std::string mName;
         TinyNode* mParentNode;

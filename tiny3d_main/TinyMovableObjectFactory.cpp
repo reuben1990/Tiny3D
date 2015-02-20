@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-#include "MovableObjectFactory.h"
+#include "TinyMovableObjectFactory.h"
 
 namespace Tiny
 {

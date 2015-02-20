@@ -20,7 +20,7 @@ namespace Tiny
         
     }
     
-    void getRenderOperation(TinyRenderOperation* ro)
+    void TinySubEntity::getRenderOperation(TinyRenderOperation* ro)
     {
         ro->mVertexData = mSubMesh->mVertexData;
         ro->mIndexData = mSubMesh->mIndexData;

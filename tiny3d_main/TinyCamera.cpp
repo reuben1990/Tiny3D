@@ -9,71 +9,72 @@
 #include "TinyCamera.h"
 #include "TinyMath.h"
 
-TinyCamera::TinyCamera(std::string &name, TinySceneManager *mgr)
-    : mSceneMgr(mgr)
-    , mName(name);
-    , mLastViewPort(nullptr)
-    , mFov(kTinyPI / 4)
-    , mAspect(4 / 3)
-    , mNear(10)
-    , mFar(1000)
+namespace Tiny
 {
     
-}
 
-TinyCamera::~TinyCamera()
-{
-    
-}
-
-void TinyCamera::renderScene(TinyViewPort *viewPort)
-{
-    notifyViewPort(viewPort);
-    mSceneMgr->renderScene(this);
-}
-
-void TinyCamera::notifyViewPort(TinyViewPort *vp)
-{
-    mLastViewPort = vp;
-    auto vpSize = vp->getViewPortSize()
-    mAspect = vpSize.x / vpSize.y;
-    
-}
-
-TinyViewPort *TinyCamera::getViewPort()
-{
-    return mLastViewPort;
-}
-
-kmMat4& TinyViewPort::getViewMatrix()
-{
-    kmMat4 ret;
-    if (mParentNode)
+    TinyCamera::TinyCamera(std::string &name, TinySceneManager *mgr)
+        : TinyMovableObject(name)
+        , mSceneMgr(mgr)
+        , mName(name)
+        , mLastViewPort(nullptr)
+        , mFov(kTinyPI / 4)
+        , mAspect(4 / 3)
+        , mNear(10)
+        , mFar(1000)
     {
-        auto parentNodeDerivedOrientation = mParentNode->getDerivedOrientation();
-        auto parentNodeDerivedPosition = mParentNode->getDerivedPosition();
-        auto frontDir = kmVec3(0, 0, -1);
-        auto upDir = kmVec3(0, 1, 0);
-        kmVec3 worldFrontDir, worldUpDir, worldCenter;
-        kmQuaternionMultiplyVec3(&worldFrontDir, &parentNodeDerivedOrientation, &frontDir);
-        kmQuaternionMultiplyVec3(&worldUpDir, &parentNodeDerivedOrientation, &upDir);
-        kmVec3Add(&worldCenter, &parentNodeDerivedPosition, &frontDir);
-        kmMat4LookAt(&ret, &parentNodeDerivedPosition, &worldCenter, &worldUpDir);
+        
     }
-    else
+
+    TinyCamera::~TinyCamera()
     {
-        kmMat4Identity(&ret);
+        
     }
-    return ret;
-}
 
-kmMat4& TinyViewPort::getProjectionMatrix()
-{
-    kmMat4 ret;
-    kmMat4PerspectiveProjection(&ret, mFov, mAspect, mNear, mFar);
-    return ret;
-}
+    void TinyCamera::renderScene(TinyViewPort *viewPort)
+    {
+        notifyViewPort(viewPort);
+        mSceneMgr->renderScene(this);
+    }
 
+    void TinyCamera::notifyViewPort(TinyViewPort *vp)
+    {
+        mLastViewPort = vp;
+        auto vpSize = vp->getViewPortSize();
+        mAspect = vpSize.x / vpSize.y;
+        
+    }
+
+    TinyViewPort *TinyCamera::getViewPort()
+    {
+        return mLastViewPort;
+    }
+
+    void TinyCamera::getViewMatrix(kmMat4& ret)
+    {
+        if (mParentNode)
+        {
+            auto parentNodeDerivedOrientation = mParentNode->getDerivedOrientation();
+            auto parentNodeDerivedPosition = mParentNode->getDerivedPosition();
+            auto frontDir = kmVec3Make(0, 0, -1);
+            auto upDir = kmVec3Make(0, 1, 0);
+            kmVec3 worldFrontDir, worldUpDir, worldCenter;
+            kmQuaternionMultiplyVec3(&worldFrontDir, &parentNodeDerivedOrientation, &frontDir);
+            kmQuaternionMultiplyVec3(&worldUpDir, &parentNodeDerivedOrientation, &upDir);
+            kmVec3Add(&worldCenter, &parentNodeDerivedPosition, &frontDir);
+            kmMat4LookAt(&ret, &parentNodeDerivedPosition, &worldCenter, &worldUpDir);
+        }
+        else
+        {
+            kmMat4Identity(&ret);
+        }
+    }
+
+    void TinyCamera::getProjectionMatrix(kmMat4& ret)
+    {
+        kmMat4PerspectiveProjection(&ret, mFov, mAspect, mNear, mFar);
+    }
+}
 
 //- (void)updateInput:(NSTimeInterval)timeInterval
 //{

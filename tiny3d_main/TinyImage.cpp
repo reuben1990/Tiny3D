@@ -7,7 +7,7 @@
 //
 
 #include <stdio.h>
-#include "TinyImage"
+#include "TinyImage.h"
 
 namespace Tiny
 {
@@ -22,7 +22,8 @@ namespace Tiny
         auto iter = mDataList.begin();
         for (; iter != mDataList.end(); iter ++)
         {
-            free(iter->second);
+            uint8* data = *iter;
+            free(data);
         }
     }
 }

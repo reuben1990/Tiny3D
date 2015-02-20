@@ -7,6 +7,9 @@
 //
 
 #include "TinyRenderOperation.h"
+#include "TinyRenderable.h"
+#include "TinyGPUProgram.h"
+#include "TinyMaterial.h"
 
 namespace Tiny
 {

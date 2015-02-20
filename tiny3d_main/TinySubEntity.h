@@ -15,7 +15,7 @@
 
 namespace Tiny
 {
-    class TinySubEntity public : TinyRenderable
+    class TinySubEntity : public TinyRenderable
     {
     public:
         TinySubEntity(TinySubMesh* subMesh);

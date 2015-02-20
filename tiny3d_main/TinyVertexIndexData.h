@@ -14,6 +14,7 @@
 #include "TinyHardwareBuffer.h"
 #include "TinyIteratorWrapper.h"
 #include <map>
+#include "TinyPlatform.h"
 
 namespace Tiny
 {

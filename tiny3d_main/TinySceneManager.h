@@ -24,12 +24,11 @@ namespace Tiny
     {
     public:
         TinySceneManager();
-        ~TinySceneManager();
+        virtual ~TinySceneManager();
         void renderScene(TinyCamera *cam);
         void findVisibleObjects(TinyCamera *cam);
         void renderVisibleObjects();
         void updateSceneGraph();
-        void renderVisibleObjects();
         void renderQueueGroupObjects(TinyRenderQueueGroup* group);
         void renderObjects(TinyRenderableCollection* collection);
         void renderSingleObject(TinyRenderable* renderable);
@@ -41,8 +40,8 @@ namespace Tiny
         TinyViewPort *mCurrentViewPort;
         TinyCamera *mCameraInProgress;
         TinySceneNode* mSceneRoot;
-        TinyRenderSystem *mDestRenderSystem;
-        RenderQueue* mRenderQueue;
+        TinyRenderSystem* mDestRenderSystem;
+        TinyRenderQueue* mRenderQueue;
     };
 }
 

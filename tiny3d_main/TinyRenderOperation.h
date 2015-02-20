@@ -11,9 +11,10 @@
 
 #include <stdio.h>
 #include "TinyVertexIndexData.h"
-#include "TinyRenderable.h"
-#include "TinyGPUProgram.h"
-#include "TinyMaterial.h"
+
+class TinyRenderable;
+class TinyMaterial;
+class TinyGpuProgram;
 
 namespace Tiny
 {

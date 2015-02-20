@@ -15,9 +15,10 @@
 
 #include <stdarg.h>
 #include <stdio.h>
-#include "TinyRenderWindow.h"
 
 #define TINYLOG tinyLog
+
+class TinyRenderWindow;
 
 namespace Tiny
 {
