@@ -8,13 +8,14 @@
 
 #include <stdio.h>
 #include "TinyViewPort.h"
+#include "TinyCamera.h"
 
 namespace Tiny
 {
     TinyViewPort::TinyViewPort(TinyCamera *cam, TinyRenderTarget *target, float left, float bottom, float width, float height, int zOrder)
         : mCamera(cam)
         , mTarget(target)
-        , mzOrder(zOrder)
+        , mZorder(zOrder)
     {
         mLeftBottomPosition.x = left;
         mLeftBottomPosition.y = bottom;

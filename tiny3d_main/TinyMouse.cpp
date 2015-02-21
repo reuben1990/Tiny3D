@@ -36,6 +36,11 @@ namespace Tiny
         return ret;
     }
     
+    void TinyMouse::initialize()
+    {
+        //
+    }
+    
     void TinyMouse::setLocation(kmVec2 *location)
     {
         mLocation.x = location->x;

@@ -11,11 +11,11 @@
 
 #include "TinyObject.h"
 #include "kazmath/kazmath.h"
-class TinyCamera;
 
 namespace Tiny
 {
     class TinyRenderTarget;
+    class TinyCamera;
     
     class TinyViewPort : public TinyObject
     {
@@ -32,6 +32,7 @@ namespace Tiny
         kmVec2 mSize;
         TinyCamera *mCamera;
         int mZorder;
+        TinyRenderTarget* mTarget;
     };
 }
 

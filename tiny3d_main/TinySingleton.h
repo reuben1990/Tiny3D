@@ -9,6 +9,8 @@
 #ifndef proj_mac_TinySingleton_h
 #define proj_mac_TinySingleton_h
 
+#include <assert.h>
+
 namespace Tiny
 {
     template <typename T> class TinySingleton
@@ -27,14 +29,23 @@ namespace Tiny
     public:
         TinySingleton( void )
         {
-            assert( !msSingleton );
-            msSingleton = static_cast< T* >( this );
+            //assert( !msSingleton );
+            //msSingleton = static_cast< T* >( this );
         }
         ~TinySingleton( void )
-        {  assert( msSingleton );  msSingleton = 0;  }
+        {  assert( msSingleton );  msSingleton = nullptr;  }
         static T* getSingleton( void )
-        { return msSingleton; }
+        {
+            if (msSingleton == nullptr)
+            {
+                msSingleton = new T();
+            }
+            return msSingleton;
+        }
     };
+    
+    template <typename T>
+    T* TinySingleton<T>::msSingleton = nullptr;
     /** @} */
     /** @} */
 }

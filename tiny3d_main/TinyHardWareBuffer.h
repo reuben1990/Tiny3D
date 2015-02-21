@@ -20,7 +20,7 @@ namespace Tiny
     public:
         TinyHardwareBuffer();
         ~TinyHardwareBuffer();
-        virtual void readData(unsigned char* data, uint32 length, GLenum target, GLenum usage);
+        virtual void readData(const uint8* data, uint32 length, GLenum target, GLenum usage);
         GLuint getHandler();
     protected:
         GLuint mHandler;

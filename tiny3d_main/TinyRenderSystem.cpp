@@ -9,6 +9,7 @@
 #include "TinyRenderSystem.h"
 #include "kazmath/kazmath.h"
 #include "TinyHardwareBuffer.h"
+#include "TinyPlatform.h"
 
 namespace Tiny
 {
@@ -39,7 +40,15 @@ namespace Tiny
             kmVec2 vpSize = vp->getViewPortSize();
             glViewport(vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
             glScissor(vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
+            TINYLOG("glViewport (%f, %f) (%f, %f)", vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
         }
+    }
+    
+    void TinyRenderSystem::clearBg()
+    {
+        glClearColor(0.0, 0.0, 0.0, 1.0);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        TINYLOG("glClear");
     }
     
     void TinyRenderSystem::setRenderTarget(TinyRenderTarget *target)
@@ -47,7 +56,8 @@ namespace Tiny
         mActiveRenderTarget = target;
         if (target)
         {
-            glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, target->getFBO());
+            TINYLOG("glBindFramebuffer %d", target->getFBO());
+            glBindFramebuffer(GL_FRAMEBUFFER, target->getFBO());
         }
     }
     
@@ -70,36 +80,45 @@ namespace Tiny
         TinyRenderTargetMap::iterator iter = mPrioritisedRenderTargets.begin();
         for (; iter != mPrioritisedRenderTargets.end(); iter ++)
         {
-            iter->second->swapBuffers();
+            iter->second->swapBuffer();
         }
     }
     
     void TinyRenderSystem::render(TinyRenderOperation* ro)
     {
-        glUseProgram(ro->mProgram->getHandler());
+        //switch states
+        glEnable(GL_DEPTH_TEST);
+        glEnable(GL_CULL_FACE);
+        TINYLOG("glEnable and glDisable");
+        
+        //bind uniform
+        TinyGPUProgram* program = ro->mProgram;
+        program->useProgram();
+        TINYLOG("glUseProgram");
         
         //bind vertexAttr
         auto iter = ro->mVertexData->getBufferIterator();
         while (iter.hasMoreElements())
         {
-            auto key = iter->first;
-            TinyVertexElement* element = iter->second;
+            auto key = iter.peekNextKey();
+            TinyVertexElement* element = iter.getNext();
             TinyHardwareBuffer* hardwareBuffer = element->mBuffer;
             glBindBuffer(GL_ARRAY_BUFFER, hardwareBuffer->getHandler());
+            TINYLOG("glBindBuffer %d", hardwareBuffer->getHandler());
             glEnableVertexAttribArray(key);
+            TINYLOG("glEnableVertexAttribArray %d", key);
             glVertexAttribPointer(key, element->mSize, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+            TINYLOG("glVertexAttribPointer %d, %d", key, element->mSize);
         }
         
         //bind index
-        TinyIndexData indexData = ro->mIndexData;
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexData->getBuffer());
-        
-        //bind uniform
-        TinyGPUProgram* program = ro->mProgram;
-        program->useProgram();
+        TinyIndexData* indexData = ro->mIndexData;
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexData->getBuffer()->getHandler());
+        TINYLOG("glBindBuffer indexbuffer %d", indexData->getBuffer()->getHandler());
         
         //draw
         glDrawElements(GL_TRIANGLES, indexData->getVertexSize(), GL_UNSIGNED_SHORT, 0);
+        TINYLOG("glDrawElements");
     }
     
     void TinyRenderSystem::attachRenderTarget(TinyRenderTarget *target)
@@ -114,7 +133,7 @@ namespace Tiny
         {
             mActiveRenderTarget = nullptr;
         }
-        std::map<unsigned char, TinyRenderTarget *> iter = mPrioritisedRenderTargets.begin();
+        TinyRenderTargetMap::iterator iter = mPrioritisedRenderTargets.begin();
         for (; iter != mPrioritisedRenderTargets.end(); iter ++)
         {
             if (iter->second == target)

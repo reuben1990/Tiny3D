@@ -21,10 +21,10 @@ namespace Tiny
         
     }
     
-    void TinyHardwareBuffer::readData(unsigned char* data, uint32 length, GLenum target, GLenum usage)
+    void TinyHardwareBuffer::readData(const uint8* data, uint32 length, GLenum target, GLenum usage)
     {
         glBindBuffer(target, mHandler);
-        glBufferData(target, &length, data, usage);
+        glBufferData(target, length, data, usage);
     }
     
     GLuint TinyHardwareBuffer::getHandler()

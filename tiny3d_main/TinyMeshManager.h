@@ -18,6 +18,7 @@ namespace Tiny
 {
     class TinyMeshManager : public TinyResourceManager, public TinySingleton<TinyMeshManager>
     {
+    public:
         virtual TinyMesh* load(std::string& fileName);
     };
 }

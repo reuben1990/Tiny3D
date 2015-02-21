@@ -9,16 +9,19 @@
 #ifndef proj_mac_TinyEntity_h
 #define proj_mac_TinyEntity_h
 
-#include "TinyObject.h"
-#include "TinyRenderQueue.h"
-#include "TinyMovableObject.h"
-#include "TinySubEntity.h"
 #include <vector>
 #include <string>
+#include "TinyObject.h"
 #include "TinyPlatform.h"
+#include "TinyMovableObject.h"
 
 namespace Tiny
 {
+    class TinyRenderQueue;
+    class TinySubEntity;
+    class TinyMesh;
+    class TinyMaterial;
+    
     class TinyEntity : public TinyMovableObject
     {
     public:
@@ -36,6 +39,7 @@ namespace Tiny
         uint8 mRenderQueueGroupID;
         uint8 mRenderPriority;
         TinyMesh* mMesh;
+        TinyMaterial* mMaterial;
     };
 }
 

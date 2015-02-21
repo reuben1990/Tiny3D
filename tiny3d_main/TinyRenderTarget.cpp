@@ -12,7 +12,7 @@
 namespace Tiny
 {
     TinyRenderTarget::TinyRenderTarget(uint32 width, uint32 height)
-        : mPriority(TINY_DEFAULT_RT_GROUP),
+        : mPriority(TINY_DEFAULT_RT_GROUP)
         , mFbo(0)
         , mWidth(width)
         , mHeight(height)
@@ -36,7 +36,7 @@ namespace Tiny
         updateImpl();
         if (swap)
         {
-            swapBuffers();
+            swapBuffer();
         }
     }
     
@@ -57,7 +57,7 @@ namespace Tiny
         auto iter = mViewPorts.find(zOrder);
         if (iter == mViewPorts.end())
         {
-            TinyViewPort *vp = TINY_NEW TinyViewPort(cam, this, left, bottom, width, height);
+            TinyViewPort *vp = TINY_NEW TinyViewPort(cam, this, left, bottom, width, height, 0);
             mViewPorts[zOrder] = vp;
         }
     }

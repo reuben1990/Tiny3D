@@ -30,6 +30,7 @@ namespace Tiny
         TinyViewPort *getViewPort();
         void getViewMatrix(kmMat4& ret);
         void getProjectionMatrix(kmMat4& ret);
+        void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue);
     private:
         TinyViewPort *mLastViewPort;
         TinySceneManager *mSceneMgr;

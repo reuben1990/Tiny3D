@@ -9,23 +9,23 @@
 #ifndef proj_mac_TinyMesh_h
 #define proj_mac_TinyMesh_h
 
-#include "TinyObject.h"
-#include "TinySubMesh.h"
 #include <vector>
-#include "TinyIteratorWrapper.h"
 #include <string>
+#include "TinyObject.h"
+#include "TinyIteratorWrapper.h"
 #include "TinyPlatform.h"
+#include "TinySubMesh.h"
 
 namespace Tiny
 {
-    typedef std::vector<TinySubMesh*> SubMeshList;
     class TinyMesh : public TinyObject
     {
     public:
+        typedef std::vector<TinySubMesh*> SubMeshList;
         TinyMesh(std::string& fileName);
         virtual ~TinyMesh();
         void load();
-        VectorIteratorWrapper<SubMeshList, std::vector<TinySubMesh*>::iterator > getSubmeshIterator();
+        VectorIteratorWrapper<SubMeshList, SubMeshList::iterator > getSubmeshIterator();
     public:
         SubMeshList mSubMeshs;
         std::string mFileName;

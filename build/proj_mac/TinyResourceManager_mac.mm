@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-#include <stdio.h>
-#include "TinyResourceManager.h"
+#include <cstdio>
 #import <Foundation/Foundation.h>
+#include "TinyResourceManager.h"
 #include "TinyPlatform.h"
 
 namespace Tiny
@@ -32,7 +32,6 @@ namespace Tiny
             uint8* bytes = (uint8*)[fileData bytes];
             memcpy(*data, bytes, dataLength);
             *data[dataLength] = '\0';
-            free(fileData);
         }
     }
 }

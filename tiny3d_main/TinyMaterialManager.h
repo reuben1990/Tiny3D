@@ -17,9 +17,10 @@
 
 namespace Tiny
 {
-    class TinyMaterialManager : public TinyResourceManager, public TinySingleton<TinyResourceManager>
+    class TinyMaterialManager : public TinyResourceManager, public TinySingleton<TinyMaterialManager>
     {
-        TinyMaterial* load(std::string& fileName);
+    public:
+        TinyMaterial* load(std::string fileName);
     };
 }
 

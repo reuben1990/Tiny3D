@@ -74,6 +74,11 @@ namespace Tiny
     {
         kmMat4PerspectiveProjection(&ret, mFov, mAspect, mNear, mFar);
     }
+    
+    void TinyCamera::updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue)
+    {
+        //
+    }
 }
 
 //- (void)updateInput:(NSTimeInterval)timeInterval

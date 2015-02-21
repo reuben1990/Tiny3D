@@ -33,9 +33,9 @@ namespace Tiny
         group->addRenderable(renderable, priority);
     }
     
-    MapIterator<RenderQueueGroupMap> TinyRenderQueue::getQueueGroupIterator();
+    MapIterator<RenderQueueGroupMap> TinyRenderQueue::getQueueGroupIterator()
     {
-        return MapIterator<RenderQueueGroupMap>(mRenderQueueGroups.begin(); mRenderQueueGroups.end());
+        return MapIterator<RenderQueueGroupMap>(mRenderQueueGroups.begin(), mRenderQueueGroups.end());
     }
     
     TinyRenderQueueGroup* TinyRenderQueue::getQueueGroup(uint8 groupID)
@@ -44,12 +44,12 @@ namespace Tiny
         TinyRenderQueueGroup* group;
         if (iter == mRenderQueueGroups.end())
         {
-            group = TINY_NEW TinyQueueGroup();
+            group = TINY_NEW TinyRenderQueueGroup();
             mRenderQueueGroups.insert(std::pair<uint8, TinyRenderQueueGroup*>(groupID, group));
         }
         else
         {
-            gourp = iter->second;
+            group = iter->second;
         }
         return group;
     }
@@ -71,8 +71,18 @@ namespace Tiny
     
     void TinyRenderQueueGroup::addRenderable(TinyRenderable* renderable, uint8 priority)
     {
-        auto group = mRenderPriorityGroups->find(priority);
-        gourp->addRenderable(renderable);
+        auto group = mRenderPriorityGroups.find(priority);
+        TinyRenderPriorityGroup* priorityGroup;
+        if (group == mRenderPriorityGroups.end())
+        {
+            priorityGroup = TINY_NEW TinyRenderPriorityGroup();
+            mRenderPriorityGroups.insert(RenderPriorityGroupMap::value_type(priority, priorityGroup));
+        }
+        else
+        {
+            priorityGroup = group->second;
+        }
+        priorityGroup->addRenderable(renderable);
     }
     
     MapIterator<RenderPriorityGroupMap > TinyRenderQueueGroup::getPriorityGroupIterator()
@@ -91,7 +101,7 @@ namespace Tiny
         }
         else
         {
-            gourp = iter->second;
+            group = iter->second;
         }
         return group;
     }

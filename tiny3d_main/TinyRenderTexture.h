@@ -9,18 +9,18 @@
 #ifndef __proj_mac__TinyRenderTexture__
 #define __proj_mac__TinyRenderTexture__
 
-#include "TinyRenderTarget.h"
-
 #include <stdio.h>
+#include "TinyRenderTarget.h"
+#include "TinyPlatform.h"
 
 namespace Tiny
 {
     class TinyRenderTexture : public TinyRenderTarget
     {
     public:
-        TinyRenderTexture();
+        TinyRenderTexture(uint32 width, uint32 height);
         ~TinyRenderTexture();
-        virtual void swapBuffers();
+        virtual void swapBuffer();
     };
 }
 

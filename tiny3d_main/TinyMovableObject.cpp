@@ -7,12 +7,15 @@
 //
 
 #include "TinyMovableObject.h"
+#include "TinyCamera.h"
+#include "TinyRenderQueue.h"
+#include "TinyNode.h"
 
 namespace Tiny
 {
     TinyMovableObject::TinyMovableObject(std::string& name)
         : mParentNode(nullptr)
-        : mName(name)
+        , mName(name)
     {
         
     }

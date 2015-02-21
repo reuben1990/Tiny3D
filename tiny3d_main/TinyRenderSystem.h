@@ -10,9 +10,8 @@
 #define __proj_mac__TinyRenderSystem__
 
 #include <stdio.h>
-
-#include "TinyObject.h"
 #include <map>
+#include "TinyObject.h"
 #include "TinyRenderTarget.h"
 #include "TinyGPUProgram.h"
 #include "TinyViewPort.h"
@@ -36,6 +35,7 @@ namespace Tiny
         void setViewMatrix(kmMat4& matrix);
         void attachRenderTarget(TinyRenderTarget *target);
         void detachRenderTarget(TinyRenderTarget *target);
+        void clearBg();
     private:
         typedef std::map<unsigned char, TinyRenderTarget *> TinyRenderTargetMap;
         TinyRenderTargetMap mPrioritisedRenderTargets;

@@ -12,19 +12,25 @@
 #include "TinySceneManager.h"
 #include "TinyDelegate.h"
 #include "TinyPlatform.h"
-#include "TinyTextureManager.h";
+#include "TinyTextureManager.h"
 #include "TinyRenderWindow.h"
 #include "kazmath/kazmath.h"
 #include "TinyEntityFactory.h"
-#include "TinyEntity.h";
+#include "TinyEntity.h"
 #include "TinyMath.h"
+#include "TinyGPUProgramManager.h"
+#include "TinyMaterialManager.h"
+#include "TinyInputManager.h"
 
 namespace Tiny
 {
     void TinyDelegate::initialize()
     {
         //Create TinyRoot.
-        TinyRoot* root = TINY_NEW TinyRoot();
+        TinyRoot* root = TinyRoot::getSingleton();
+        
+        Tiny::TinyInputManager::getSingleton()->createInputObject(Tiny::InputDevice::Mouse);
+        Tiny::TinyInputManager::getSingleton()->createInputObject(Tiny::InputDevice::Keyboard);
         
         //Create render window.
         TinyRenderWindow* mainWindow = tinyCreateRenderWindow(0, 0);
@@ -37,34 +43,39 @@ namespace Tiny
         TinySceneNode* entityNode = rootNode->createChildSceneNode();
         kmVec3 entityNodePosition = kmVec3Make(0, 0, -0.5);
         entityNode->setPosition(entityNodePosition);
-        rootNode->addChild(entityNode);
         //Camera node.
         TinySceneNode* cameraNode = rootNode->createChildSceneNode();
         kmVec3 cameraNodePosition = kmVec3Make(0, 0, 0);
         cameraNode->setPosition(cameraNodePosition);
-        rootNode->addChild(cameraNode);
         
         //Create an entity and attach it to our scene graph.
-        TinyEntityFactory* factory = root->getMovableObjectFactory("Entity");
-        TinyEntity* entity = factory->createInstance();
+        std::string entityFactoryNameStr("Entity");
+        TinyEntityFactory* factory = dynamic_cast<TinyEntityFactory*>(root->getMovableObjectFactory(entityFactoryNameStr));
+        TinyNameValuePairList params;
+        const int8* meshName = "first_mesh.obj";
+        params["mesh"] = meshName;
+        std::string entityNameStr("first_entity");
+        TinyEntity* entity = dynamic_cast<TinyEntity*>(factory->createInstance(entityNameStr, params));
         entityNode->attachObject(entity);
         
         //Create camera.
-        TinyCamera* camera = TINY_NEW TinyCamera();
-        mainWindow->addViewPort(camera);
+        std::string cameraNameStr("camera");
+        TinyCamera* camera = TINY_NEW TinyCamera(cameraNameStr, sceneMgr);
+        mainWindow->addViewPort(camera, 0, 0, 0, 1, 1);
         cameraNode->attachObject(camera);
         
         
         //Create a diffuse texture.
-        TinyTexture* texture = TinyTextureManager::getSingleton()->load("first_demo.png");
+        std::string textureName("first_demo.png");
+        TinyTexture* texture = TinyTextureManager::getSingleton()->load(textureName);
         
         //Create a gpu program, set diffuse texture to our program as parameter.
-        TinyProgram* program = TinyProgramManager::getSingleton()->load("first_demo.vs", "first_demo.fs");
+        TinyGPUProgram* program = TinyGPUProgramManager::getSingleton()->load("first_demo.vs", "first_demo.fs");
         TinyGPUProgramParameter param;
-        param.mName = "diffuseTexture"
-        param.mType = GP_SAMPLER
+        param.mName = "diffuseTexture";
+        param.mType = GP_SAMPLER;
         param.mBindData = texture->getHandlerPtr();
-        program->setParameter(const TinyGPUProgramParameter& value);
+        program->setParameter(param);
         
         //Create material with gpu program. TODO assemble program form script.
         TinyMaterial* material = TinyMaterialManager::getSingleton()->load("first_demo.material");

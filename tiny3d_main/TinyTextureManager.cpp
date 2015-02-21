@@ -11,6 +11,16 @@
 
 namespace Tiny
 {
+    TinyTextureManager::TinyTextureManager()
+    {
+        
+    }
+    
+    TinyTextureManager::~TinyTextureManager()
+    {
+        
+    }
+    
     TinyTexture* TinyTextureManager::load(std::string& fileName)
     {
         uint8* data;
@@ -22,11 +32,11 @@ namespace Tiny
         return texture;
     }
     
-    TinyTexture* load(std::vector<std::string>& fileNames)
+    TinyTexture* TinyTextureManager::load(std::vector<std::string>& fileNames)
     {
         std::vector<uint8*> datas;
         std::vector<uint32> lengths;
-        uint32 length = fileNames.size();
+        uint32 length = (uint32)fileNames.size();
         for (int i = 0; i < length; i ++)
         {
             uint8* data;
@@ -39,7 +49,7 @@ namespace Tiny
         texture->load(datas, lengths);
         for (int i = 0; i < length; i ++)
         {
-            free(datas[i])
+            free(datas[i]);
         }
         return texture;
     }

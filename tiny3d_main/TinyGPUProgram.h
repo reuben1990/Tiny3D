@@ -9,10 +9,11 @@
 #ifndef __proj_mac__TinyGPUProgram__
 #define __proj_mac__TinyGPUProgram__
 
-#include <stdio.h>
-#include "TinyObject.h"
+#include <cstdio>
+#include <cstdlib>
 #include <string>
 #include <map>
+#include "TinyObject.h"
 #include "TinyPlatform.h"
 
 namespace Tiny

@@ -643,7 +643,7 @@
 					"$(PROJECT_DIR)/../../sample",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = proj_mac/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -663,7 +663,7 @@
 					"$(PROJECT_DIR)/../../sample",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = proj_mac/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

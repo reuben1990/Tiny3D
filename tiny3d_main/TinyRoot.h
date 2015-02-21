@@ -9,13 +9,13 @@
 #ifndef proj_mac_TinyRoot_h
 #define proj_mac_TinyRoot_h
 
+#include <map>
 #include "TinyObject.h"
 #include "TinyRenderSystem.h"
 #include "TinySingleton.h"
 #include "TinySceneManager.h"
 #include "TinyRenderWindow.h"
-#incluee "TinyMovableObjectFactory.h"
-#include <map>
+#include "TinyMovableObjectFactory.h"
 
 
 namespace Tiny

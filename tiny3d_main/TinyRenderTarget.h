@@ -39,7 +39,7 @@ namespace Tiny
         void updateViewPorts();
         
         //swapBuffer.
-        virtual void swapBuffers() = 0;
+        virtual void swapBuffer() = 0;
         
         virtual kmVec2 getSize();
         

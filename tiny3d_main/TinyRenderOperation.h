@@ -12,12 +12,12 @@
 #include <stdio.h>
 #include "TinyVertexIndexData.h"
 
-class TinyRenderable;
-class TinyMaterial;
-class TinyGpuProgram;
-
 namespace Tiny
 {
+    class TinyRenderable;
+    class TinyMaterial;
+    class TinyGPUProgram;
+    
     class TinyRenderOperation
     {
     public:
@@ -28,7 +28,7 @@ namespace Tiny
         TinyVertexData* mVertexData;
         TinyIndexData* mIndexData;
         TinyMaterial* mMaterial;
-        TinyGpuProgram* mProgram;
+        TinyGPUProgram* mProgram;
     };
 }
 

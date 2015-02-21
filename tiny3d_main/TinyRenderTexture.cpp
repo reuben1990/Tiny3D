@@ -10,7 +10,8 @@
 
 namespace Tiny
 {
-    TinyRenderTexture::TinyRenderTexture()
+    TinyRenderTexture::TinyRenderTexture(uint32 width, uint32 height)
+        : TinyRenderTarget(width, height)
     {
         mPriority = TINY_REND_TO_TEX_RT_GROUP;
     }
@@ -20,7 +21,7 @@ namespace Tiny
         //
     }
     
-    void TinyRenderTexture::swapBuffers()
+    void TinyRenderTexture::swapBuffer()
     {
         //Nothing to do.
     }

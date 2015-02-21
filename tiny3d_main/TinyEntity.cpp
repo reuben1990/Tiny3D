@@ -7,21 +7,30 @@
 //
 
 #include <stdio.h>
+#include "TinyEntity.h"
 #include "TinyMovableObject.h"
+#include "TinyRenderQueue.h"
+#include "TinySubEntity.h"
+#include "TinyMesh.h"
+#include "TinyMemoryAlloc.h"
 
 namespace Tiny
 {
     TinyEntity::TinyEntity(std::string& name, TinyMesh* mesh)
         : TinyMovableObject(name)
     {
-        mName = name;
         mMesh = mesh;
         initialize();
     }
     
     TinyEntity::~TinyEntity()
     {
-        
+        auto iter = mSubEntitys.begin();
+        for (; iter <= mSubEntitys.end(); iter ++)
+        {
+            TinySubEntity* subEnt = *iter;
+            TINY_DELETE subEnt;
+        }
     }
     
     void TinyEntity::initialize()
@@ -43,9 +52,9 @@ namespace Tiny
     void TinyEntity::updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue)
     {
         auto iter = mSubEntitys.begin();
-        for (; iter <= mSubEntitys.end(); iter ++)
+        for (; iter != mSubEntitys.end(); iter ++)
         {
-            queue->addRenderable(iter->second, mRenderQueueGroupID, mRenderPriority);
+            queue->addRenderable(*iter, mRenderQueueGroupID, mRenderPriority);
         }
     }
     
@@ -58,4 +67,18 @@ namespace Tiny
     {
         mRenderPriority = priority;
     }
+    
+    void TinyEntity::setMaterial(TinyMaterial* material)
+    {
+        mMaterial = material;
+        auto iter = mSubEntitys.begin();
+        for (; iter != mSubEntitys.end(); iter ++)
+        {
+            TinySubEntity* subEnt = *iter;
+            subEnt->setMaterial(mMaterial);
+        }
+    }
 }
+
+
+

@@ -12,15 +12,14 @@
 #include "TinyObject.h"
 #include "TinyCamera.h"
 #include "TinyViewPort.h"
-#include "TinyRenderSystem.h"
 #include "TinyRenderTarget.h"
-#include "TinySingleton.h"
 #include "TinySceneNode.h"
 #include "TinyRenderQueue.h"
 
 namespace Tiny
 {
-    class TinySceneManager : public TinyObject, public TinySingleton<TinySceneManager>
+    class TinyRenderSystem;
+    class TinySceneManager : public TinyObject
     {
     public:
         TinySceneManager();
@@ -36,6 +35,7 @@ namespace Tiny
         void setViewMatrix(kmMat4& matrix);
         TinySceneNode* getRootSceneNode();
         TinyRenderQueue* getRenderQueue();
+        void clearBg();
     private:
         TinyViewPort *mCurrentViewPort;
         TinyCamera *mCameraInProgress;

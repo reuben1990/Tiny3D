@@ -11,17 +11,16 @@
 
 #include <OpenGL/gl3.h>
 #include <OpenGL/gl3ext.h>
-#include <OpenGL/gl.h>
 
 #include <stdarg.h>
 #include <stdio.h>
 
 #define TINYLOG tinyLog
 
-class TinyRenderWindow;
-
 namespace Tiny
 {
+    class TinyRenderWindow;
+    
     typedef unsigned int uint32;
     typedef unsigned short uint16;
     typedef unsigned char uint8;

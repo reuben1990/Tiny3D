@@ -22,7 +22,7 @@ namespace Tiny
         TinyMacRenderWindow(OpenGLView* glView);
         ~TinyMacRenderWindow();
         virtual void preRender();
-        virtual void swapBuffers();
+        virtual void swapBuffer();
     protected:
         OpenGLView* mGLView;
     };

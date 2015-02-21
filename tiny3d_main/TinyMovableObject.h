@@ -10,14 +10,16 @@
 #define __proj_mac__TinyMovableObject__
 
 #include <stdio.h>
-#include "TinyObject.h"
 #include <string>
+#include "TinyObject.h"
 #include "kazmath/kazmath.h"
-#include "TinyCamera.h"
 
-class TinyNode;
-
-namespace Tiny {
+namespace Tiny
+{
+    class TinyNode;
+    class TinyRenderQueue;
+    class TinyCamera;
+    
     class TinyMovableObject : public TinyObject
     {
     public:

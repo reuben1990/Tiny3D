@@ -17,12 +17,13 @@ namespace Tiny
         
     }
     
-    virtual TinyMesh::~TinyMesh()
+    TinyMesh::~TinyMesh()
     {
-        auto iter = subMesh.begin();
-        for (; iter != subMesh.end(); iter ++)
+        auto iter = mSubMeshs.begin();
+        for (; iter != mSubMeshs.end(); iter ++)
         {
-            TINY_DELETE iter->second;
+            TinySubMesh* subMesh = *iter;
+            TINY_DELETE subMesh;
         }
     }
     
@@ -30,7 +31,7 @@ namespace Tiny
     {
         uint8* data = nullptr;//TODO load from file
         
-        auto subMesh = TINY_NEW TinySubMesh(this);
+        TinySubMesh* subMesh = TINY_NEW TinySubMesh();
         uint32 offset = 0;
         for (int i = 0; i < 1; i ++)
         {
@@ -39,8 +40,8 @@ namespace Tiny
         }
     }
     
-    VectorIteratorWrapper<SubMeshList> TinyMesh::getSubmeshIterator()
+    VectorIteratorWrapper<TinyMesh::SubMeshList, TinyMesh::SubMeshList::iterator> TinyMesh::getSubmeshIterator()
     {
-        return VectorIteratorWrapper<SubMeshList>(mSubMeshs.begin(), mSubMeshs.end());
+        return VectorIteratorWrapper<SubMeshList, SubMeshList::iterator>(mSubMeshs.begin(), mSubMeshs.end());
     }
 }

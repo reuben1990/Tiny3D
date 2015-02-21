@@ -7,6 +7,9 @@
 //
 
 #include "TinySubMesh.h"
+#include "TinyMesh.h"
+#include "TinyMemoryAlloc.h"
+#include "kazmath/kazmath.h"
 
 namespace Tiny
 {
@@ -18,6 +21,7 @@ namespace Tiny
     
     TinySubMesh::~TinySubMesh()
     {
+        
         TINY_DELETE mVertexData;
         TINY_DELETE mIndexData;
     }
@@ -32,7 +36,8 @@ namespace Tiny
             {1, 0, 0}
         };
         GLushort idata[] = {0, 1, 2};
-        mVertexData->load(vdata, sizeof(vdata), VERTEX_LOCATION_POSITION);
-        mIndexData->load(idata, sizeof(idata));
+        mVertexData->load((uint8*)vdata, sizeof(vdata), sizeof(float), VERTEX_LOCATION_POSITION);
+        mIndexData->load((uint8*)idata, sizeof(idata), sizeof(uint32));
+        return 0;
     }
 }

@@ -26,6 +26,7 @@ namespace Tiny
         ro->mIndexData = mSubMesh->mIndexData;
         ro->mRenderable = this;
         ro->mMaterial = getMaterial();
-        ro->mProgram = ro->mMaterial->getProgram();
+        TinyGPUProgram* program = ro->mMaterial->getProgram();
+        ro->mProgram = program;
     }
 }

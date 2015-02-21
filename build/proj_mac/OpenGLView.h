@@ -9,7 +9,7 @@
 #ifndef proj_mac_TinyOpenGLView_h
 #define proj_mac_TinyOpenGLView_h
 
-#import <OpenGL/gl.h>
+#import <OpenGL/gl3.h>
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 #include "TinyMouse.h"

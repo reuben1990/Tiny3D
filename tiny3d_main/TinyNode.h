@@ -10,10 +10,12 @@
 #define __proj_mac__TinyNode__
 
 #include <stdio.h>
-#include "TinyObject.h"
 #include <set>
 #include <map>
 #include <string>
+#include "kazmath/kazmath.h"
+#include "TinyObject.h"
+#include "TinyCommon.h"
 
 namespace Tiny
 {
@@ -21,12 +23,12 @@ namespace Tiny
     class TinyNode : public TinyObject
     {
     public:
-        TinyNode(std::string &name);
-        ~TinyNode();
+        TinyNode(std::string name);
+        virtual ~TinyNode();
         TinyNode* createChild();
         void addChild(TinyNode* node);
         void removeChild(TinyNode* node);
-        void getChild(std::string& name);
+        TinyNode* getChild(std::string name);
         void update();
         void setPosition(kmVec3 &pos);
         void setScale(kmVec3 &scale);
@@ -34,7 +36,7 @@ namespace Tiny
         void updateFromParent();
         kmVec3& getPosition();
         kmVec3& getScale();
-        kmVec3& getOrientation();
+        kmQuaternion& getOrientation();
         kmVec3& getDerivedPosition();
         kmVec3& getDerivedScale();
         kmQuaternion& getDerivedOrientation();
@@ -48,9 +50,10 @@ namespace Tiny
         kmQuaternion mDerivedOrientation;
         kmVec3 mScale;
         kmVec3 mDerivedScale;
-        TinyNode* parent;
+        TinyNode* mParent;
         std::map<std::string, TinyNode*> mChildren;
         std::string mName;
+        static TinyNameGenerator mNameGenerator;
     };
 }
 #endif /* defined(__proj_mac__TinyNode__) */

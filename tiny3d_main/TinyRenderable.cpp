@@ -16,17 +16,17 @@ namespace Tiny
 
     }
     
-    virtual TinyRenderable::~TinyRenderable()
+    TinyRenderable::~TinyRenderable()
     {
         
     }
     
-    void TinyEntity::setMaterial(TinyMaterial* material)
+    void TinyRenderable::setMaterial(TinyMaterial* material)
     {
         mMaterial = material;
     }
     
-    TinyMaterial* TinyEntity::getMaterial()
+    TinyMaterial* TinyRenderable::getMaterial()
     {
         return mMaterial;
     }

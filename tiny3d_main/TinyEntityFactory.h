@@ -10,17 +10,19 @@
 #define __proj_mac__TinyEntityFactory__
 
 #include <stdio.h>
+#include <vector>
 #include "TinyMovableObjectFactory.h"
 #include "TinyMesh.h"
 #include "TinySubMesh.h"
-#include <vector>
+#include "TinyCommon.h"
+#include "TinySubEntity.h"
 
 namespace Tiny
 {
     class TinyEntityFactory : public TinyMovableObjectFactory
     {
     public:
-        std::string& getType();
+        virtual std::string& getType();
         static std::string mType;
         virtual TinyMovableObject* createInstanceImpl(std::string& name, TinyNameValuePairList& params);
     protected:

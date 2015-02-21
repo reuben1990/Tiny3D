@@ -8,10 +8,12 @@
 
 #include "TinyEntityFactory.h"
 #include "TinyMeshManager.h"
+#include "TinyMemoryAlloc.h"
+#include "TinyEntity.h"
 
 namespace Tiny
 {
-    std::string TinyEntityFactory::mType = "Entity"
+    std::string TinyEntityFactory::mType = "Entity";
     
     std::string& TinyEntityFactory::getType()
     {
@@ -23,7 +25,8 @@ namespace Tiny
         auto iter = params.find("mesh");
         if (iter != params.end())
         {
-            TinyMesh* mesh = TinyMeshManager::getSingleton()->load(iter->second);
+            auto nameStr = std::string((char*)iter->second);
+            TinyMesh* mesh = TinyMeshManager::getSingleton()->load(nameStr);
             return TINY_NEW TinyEntity(name, mesh);
         }
         else

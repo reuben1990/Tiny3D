@@ -8,20 +8,21 @@
 #ifndef proj_mac_TinyTextureManager_h
 #define proj_mac_TinyTextureManager_h
 
-#include "TinyResourceManager.h"
 #include <string>
 #include <vector>
+#include "TinyResourceManager.h"
+#include "TinyTexture.h"
+#include "TinySingleton.h"
 
 namespace Tiny
 {
-    class TinyTextureManager : TinyResourceManager
+    class TinyTextureManager : public TinyResourceManager, public TinySingleton<TinyTextureManager>
     {
     public:
-        TinyResourceManager();
-        ~TinyResourceManager();
+        TinyTextureManager();
+        virtual ~TinyTextureManager();
         TinyTexture* load(std::string& fileName);
-        TinyTexture* load(std::vector<std::string>& fileNames)
-    protected:
+        TinyTexture* load(std::vector<std::string>& fileNames);
         
     };
 }

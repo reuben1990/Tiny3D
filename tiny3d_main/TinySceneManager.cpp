@@ -10,6 +10,7 @@
 #include "TinyMemoryAlloc.h"
 #include "TinyIteratorWrapper.h"
 #include "TinyRenderOperation.h"
+#include "TinyRenderSystem.h"
 
 namespace Tiny
 {
@@ -36,10 +37,16 @@ namespace Tiny
         kmMat4 viewMatrix;
         cam->getViewMatrix(viewMatrix);
         setViewPort(cam->getViewPort());
+        clearBg();
         setViewMatrix(viewMatrix);
         updateSceneGraph();
         findVisibleObjects(cam);
         renderVisibleObjects();
+    }
+    
+    void TinySceneManager::clearBg()
+    {
+        mDestRenderSystem->clearBg();
     }
     
     TinySceneNode* TinySceneManager::getRootSceneNode()

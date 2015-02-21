@@ -21,8 +21,9 @@ namespace Tiny
         
     }
     
-    void TinyMacRenderWindow::swapBuffers()
+    void TinyMacRenderWindow::swapBuffer()
     {
+        TINYLOG("swap buffer");
         [[mGLView openGLContext] flushBuffer];
     }
     

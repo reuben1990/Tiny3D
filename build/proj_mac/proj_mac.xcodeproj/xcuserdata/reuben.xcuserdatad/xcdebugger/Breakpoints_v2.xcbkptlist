@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyMouse.cpp"
-            timestampString = "444741898.99632"
+            timestampString = "446192157.727939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44">
+            startingLineNumber = "49"
+            endingLineNumber = "49">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -45,7 +45,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
-            landmarkName = "TinyInputManager::createInputObject(InputDevice inputDevice)"
+            landmarkName = "TinyInputManager::getInputObject(InputDevice inputDevice, int index)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderTarget.h"
-            timestampString = "444812581.671203"
+            timestampString = "446192157.727939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19">
+            startingLineNumber = "20"
+            endingLineNumber = "20">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -70,11 +70,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "444821707.217089"
+            timestampString = "446192157.727939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13">
+            startingLineNumber = "14"
+            endingLineNumber = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "444821988.617197"
+            timestampString = "446192157.727939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "TinyRenderSystem::TinyRenderSystem()"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRoot.cpp"
-            timestampString = "444825188.211632"
+            timestampString = "446192157.727939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "TinyRoot::TinyRoot()"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "444901123.066328"
+            timestampString = "446220396.051367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "TinyRenderSystem::setRenderTarget(TinyRenderTarget *target)"
             landmarkType = "5">
          </BreakpointContent>
@@ -146,11 +146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "444905206.536551"
+            timestampString = "446220396.051367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58">
+            startingLineNumber = "68"
+            endingLineNumber = "68">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppDelegate.mm"
-            timestampString = "446047773.88158"
+            timestampString = "446192157.727939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "-visit:"
             landmarkType = "5">
          </BreakpointContent>
@@ -241,6 +241,538 @@
             endingLineNumber = "17"
             landmarkName = "@interface OpenGLView"
             landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinySubMesh.cpp"
+            timestampString = "446192157.727939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "TinySubMesh::TinySubMesh()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
+            timestampString = "446138730.515696"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "TinyGPUProgramParameters::bindParametersToProgram(GLuint program)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyEntityFactory.cpp"
+            timestampString = "446192157.727939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "TinyEntityFactory::createInstanceImpl(std::string&amp; name, TinyNameValuePairList&amp; params)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyNode.cpp"
+            timestampString = "446194614.747864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "TinyNode::removeChild(TinyNode *node)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyEntity.cpp"
+            timestampString = "446192157.727939"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "TinyEntity::setMaterial(TinyMaterial* material)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../sample/sample_ocean/OceanDelegate.cpp"
+            timestampString = "446211487.682168"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "TinyDelegate::initialize()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyEntity.cpp"
+            timestampString = "446196691.80812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "TinyEntity::setMaterial(TinyMaterial* material)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OpenGLView.mm"
+            timestampString = "446196796.709142"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-initWithFrame:pixelFormat:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
+            timestampString = "446220407.425253"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
+            timestampString = "446220416.296719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppDelegate.mm"
+            timestampString = "446220431.811548"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-visit:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../sample/sample_ocean/OceanDelegate.cpp"
+            timestampString = "446220493.523037"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "TinyDelegate::initialize()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
+            timestampString = "446220532.536125"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "TinyRenderSystem::updateAllRenderTargets()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
+            timestampString = "446220544.753954"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "TinyRenderSystem::detachRenderTarget(TinyRenderTarget *target)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
+            timestampString = "446220675.083846"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "TinyRenderSystem::attachRenderTarget(TinyRenderTarget *target)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRoot.cpp"
+            timestampString = "446220749.246581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "TinyRoot::TinyRoot()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinySingleton.h"
+            timestampString = "446221507.627195"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getSingleton( void )"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyMeshManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.733334"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyScheduleManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.733531"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyInputManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.733662"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyTextureManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.733843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyGPUProgramManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.733971"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyMaterialManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.734089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyDelegate&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.734209"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyRoot&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446220818.734326"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinySingleton.h"
+            timestampString = "446221192.6474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getSingleton( void )"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyMeshManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.388126"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyScheduleManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.388427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyRoot&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.388644"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyInputManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.388896"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyTextureManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.389109"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyGPUProgramManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.389336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyMaterialManager&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.389541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tiny::TinySingleton&lt;Tiny::TinyDelegate&gt;::getSingleton()"
+                  moduleName = "proj_mac"
+                  urlString = "file:///Users/reuben/Documents/code/cg_workspace/tiny3d/build/proj_mac/../../tiny3d_main/TinySingleton.h"
+                  timestampString = "446221557.38972"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyGPUProgramManager.cpp"
+            timestampString = "446222561.169941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "TinyGPUProgramManager::load(std::string vFileName, std::string fFileName)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

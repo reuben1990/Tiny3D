@@ -30,15 +30,15 @@ namespace Tiny
         TINY_DELETE image;
     }
     
-    void TinyTexture::load(vector<uint8*>& datas, vector<uint32>& lengths)
+    void TinyTexture::load(std::vector<uint8*>& datas, std::vector<uint32>& lengths)
     {
-        uint32 length = datas.size();
-        std::vector<TinyImage*> images
+        uint32 length = (uint32)datas.size();
+        std::vector<TinyImage*> images;
         for (int i = 0; i < length; i ++)
         {
             TinyImage* image = TINY_NEW TinyImage();
             image->initWithData(datas[i], lengths[i], true);
-            images.push_back(image)
+            images.push_back(image);
         }
         initWithImages(images);
         for (int i = 0; i < length; i ++)
@@ -51,8 +51,8 @@ namespace Tiny
     {
         if (mHandler == 0)
         {
-            DataList& dataList = image->mDataList;
-            SizeList& sizeList = image->mSizeList;
+            TinyImage::DataList& dataList = image->mDataList;
+            TinyImage::SizeList& sizeList = image->mSizeList;
             //glPixelStorei(GL_UNPACK_ALIGNMENT,4);
             glGenTextures(1, &mHandler);
             
@@ -60,7 +60,7 @@ namespace Tiny
             glEnable(GL_TEXTURE_2D);
             glBindTexture(GL_TEXTURE_2D, mHandler);
             
-            int mipMapCount = image->mDataList.size();
+            uint32 mipMapCount = (uint32)image->mDataList.size();
             for (int i = 0; i < mipMapCount; i ++)
             {
                 uint32 width = sizeList[i].x;
@@ -71,7 +71,7 @@ namespace Tiny
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-            if (image.mIsMapmap == false)
+            if (image->mIsMipmap == false)
             {
                 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
             }
@@ -84,7 +84,7 @@ namespace Tiny
         }
     }
     
-    void TinyTexture::initWithImages(std::vector<TinyImage*> images)
+    void TinyTexture::initWithImages(std::vector<TinyImage*>& images)
     {
         if (mHandler == 0)
         {
@@ -95,7 +95,7 @@ namespace Tiny
             glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
             glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
             glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-            bool isMapmap = images[0].mIsMapmap;
+            bool isMapmap = images[0]->mIsMipmap;
             if (isMapmap == false)
             {
                 glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
@@ -110,10 +110,10 @@ namespace Tiny
             
             for (int cubeIdx = 0; cubeIdx < 6; cubeIdx ++)
             {
-                DataList& dataList = images[i]->mDataList;
-                SizeList& sizeList = images[i]->mSizeList;
+                TinyImage::DataList& dataList = images[cubeIdx]->mDataList;
+                TinyImage::SizeList& sizeList = images[cubeIdx]->mSizeList;
                 
-                int mipMapCount = dataList.size();
+                uint32 mipMapCount = (uint32)dataList.size();
                 for (int i = 0; i < mipMapCount; i ++)
                 {
                     uint32 width = sizeList[i].x;
@@ -130,7 +130,7 @@ namespace Tiny
         return mHandler;
     }
     
-    GLuint* getHandlerPtr()
+    GLuint* TinyTexture::getHandlerPtr()
     {
         return &mHandler;
     }

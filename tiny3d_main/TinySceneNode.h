@@ -23,7 +23,7 @@ namespace Tiny
     class TinySceneNode : public TinyNode
     {
     public:
-        TinySceneNode(std::string& name);
+        TinySceneNode(std::string name);
         virtual ~TinySceneNode();
         void attachObject(TinyMovableObject* obj);
         void detattchObject(TinyMovableObject* obj);

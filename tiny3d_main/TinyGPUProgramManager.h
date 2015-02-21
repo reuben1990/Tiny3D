@@ -16,12 +16,14 @@
 
 namespace Tiny
 {
-    class TinyGPUProgramManager : public TinyResourceManager, public TinySingleton<TinyMeshManager>
+    class TinyMeshManager;
+    
+    class TinyGPUProgramManager : public TinyResourceManager, public TinySingleton<TinyGPUProgramManager>
     {
     public:
         TinyGPUProgramManager();
         ~TinyGPUProgramManager();
-        TinyGPUProgram* load(std::string& vFileName, std::string& fFileName);
+        TinyGPUProgram* load(std::string vFileName, std::string fFileName);
     protected:
     };
 }

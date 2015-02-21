@@ -13,10 +13,10 @@
 namespace Tiny
 {
     TinyGPUProgram::TinyGPUProgram(std::string& vs, std::string& fs)
-        : mParams(TINY_NEW TinyGPUProgramParameters()),
+        : mParams(TINY_NEW TinyGPUProgramParameters())
         , mHandler(0)
-        , mVertexShaderSource(vs);
-        , mFragmentShaderSource(fs);
+        , mVertexShaderSource(vs)
+        , mFragmentShaderSource(fs)
     {
         //
     }
@@ -38,13 +38,15 @@ namespace Tiny
         char *programInfoMessage = nullptr;
         
         // Compile Vertex Shader
-        glShaderSource(vertexShader, 1, &mVertexShaderSource , NULL);
+        const char* vSourceStr = mVertexShaderSource.c_str();
+        glShaderSource(vertexShader, 1, &vSourceStr, NULL);
         glCompileShader(vertexShader);
         
         // Check Vertex Shader
         glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &result);
         glGetShaderiv(vertexShader, GL_INFO_LOG_LENGTH, &infoLogLength);
-        if (infoLogLength > 0) {
+        if (infoLogLength > 0)
+        {
             shaderInfoMessage = (char *)malloc(infoLogLength + 1);
             glGetShaderInfoLog(vertexShader, infoLogLength, NULL, shaderInfoMessage);
             TINYLOG("vertex shder info: %s", shaderInfoMessage);
@@ -52,7 +54,8 @@ namespace Tiny
         }
         
         // Compile Fragment Shader
-        glShaderSource(fragmentShader, 1, &mFragmentShaderSource , NULL);
+        const char* fSourceStr = mFragmentShaderSource.c_str();
+        glShaderSource(fragmentShader, 1, &fSourceStr , NULL);
         glCompileShader(fragmentShader);
         
         // Check Fragment Shader
@@ -130,64 +133,65 @@ namespace Tiny
             {
                 case GP_FLOAT1:
                 {
-                    glUniform1fv(location, 1, iter->second.mBindData);
+                    glUniform1fv(location, 1, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_FLOAT2:
                 {
-                    glUniform2fv(location, 1, iter->second.mBindData);
+                    glUniform2fv(location, 1, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_FLOAT3:
                 {
-                    glUniform3fv(location, 1, iter->second.mBindData);
+                    glUniform3fv(location, 1, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_FLOAT4:
                 {
-                    glUniform14v(location, 1, iter->second.mBindData);
+                    glUniform4fv(location, 1, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_INT1:
                 {
-                    glUniform1iv(location, 1, iter->second.mBindData);
+                    glUniform1iv(location, 1, (GLint*)iter->second.mBindData);
                     break;
                 }
                 case GP_INT2:
                 {
-                    glUniform2iv(location, 1, iter->second.mBindData);
+                    glUniform2iv(location, 1, (GLint*)iter->second.mBindData);
                     break;
                 }
                 case GP_INT3:
                 {
-                    glUniform3iv(location, 1, iter->second.mBindData);
+                    glUniform3iv(location, 1, (GLint*)iter->second.mBindData);
                     break;
                 }
                 case GP_INT4:
                 {
-                    glUniform4iv(location, 1, iter->second.mBindData);
+                    glUniform4iv(location, 1, (GLint*)iter->second.mBindData);
                     break;
                 }
                 case GP_MATRIX_2X2:
                 {
-                    glUniformMatrix2fv(location, 1, GL_FALSE, iter->second.mBindData);
+                    glUniformMatrix2fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_MATRIX_3X3:
                 {
-                    glUniformMatrix3fv(location, 1, GL_FALSE, iter->second.mBindData);
+                    glUniformMatrix3fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_MATRIX_4X4:
                 {
-                    glUniformMatrix4fv(location, 1, GL_FALSE, iter->second.mBindData);
+                    glUniformMatrix4fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_SAMPLER:
                 {
                     glActiveTexture(GL_TEXTURE0 + textureCnter);
-                    glEnable(GL_TEXTURE_MAP);
-                    glBindTexture(GL_TEXTURE_MAP, cubeTexture);
+                    glEnable(GL_TEXTURE_2D);
+                    auto textureID = *(GLuint*)iter->second.mBindData;
+                    glBindTexture(GL_TEXTURE_2D, textureID);
                     glUniform1i(location, textureCnter);
                     ++ textureCnter;
                     break;
@@ -196,7 +200,8 @@ namespace Tiny
                 {
                     glActiveTexture(GL_TEXTURE0 + textureCnter);
                     glEnable(GL_TEXTURE_CUBE_MAP);
-                    glBindTexture(GL_TEXTURE_CUBE_MAP, cubeTexture);
+                    auto textureID = *(GLuint*)iter->second.mBindData;
+                    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
                     glUniform1i(location, textureCnter);
                     ++ textureCnter;
                     break;
@@ -209,7 +214,8 @@ namespace Tiny
     
     void TinyGPUProgramParameter::calcLocation(GLuint program)
     {
-        mLocation = glGetUniformLocation(program, mName);
+        const GLchar* nameStr = mName.c_str();
+        mLocation = glGetUniformLocation(program, nameStr);
     }
 }
 

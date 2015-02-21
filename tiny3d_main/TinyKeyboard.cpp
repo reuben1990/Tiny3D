@@ -29,6 +29,11 @@ namespace Tiny
         return ret;
     }
     
+    void TinyKeyboard::initialize()
+    {
+        
+    }
+    
     void TinyKeyboard::addEventCallBack(TinyKeyListener* listener)
     {
         auto listenerIter = mListeners.find(listener);

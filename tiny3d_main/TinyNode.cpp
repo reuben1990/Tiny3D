@@ -8,16 +8,19 @@
 
 #include "TinyNode.h"
 #include "TinyMemoryAlloc.h"
+#include "TinyMath.h"
 
 namespace Tiny
 {
-    TinyNode::TinyNode(std::string &name)
-        : mPosition(0, 0, 0)
-        , mDerivedPosition(0, 0, 0)
-        , mOrientation(0, 0, 0, 1)
-        , mDerivedOrientation(0, 0, 0, 1)
-        , mScale(0, 0, 0)
-        , mDerivedScale(0, 0, 0)
+    TinyNameGenerator TinyNode::mNameGenerator("node");
+    
+    TinyNode::TinyNode(std::string name)
+        : mPosition(kmVec3Make(0, 0, 0))
+        , mDerivedPosition(kmVec3Make(0, 0, 0))
+        , mOrientation(kmQuaternionMake(0, 0, 0, 1))
+        , mDerivedOrientation(kmQuaternionMake(0, 0, 0, 1))
+        , mScale(kmVec3Make(0, 0, 0))
+        , mDerivedScale(kmVec3Make(0, 0, 0))
         , mParent(nullptr)
         , mName(name)
     {
@@ -31,36 +34,30 @@ namespace Tiny
     
     TinyNode* TinyNode::createChild()
     {
-        auto child = TINY_NEW TinyNode();
-        addChild(node);
-        return node;
+        auto child = TINY_NEW TinyNode(mNameGenerator.generate());
+        addChild(child);
+        return child;
     }
     
     void TinyNode::addChild(TinyNode *node)
     {
-        if (node->getParent())
-        {
-            assert(result.second && "Child was not added because it has already added to a parent");
-        }
-        else
-        {
-            auto result = mChildren->insert(std::pair<std::string, TinyNode>(node->getName(), node));
-            assert(result.second && "Child was not added because of a doublicate name.");
-            node->setParent(this);
-        }
+        assert(!node->getParent()&& "Child was not added because it has already added to a parent");
+        auto result = mChildren.insert(std::pair<std::string, TinyNode*>(node->getName(), node));
+        assert(result.second && "Child was not added because of a doublicate name.");
+        node->setParent(this);
     }
     
     void TinyNode::removeChild(TinyNode *node)
     {
-        mChildren->erase(node->getname());
+        mChildren.erase(node->getName());
         node->setParent(nullptr);
     }
     
-    void TinyNode::getChild(std::string& name)
+    TinyNode* TinyNode::getChild(std::string name)
     {
         TinyNode* ret = nullptr;
-        auto iter = mChildren->find(name);
-        if (iter != mChildren->end())
+        auto iter = mChildren.find(name);
+        if (iter != mChildren.end())
         {
             ret = iter->second;
         }
@@ -72,13 +69,15 @@ namespace Tiny
         if (mParent)
         {
             auto parentDerivedPosition = mParent->getDerivedPosition();
-            mDerivedPosition = parentDerivedPosition + mPosition;
+            kmVec3Add(&mDerivedPosition, &parentDerivedPosition, &mPosition);
             
             auto parentDerivedOrientation = mParent->getDerivedOrientation();
             kmQuaternionMultiply(&mDerivedOrientation, &parentDerivedOrientation, &mOrientation);
 
             auto parentDerivedScale = mParent->getScale();
-            kmVec3Dot(&mDerivedScale, &parentDerivedScale, &mScale);
+            mDerivedScale.x = parentDerivedScale.x * mScale.x;
+            mDerivedScale.y = parentDerivedScale.y * mScale.y;
+            mDerivedScale.z = parentDerivedScale.z * mScale.z;
         }
         else
         {
@@ -91,8 +90,8 @@ namespace Tiny
     void TinyNode::update()
     {
         updateFromParent();
-        auto iter = mChildren->begin();
-        for (; iter != mChildren->end(); iter ++)
+        auto iter = mChildren.begin();
+        for (; iter != mChildren.end(); iter ++)
         {
             iter->second->update();
         }
@@ -123,7 +122,7 @@ namespace Tiny
         return mScale;
     }
     
-    kmVec3& TinyNode::getOrientation()
+    kmQuaternion& TinyNode::getOrientation()
     {
         return mOrientation;
     }

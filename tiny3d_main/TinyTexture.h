@@ -23,7 +23,7 @@ namespace Tiny
         TinyTexture();
         ~TinyTexture();
         void load(uint8* data, uint32 length);
-        void load(vector<uint8*>& datas, vector<uint32>& lengths);
+        void load(std::vector<uint8*>& datas, std::vector<uint32>& lengths);
         void initWithImage(TinyImage* image);
         void initWithImages(std::vector<TinyImage*>& images);
         GLuint getHandler();

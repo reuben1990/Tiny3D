@@ -15,6 +15,8 @@
 
 namespace Tiny
 {
+    kmQuaternion kmQuaternionMake(float x, float y, float z, float w);
+    kmVec4 kmVec4Make(float x, float y, float z, float w);
     kmVec3 kmVec3Make(float x, float y, float z);
     kmVec2 kmVec2Make(float x, float y);
     const float kTinyPI = 4 * atan(1);
