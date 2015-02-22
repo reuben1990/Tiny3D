@@ -669,12 +669,18 @@
         <window title="proj_mac" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="800" height="480"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="800" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <openGLView fixedFrame="YES" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WY8-Aj-Ur9" customClass="OpenGLView">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="480"/>
+                    </openGLView>
+                </subviews>
             </view>
+            <point key="canvasLocation" x="557" y="422.5"/>
         </window>
     </objects>
 </document>

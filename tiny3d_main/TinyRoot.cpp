@@ -19,6 +19,11 @@ namespace Tiny
     mRenderSystem(nullptr),
     mSceneMgr(nullptr)
     {
+        //const GLubyte* vendor = glGetString( GL_VENDOR );
+        //TINYLOG("GL_VENDOR:   %s", glGetString( GL_VENDOR ) );
+        //TINYLOG("GL_RENDERER: %s", glGetString( GL_RENDERER ) );
+        //TINYLOG("GL_VERSION:  %s", glGetString( GL_VERSION ) );
+        
         mRenderSystem = TINY_NEW TinyRenderSystem();
         addMovableObjectFactory(TINY_NEW TinyEntityFactory());
     }
@@ -51,7 +56,6 @@ namespace Tiny
         
         //update all render targets, include render window, render texture, etc.
         updateAllRenderTargets();
-        
     }
     
     void TinyRoot::updateAllRenderTargets()

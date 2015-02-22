@@ -22,8 +22,7 @@ namespace Tiny
     
     void TinySubEntity::getRenderOperation(TinyRenderOperation* ro)
     {
-        ro->mVertexData = mSubMesh->mVertexData;
-        ro->mIndexData = mSubMesh->mIndexData;
+        ro->mVertexObject = mSubMesh->mVertexObject;
         ro->mRenderable = this;
         ro->mMaterial = getMaterial();
         TinyGPUProgram* program = ro->mMaterial->getProgram();

@@ -66,6 +66,7 @@ namespace Tiny
     
     void TinySceneManager::findVisibleObjects(TinyCamera *cam)
     {
+        getRenderQueue()->clear();
         getRootSceneNode()->findVisibleObjects(cam, getRenderQueue());
     }
     

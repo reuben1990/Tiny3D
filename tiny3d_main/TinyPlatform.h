@@ -27,6 +27,8 @@ namespace Tiny
     typedef int int32;
     typedef short int16;
     typedef char int8;
+    typedef long long graphicInt;
+    typedef double graphicFloat;
     
     static const int kMaxLogLen = 16*1024;
     

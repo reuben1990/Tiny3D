@@ -20,9 +20,4 @@ namespace Tiny
     {
         //
     }
-    
-    void TinyRenderTexture::swapBuffer()
-    {
-        //Nothing to do.
-    }
 }

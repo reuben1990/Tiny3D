@@ -32,11 +32,10 @@ namespace Tiny
     
     void TinyRenderTarget::update(bool swap)
     {
-        preRender();
         updateImpl();
         if (swap)
         {
-            swapBuffer();
+            //swapBuffer();
         }
     }
     
@@ -95,6 +94,13 @@ namespace Tiny
         {
             iter->second->update();
         }
+    }
+    
+    void TinyRenderTarget::clearBg()
+    {
+        glClearColor(0.0, 0.0, 0.0, 1.0);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        TINYLOG("glClear");
     }
 }
 

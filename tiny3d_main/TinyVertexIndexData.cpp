@@ -22,15 +22,15 @@ namespace Tiny
         TINY_DELETE mBuffer;
     }
     
-    void TinyIndexData::load(uint8* data, uint32 length, uint32 vertexSize)
+    void TinyIndexData::load(uint8* data, uint32 length, uint32 vertexNum)
     {
-        mVertexSize = vertexSize;
+        mVertexNum = vertexNum;
         mBuffer->readData(data, length, GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW);
     }
     
-    uint32 TinyIndexData::getVertexSize()
+    uint32 TinyIndexData::getVertexNum()
     {
-        return mVertexSize;
+        return mVertexNum;
     }
     
     TinyHardwareBuffer* TinyIndexData::getBuffer()
@@ -45,10 +45,14 @@ namespace Tiny
     
     TinyVertexData::~TinyVertexData()
     {
-
+        auto iter = mVertexElements.begin();
+        for (; iter != mVertexElements.end(); iter ++)
+        {
+            TINY_DELETE iter->second;
+        }
     }
  
-    void TinyVertexData::load(uint8* data, uint32 length, uint32 size, TinyVertexAttrLocation location)
+    void TinyVertexData::load(uint8* data, uint32 length, uint32 vecSizePerElement, TinyVertexAttrLocation location)
     {
         auto iter = mVertexElements.find(location);
         TinyVertexElement* element;
@@ -61,7 +65,7 @@ namespace Tiny
         {
             element = iter->second;
         }
-        element->load(data, length, size);
+        element->load(data, length, vecSizePerElement);
     }
     
     MapIterator<TinyVertexElementMap > TinyVertexData::getBufferIterator()
@@ -71,7 +75,7 @@ namespace Tiny
     
     TinyVertexElement::TinyVertexElement()
         : mBuffer(TINY_NEW TinyHardwareBuffer())
-        , mSize(0)
+        , mVecSizePerElement(0)
     {
         
     }
@@ -81,10 +85,59 @@ namespace Tiny
         TINY_DELETE mBuffer;
     }
     
-    void TinyVertexElement::load(uint8* data, uint32 length, uint32 size)
+    void TinyVertexElement::load(uint8* data, uint32 length, uint32 vecSizePerElement)
     {
         mBuffer->readData(data, length, GL_ARRAY_BUFFER, GL_STATIC_DRAW);
-        mSize = size;
+        mVecSizePerElement = vecSizePerElement;
+    }
+    
+    TinyVertexObject::TinyVertexObject()
+        : mVertexData(TINY_NEW TinyVertexData())
+        , mIndexData(TINY_NEW TinyIndexData())
+        , mHandler(0)
+    {
+        
+    }
+    
+    TinyVertexObject::~TinyVertexObject()
+    {
+        TINY_DELETE mVertexData;
+        TINY_DELETE mIndexData;
+    }
+    
+    TinyVertexData* TinyVertexObject::getVertexData()
+    {
+        return mVertexData;
+    }
+    
+    TinyIndexData* TinyVertexObject::getIndexData()
+    {
+        return mIndexData;
+    }
+    
+    void TinyVertexObject::loadVertexElement(uint8* data, uint32 length, uint32 vecSizePerElement, TinyVertexAttrLocation location)
+    {
+        mVertexData->load(data, length, vecSizePerElement, location);
+    }
+    
+    void TinyVertexObject::loadIndexElement(uint8* data, uint32 length, uint32 vertexNum)
+    {
+        mIndexData->load(data, length, vertexNum);
+    }
+    
+    graphicInt TinyVertexObject::getHandler()
+    {
+        return mHandler;
+    }
+    
+    void TinyVertexObject::setHandler(graphicInt handler)
+    {
+        mHandler = handler;
+    }
+    
+    bool TinyVertexObject::isGeneratedObject()
+    {
+        return mHandler;
     }
 }
 

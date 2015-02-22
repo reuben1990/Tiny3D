@@ -14,16 +14,15 @@
 namespace Tiny
 {
     TinySubMesh::TinySubMesh()
+        : mVertexObject(TINY_NEW TinyVertexObject())
     {
-        mVertexData = TINY_NEW TinyVertexData();
-        mIndexData = TINY_NEW TinyIndexData();
+
     }
     
     TinySubMesh::~TinySubMesh()
     {
         
-        TINY_DELETE mVertexData;
-        TINY_DELETE mIndexData;
+        TINY_DELETE mVertexObject;
     }
     
     uint32 TinySubMesh::load(uint8* data, uint32 offset)
@@ -31,13 +30,13 @@ namespace Tiny
         //TODO
         kmVec3 vdata[] =
         {
-            {0, 1, 0},
-            {0, 0, 0},
-            {1, 0, 0}
+            {0, 1, -1},
+            {0, 0, -1},
+            {1, 0, -1}
         };
         GLushort idata[] = {0, 1, 2};
-        mVertexData->load((uint8*)vdata, sizeof(vdata), sizeof(float), VERTEX_LOCATION_POSITION);
-        mIndexData->load((uint8*)idata, sizeof(idata), sizeof(uint32));
+        mVertexObject->loadVertexElement((uint8*)vdata, sizeof(vdata), 3, VERTEX_LOCATION_POSITION);
+        mVertexObject->loadIndexElement((uint8*)idata, sizeof(idata), 3);
         return 0;
     }
 }

@@ -6,14 +6,13 @@
 //  Copyright (c) 2015 reuben chao. All rights reserved.
 //
 
-#import <OpenGL/gl3.h>
+#include <vector>
+#include <string>
 #import "OpenGLView.h"
 #import "TinyInputManager.h"
 #include "TinyMouse.h"
 #include "TinyKeyboard.h"
 #include "TinyRoot.h"
-#include <vector>
-#include <string>
 #include "kazmath/kazmath.h"
 #include "TinyMath.h"
 #include "TinyDelegate.h"
@@ -21,17 +20,35 @@
 
 @implementation OpenGLView
 
-- (id)initWithFrame:(NSRect)frameRect pixelFormat:(NSOpenGLPixelFormat*)format
+- (void) awakeFromNib
 {
-    self = [super initWithFrame:frameRect pixelFormat:format];
-    if (self)
+    NSOpenGLPixelFormatAttribute attributes[] = {
+        NSOpenGLPFAColorSize, 32,
+        NSOpenGLPFADepthSize, 16,
+        NSOpenGLPFAStencilSize, 8,
+        NSOpenGLPFADoubleBuffer,
+        NSOpenGLPFAAccelerated,
+        NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersion3_2Core,
+        0
+    };
+    
+    NSOpenGLPixelFormat *pixelFormat = [[NSOpenGLPixelFormat alloc] initWithAttributes:attributes];
+    if (pixelFormat == nil)
     {
-        NSTrackingArea *trackingArea = [[NSTrackingArea alloc] initWithRect:[self bounds]
-            options: (NSTrackingMouseEnteredAndExited | NSTrackingMouseMoved | NSTrackingActiveInKeyWindow )
-            owner:self
-            userInfo:nil];
-        [self addTrackingArea:trackingArea];
+        assert(0 && "Faild create pixel format");
     }
+    else
+    {
+        [self setPixelFormat:pixelFormat];
+    }
+    
+    [self prepareOpenGL];
+    [super update];
+    [[self openGLContext] makeCurrentContext];
+    [[self openGLContext] update];
+    
+    Tiny::TinyDelegate* delegate = Tiny::TinyDelegate::getSingleton();
+    delegate->initialize();
     
     //create mouse and keyboard delegate
     Tiny::TinyInputObject *inputObject_mouse = Tiny::TinyInputManager::getSingleton()->getInputObject(Tiny::InputDevice::Mouse);
@@ -39,25 +56,24 @@
     Tiny::TinyInputObject *inputObject_keyboard = Tiny::TinyInputManager::getSingleton()->getInputObject(Tiny::InputDevice::Keyboard);
     mKeyBoard = (Tiny::TinyKeyboard *)inputObject_keyboard;
     
-    
-    
-    return self;
+    //schedule main loop
+    mTimer = [NSTimer timerWithTimeInterval:(1.0 / 60.0) target:self selector:@selector(visit:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:mTimer forMode:NSDefaultRunLoopMode];
 }
 
-- (void)update  // moved or resized
+- (void)visit:(NSTimer*)timer
 {
-    [super update];
-    
-    [[self openGLContext] makeCurrentContext];
-    [[self openGLContext] update];
+    if ([timer isEqual:mTimer] == YES)
+    {
+        [self drawRect:[self frame]];
+    }
 }
 
-- (void)reshape
+-(void)drawRect:(NSRect)dirtyRect
 {
-    [super reshape];
-    
     [[self openGLContext] makeCurrentContext];
-    [[self openGLContext] update];
+    Tiny::TinyRoot::getSingleton()->renderOneFrame([mTimer timeInterval]);
+    [[self openGLContext] flushBuffer];
 }
 
 - (BOOL)acceptsFirstResponder

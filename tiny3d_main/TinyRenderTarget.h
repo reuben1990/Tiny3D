@@ -38,8 +38,8 @@ namespace Tiny
         //update all viewports.
         void updateViewPorts();
         
-        //swapBuffer.
-        virtual void swapBuffer() = 0;
+        //clear
+        virtual void clearBg();
         
         virtual kmVec2 getSize();
         
@@ -56,7 +56,6 @@ namespace Tiny
         
         unsigned char getPriority();
         
-        virtual void preRender() = 0;
         
     protected:
         float mWidth;

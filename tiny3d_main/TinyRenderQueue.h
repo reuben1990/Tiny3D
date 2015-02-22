@@ -51,6 +51,7 @@ namespace Tiny
         ~TinyRenderableCollection();
         void addRenderable(TinyRenderable* renderable);
         VectorIterator<RenderableArray > getRenderableIterator();
+        void clear();
     protected:
         RenderableArray mRenderables;
     };
@@ -63,6 +64,7 @@ namespace Tiny
         void addRenderable(TinyRenderable* renderable);
         TinyRenderableCollection* getSolidCollection();
         TinyRenderableCollection* getTransParentCollection();
+        void clear();
     protected:
         TinyRenderableCollection* mSolidCollection;
         TinyRenderableCollection* mTransParentCollection;
@@ -77,6 +79,7 @@ namespace Tiny
         void addRenderable(TinyRenderable* renderable, uint8 priority = 0);
         TinyRenderPriorityGroup* getPriorityGroup(uint8 priority);
         MapIterator<RenderPriorityGroupMap > getPriorityGroupIterator();
+        void clear();
     protected:
         RenderPriorityGroupMap mRenderPriorityGroups;
     };
@@ -90,6 +93,7 @@ namespace Tiny
         void addRenderable(TinyRenderable* renderable, uint8 groupID = RenderQueueGroupID::RENDER_QUEUE_MAIN, uint8 priority = 0);
         TinyRenderQueueGroup* getQueueGroup(uint8 groupID);
         MapIterator<RenderQueueGroupMap > getQueueGroupIterator();
+        void clear();
     protected:
         RenderQueueGroupMap mRenderQueueGroups;
     };

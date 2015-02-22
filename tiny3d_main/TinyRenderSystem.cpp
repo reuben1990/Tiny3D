@@ -38,17 +38,22 @@ namespace Tiny
             setRenderTarget(renderTarget);
             kmVec2 vpPosition = vp->geViewPortLeftBottom();
             kmVec2 vpSize = vp->getViewPortSize();
-            glViewport(vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
-            glScissor(vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
-            TINYLOG("glViewport (%f, %f) (%f, %f)", vpPosition.x, vpPosition.y, vpSize.x, vpSize.y);
+            uint32 width = renderTarget->getSize().x;
+            uint32 height = renderTarget->getSize().y;
+            uint32 actualX = vpPosition.x * width;
+            uint32 actualY = vpPosition.y * height;
+            uint32 actualWidth = vpSize.x * width;
+            uint32 actualHeight = vpSize.y * height;
+            glViewport(actualX, actualY, actualWidth, actualHeight);
+            glScissor(actualX, actualY, actualWidth, actualHeight);
+            //TODO
+            TINYLOG("glViewport (%d, %d) (%d, %d)", actualX, actualY, actualWidth, actualHeight);
         }
     }
     
     void TinyRenderSystem::clearBg()
     {
-        glClearColor(0.0, 0.0, 0.0, 1.0);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        TINYLOG("glClear");
+        mActiveRenderTarget->clearBg();
     }
     
     void TinyRenderSystem::setRenderTarget(TinyRenderTarget *target)
@@ -80,12 +85,13 @@ namespace Tiny
         TinyRenderTargetMap::iterator iter = mPrioritisedRenderTargets.begin();
         for (; iter != mPrioritisedRenderTargets.end(); iter ++)
         {
-            iter->second->swapBuffer();
+            //
         }
     }
     
     void TinyRenderSystem::render(TinyRenderOperation* ro)
     {
+        
         //switch states
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_CULL_FACE);
@@ -96,29 +102,44 @@ namespace Tiny
         program->useProgram();
         TINYLOG("glUseProgram");
         
-        //bind vertexAttr
-        auto iter = ro->mVertexData->getBufferIterator();
-        while (iter.hasMoreElements())
+        TinyVertexObject* vertexObject = ro->mVertexObject;
+        TinyVertexData* vertexData = vertexObject->getVertexData();
+        TinyIndexData* indexData = vertexObject->getIndexData();
+        GLuint handler = static_cast<GLuint>(vertexObject->getHandler());
+        if (!vertexObject->isGeneratedObject())
         {
-            auto key = iter.peekNextKey();
-            TinyVertexElement* element = iter.getNext();
-            TinyHardwareBuffer* hardwareBuffer = element->mBuffer;
-            glBindBuffer(GL_ARRAY_BUFFER, hardwareBuffer->getHandler());
-            TINYLOG("glBindBuffer %d", hardwareBuffer->getHandler());
-            glEnableVertexAttribArray(key);
-            TINYLOG("glEnableVertexAttribArray %d", key);
-            glVertexAttribPointer(key, element->mSize, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
-            TINYLOG("glVertexAttribPointer %d, %d", key, element->mSize);
+            glGenVertexArrays(1, &handler);
+            glBindVertexArray(handler);
+            auto iter = vertexData->getBufferIterator();
+            while (iter.hasMoreElements())
+            {
+                GLuint location = iter.peekNextKey();
+                TinyVertexElement* element = iter.getNext();
+                TinyHardwareBuffer* hardwareBuffer = element->mBuffer;
+                glBindBuffer(GL_ARRAY_BUFFER, hardwareBuffer->getHandler());
+                TINYLOG("glBindBuffer vertex %d", hardwareBuffer->getHandler());
+                glEnableVertexAttribArray(location);
+                TINYLOG("glEnableVertexAttribArray %d", location);
+                glVertexAttribPointer(location, element->mVecSizePerElement, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+                TINYLOG("glVertexAttribPointer %d, %d", location, element->mVecSizePerElement);
+            }
+            
+            //bind index
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexData->getBuffer()->getHandler());
+            TINYLOG("glBindBuffer index %d", indexData->getBuffer()->getHandler());
+            
+            vertexObject->setHandler(handler);
+        }
+        else
+        {
+            glBindVertexArray(handler);
         }
         
-        //bind index
-        TinyIndexData* indexData = ro->mIndexData;
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexData->getBuffer()->getHandler());
-        TINYLOG("glBindBuffer indexbuffer %d", indexData->getBuffer()->getHandler());
-        
         //draw
-        glDrawElements(GL_TRIANGLES, indexData->getVertexSize(), GL_UNSIGNED_SHORT, 0);
-        TINYLOG("glDrawElements");
+        uint32 vertexNum = indexData->getVertexNum();
+        glDrawElements(GL_TRIANGLES, vertexNum, GL_UNSIGNED_SHORT, 0);
+        TINYLOG("glDrawElements vertexNum = %d", vertexNum);
+        
     }
     
     void TinyRenderSystem::attachRenderTarget(TinyRenderTarget *target)

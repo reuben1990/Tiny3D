@@ -41,6 +41,7 @@ namespace Tiny
         const char* vSourceStr = mVertexShaderSource.c_str();
         glShaderSource(vertexShader, 1, &vSourceStr, NULL);
         glCompileShader(vertexShader);
+        //TINYLOG("v:%s", vSourceStr);
         
         // Check Vertex Shader
         glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &result);
@@ -57,6 +58,7 @@ namespace Tiny
         const char* fSourceStr = mFragmentShaderSource.c_str();
         glShaderSource(fragmentShader, 1, &fSourceStr , NULL);
         glCompileShader(fragmentShader);
+        //TINYLOG("f:%s", vSourceStr);
         
         // Check Fragment Shader
         glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &result);

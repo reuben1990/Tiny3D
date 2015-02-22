@@ -11,13 +11,6 @@
 #import "OpenGLView.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-{
-    NSTimer *mTimer;
-}
-
 @property (weak) IBOutlet NSWindow *window;
-
-- (void)visit:(NSTimer*)timer;
-- (OpenGLView*)createGLView:(NSInteger)width height:(NSInteger)height;
-+ (AppDelegate*)sharedDelegate;
+//- (OpenGLView*)createGLView:(NSInteger)width height:(NSInteger)height;
 @end

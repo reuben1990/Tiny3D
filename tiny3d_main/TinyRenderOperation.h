@@ -25,8 +25,7 @@ namespace Tiny
         virtual ~TinyRenderOperation();
         
         TinyRenderable* mRenderable;
-        TinyVertexData* mVertexData;
-        TinyIndexData* mIndexData;
+        TinyVertexObject* mVertexObject;
         TinyMaterial* mMaterial;
         TinyGPUProgram* mProgram;
     };

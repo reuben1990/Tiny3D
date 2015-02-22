@@ -33,7 +33,7 @@ namespace Tiny
         Tiny::TinyInputManager::getSingleton()->createInputObject(Tiny::InputDevice::Keyboard);
         
         //Create render window.
-        TinyRenderWindow* mainWindow = tinyCreateRenderWindow(0, 0);
+        TinyRenderWindow* mainWindow = tinyCreateRenderWindow(800, 480);
         root->attachRenderTarget(mainWindow);
         
         //Init scene graph.
@@ -66,16 +66,16 @@ namespace Tiny
         
         
         //Create a diffuse texture.
-        std::string textureName("first_demo.png");
-        TinyTexture* texture = TinyTextureManager::getSingleton()->load(textureName);
+        //std::string textureName("first_demo.png");
+        //TinyTexture* texture = TinyTextureManager::getSingleton()->load(textureName);
         
         //Create a gpu program, set diffuse texture to our program as parameter.
         TinyGPUProgram* program = TinyGPUProgramManager::getSingleton()->load("first_demo.vs", "first_demo.fs");
-        TinyGPUProgramParameter param;
-        param.mName = "diffuseTexture";
-        param.mType = GP_SAMPLER;
-        param.mBindData = texture->getHandlerPtr();
-        program->setParameter(param);
+        //TinyGPUProgramParameter param;
+        //param.mName = "diffuseTexture";
+        //param.mType = GP_SAMPLER;
+        //param.mBindData = texture->getHandlerPtr();
+        //program->setParameter(param);
         
         //Create material with gpu program. TODO assemble program form script.
         TinyMaterial* material = TinyMaterialManager::getSingleton()->load("first_demo.material");

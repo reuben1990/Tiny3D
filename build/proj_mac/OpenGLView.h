@@ -9,17 +9,21 @@
 #ifndef proj_mac_TinyOpenGLView_h
 #define proj_mac_TinyOpenGLView_h
 
-#import <OpenGL/gl3.h>
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 #include "TinyMouse.h"
 #include "TinyKeyboard.h"
+#include "TinyPlatform.h"
 
 @interface OpenGLView : NSOpenGLView
 {
     Tiny::TinyMouse *mMouse;
     Tiny::TinyKeyboard *mKeyBoard;
+    NSTimer *mTimer;
 }
+
+- (void)visit:(NSTimer*)timer;
+
 @end
 
 #endif

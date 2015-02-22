@@ -20,7 +20,6 @@ namespace Tiny
     public:
         TinyRenderTexture(uint32 width, uint32 height);
         ~TinyRenderTexture();
-        virtual void swapBuffer();
     };
 }
 

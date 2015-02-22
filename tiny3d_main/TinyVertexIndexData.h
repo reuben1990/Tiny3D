@@ -31,8 +31,8 @@ namespace Tiny
     public:
         TinyVertexElement();
         ~TinyVertexElement();
-        void load(uint8* data, uint32 length, uint32 size);
-        uint32 mSize;
+        void load(uint8* data, uint32 length, uint32 vecSizePerElement);
+        uint32 mVecSizePerElement;
         TinyHardwareBuffer* mBuffer;
     };
     
@@ -42,7 +42,7 @@ namespace Tiny
     public:
         TinyVertexData();
         virtual ~TinyVertexData();
-        void load(uint8* data, uint32 length, uint32 size, TinyVertexAttrLocation location);
+        void load(uint8* data, uint32 length, uint32 vecSizePerElement, TinyVertexAttrLocation location);
         MapIterator<TinyVertexElementMap > getBufferIterator();
     protected:
         TinyVertexElementMap mVertexElements;
@@ -53,12 +53,31 @@ namespace Tiny
     public:
         TinyIndexData();
         virtual ~TinyIndexData();
-        void load(uint8* data, uint32 length, uint32 vertexSize);
-        uint32 getVertexSize();
+        void load(uint8* data, uint32 length, uint32 vertexNum);
+        uint32 getVertexNum();
         TinyHardwareBuffer* getBuffer();
     protected:
         TinyHardwareBuffer* mBuffer;
-        uint32 mVertexSize;
+        uint32 mVertexNum;
+    };
+    
+    //VAO
+    class TinyVertexObject : public TinyObject
+    {
+    public:
+        TinyVertexObject();
+        ~TinyVertexObject();
+        void loadVertexElement(uint8* data, uint32 length, uint32 vecSizePerElement, TinyVertexAttrLocation location);
+        void loadIndexElement(uint8* data, uint32 length, uint32 vertexNum);
+        TinyVertexData* getVertexData();
+        TinyIndexData* getIndexData();
+        graphicInt getHandler();
+        void setHandler(graphicInt);
+        bool isGeneratedObject();
+    protected:
+        TinyVertexData* mVertexData;
+        TinyIndexData* mIndexData;
+        graphicInt mHandler;
     };
 }
 

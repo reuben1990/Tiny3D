@@ -24,9 +24,17 @@ namespace Tiny
         {
             TINY_DELETE iter->second;
         }
-        mRenderQueueGroups.clear();
     }
-
+    
+    void TinyRenderQueue::clear()
+    {
+        auto iter = mRenderQueueGroups.begin();
+        for (; iter != mRenderQueueGroups.end(); iter ++)
+        {
+            iter->second->clear();
+        }
+    }
+    
     void TinyRenderQueue::addRenderable(TinyRenderable* renderable, uint8 groupID, uint8 priority)
     {
         auto group = getQueueGroup(groupID);
@@ -66,7 +74,15 @@ namespace Tiny
         {
             TINY_DELETE iter->second;
         }
-        mRenderPriorityGroups.clear();
+    }
+    
+    void TinyRenderQueueGroup::clear()
+    {
+        auto iter = mRenderPriorityGroups.begin();
+        for (; iter != mRenderPriorityGroups.end(); iter ++)
+        {
+            iter->second->clear();
+        }
     }
     
     void TinyRenderQueueGroup::addRenderable(TinyRenderable* renderable, uint8 priority)
@@ -119,6 +135,12 @@ namespace Tiny
         TINY_DELETE mTransParentCollection;
     }
     
+    void TinyRenderPriorityGroup::clear()
+    {
+        mSolidCollection->clear();
+        mTransParentCollection->clear();
+    }
+    
     void TinyRenderPriorityGroup::addRenderable(TinyRenderable* renderable)
     {
         auto material = renderable->getMaterial();
@@ -150,6 +172,11 @@ namespace Tiny
     TinyRenderableCollection::~TinyRenderableCollection()
     {
         //
+    }
+    
+    void TinyRenderableCollection::clear()
+    {
+        mRenderables.clear();
     }
     
     void TinyRenderableCollection::addRenderable(TinyRenderable* renderable)

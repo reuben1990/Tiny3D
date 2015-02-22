@@ -15,7 +15,6 @@
 		1B9FE3F41A965B7A00496A2A /* TinyResourceManager_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D6CE1A958ECB00FC82E7 /* TinyResourceManager_mac.mm */; };
 		1B9FE3F51A965B7A00496A2A /* TinyImage_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D6D01A95C80200FC82E7 /* TinyImage_mac.mm */; };
 		1B9FE3F61A965B7A00496A2A /* TinyPlatform_mac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D6D81A96139F00FC82E7 /* TinyPlatform_mac.mm */; };
-		1B9FE3F71A965B7A00496A2A /* TinyMacRenderWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BC0D6DA1A961A1B00FC82E7 /* TinyMacRenderWindow.mm */; };
 		1B9FE4201A965B8A00496A2A /* aabb.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B0760AB1A7F66E4007103F3 /* aabb.c */; };
 		1B9FE4211A965B8A00496A2A /* mat4stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B0760AE1A7F66E4007103F3 /* mat4stack.c */; };
 		1B9FE4221A965B8A00496A2A /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B0760B01A7F66E4007103F3 /* matrix.c */; };
@@ -72,6 +71,9 @@
 		1B9FE4AC1A965D4700496A2A /* TinyTextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FE4811A965D4700496A2A /* TinyTextureManager.cpp */; };
 		1B9FE4AD1A965D4700496A2A /* TinyVertexIndexData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FE4831A965D4700496A2A /* TinyVertexIndexData.cpp */; };
 		1B9FE4AE1A965D4700496A2A /* TinyViewPort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FE4851A965D4700496A2A /* TinyViewPort.cpp */; };
+		1B9FE4B21A98D3FD00496A2A /* first_demo.fs in Resources */ = {isa = PBXBuildFile; fileRef = 1B9FE4AF1A98D3FD00496A2A /* first_demo.fs */; };
+		1B9FE4B31A98D3FD00496A2A /* first_demo.material in Resources */ = {isa = PBXBuildFile; fileRef = 1B9FE4B01A98D3FD00496A2A /* first_demo.material */; };
+		1B9FE4B41A98D3FD00496A2A /* first_demo.vs in Resources */ = {isa = PBXBuildFile; fileRef = 1B9FE4B11A98D3FD00496A2A /* first_demo.vs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,11 +199,12 @@
 		1B9FE4841A965D4700496A2A /* TinyVertexIndexData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyVertexIndexData.h; sourceTree = "<group>"; };
 		1B9FE4851A965D4700496A2A /* TinyViewPort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TinyViewPort.cpp; sourceTree = "<group>"; };
 		1B9FE4861A965D4700496A2A /* TinyViewPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyViewPort.h; sourceTree = "<group>"; };
+		1B9FE4AF1A98D3FD00496A2A /* first_demo.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = first_demo.fs; sourceTree = "<group>"; };
+		1B9FE4B01A98D3FD00496A2A /* first_demo.material */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = first_demo.material; sourceTree = "<group>"; };
+		1B9FE4B11A98D3FD00496A2A /* first_demo.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = first_demo.vs; sourceTree = "<group>"; };
 		1BC0D6CE1A958ECB00FC82E7 /* TinyResourceManager_mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TinyResourceManager_mac.mm; sourceTree = SOURCE_ROOT; };
 		1BC0D6D01A95C80200FC82E7 /* TinyImage_mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TinyImage_mac.mm; sourceTree = SOURCE_ROOT; };
 		1BC0D6D81A96139F00FC82E7 /* TinyPlatform_mac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TinyPlatform_mac.mm; sourceTree = SOURCE_ROOT; };
-		1BC0D6DA1A961A1B00FC82E7 /* TinyMacRenderWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TinyMacRenderWindow.mm; sourceTree = SOURCE_ROOT; };
-		1BC0D6DB1A961A1B00FC82E7 /* TinyMacRenderWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyMacRenderWindow.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,8 +255,6 @@
 				1BC0D6CE1A958ECB00FC82E7 /* TinyResourceManager_mac.mm */,
 				1BC0D6D01A95C80200FC82E7 /* TinyImage_mac.mm */,
 				1BC0D6D81A96139F00FC82E7 /* TinyPlatform_mac.mm */,
-				1BC0D6DA1A961A1B00FC82E7 /* TinyMacRenderWindow.mm */,
-				1BC0D6DB1A961A1B00FC82E7 /* TinyMacRenderWindow.h */,
 			);
 			path = proj_mac;
 			sourceTree = "<group>";
@@ -412,6 +413,9 @@
 		1B0760E41A7F719E007103F3 /* sample_ocean */ = {
 			isa = PBXGroup;
 			children = (
+				1B9FE4AF1A98D3FD00496A2A /* first_demo.fs */,
+				1B9FE4B01A98D3FD00496A2A /* first_demo.material */,
+				1B9FE4B11A98D3FD00496A2A /* first_demo.vs */,
 				1B9FE3731A96518700496A2A /* OceanDelegate.cpp */,
 			);
 			path = sample_ocean;
@@ -474,6 +478,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9FE4B41A98D3FD00496A2A /* first_demo.vs in Resources */,
+				1B9FE4B31A98D3FD00496A2A /* first_demo.material in Resources */,
+				1B9FE4B21A98D3FD00496A2A /* first_demo.fs in Resources */,
 				1B4F26131A7FEAD200DABC42 /* Info.plist in Resources */,
 				1B4F26121A7FEAD200DABC42 /* Contents.json in Resources */,
 				1B4F26151A7FEAD200DABC42 /* MainMenu.xib in Resources */,
@@ -546,7 +553,6 @@
 				1B9FE3F41A965B7A00496A2A /* TinyResourceManager_mac.mm in Sources */,
 				1B9FE3F51A965B7A00496A2A /* TinyImage_mac.mm in Sources */,
 				1B9FE3F61A965B7A00496A2A /* TinyPlatform_mac.mm in Sources */,
-				1B9FE3F71A965B7A00496A2A /* TinyMacRenderWindow.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

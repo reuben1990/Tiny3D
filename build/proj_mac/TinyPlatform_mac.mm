@@ -8,9 +8,7 @@
 
 #include <stdio.h>
 #include "TinyPlatform.h"
-#include "AppDelegate.h"
-#include "OpenGLView.h"
-#include "TinyMacRenderWindow.h"
+#include "TinyRenderWindow.h"
 #include "TinyMemoryAlloc.h"
 
 namespace Tiny
@@ -29,7 +27,6 @@ namespace Tiny
     
     TinyRenderWindow* tinyCreateRenderWindow(uint32 width, uint32 height)
     {
-        OpenGLView* glView = [[AppDelegate sharedDelegate] createGLView:width height:height];
-        return TINY_NEW TinyMacRenderWindow(glView);
+        return TINY_NEW TinyRenderWindow(width, height);
     }
 }

@@ -22,8 +22,7 @@ namespace Tiny
         TinySubMesh();
         ~TinySubMesh();
         uint32 load(uint8* data, uint32 offset);
-        TinyVertexData* mVertexData;
-        TinyIndexData* mIndexData;
+        TinyVertexObject* mVertexObject;
     };
 }
 
