@@ -11,6 +11,7 @@
 
 #include "TinyMaterial.h"
 #include "TinyRenderOperation.h"
+#include "kazmath/kazmath.h"
 
 namespace Tiny
 {
@@ -22,6 +23,7 @@ namespace Tiny
         virtual void getRenderOperation(TinyRenderOperation* ro) = 0;
         virtual void setMaterial(TinyMaterial* material);
         TinyMaterial* getMaterial();
+        virtual void getModelMatrix(kmMat4& mat) = 0;
     protected:
         TinyMaterial* mMaterial;
     };

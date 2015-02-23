@@ -32,7 +32,9 @@ namespace Tiny
         void bindGPUProgramParameters(TinyGPUProgramParameters *params);
         void setRenderTarget(TinyRenderTarget *target);
         void setViewPort(TinyViewPort *vp);
+        void setProjectionMatrix(kmMat4& matrix);
         void setViewMatrix(kmMat4& matrix);
+        void setModelMatrix(kmMat4& matrix);
         void attachRenderTarget(TinyRenderTarget *target);
         void detachRenderTarget(TinyRenderTarget *target);
         void clearBg();
@@ -41,7 +43,9 @@ namespace Tiny
         TinyRenderTargetMap mPrioritisedRenderTargets;
         TinyViewPort *mActiveViewPort;
         TinyRenderTarget *mActiveRenderTarget;
+        kmMat4 mProjMatrix;
         kmMat4 mViewMatrix;
+        kmMat4 mModelMatrix;
     };
 }
 

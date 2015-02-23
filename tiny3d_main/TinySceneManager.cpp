@@ -34,11 +34,16 @@ namespace Tiny
     
     void TinySceneManager::renderScene(TinyCamera *cam)
     {
+        kmMat4 projMatrix;
+        cam->getProjectionMatrix(projMatrix);
+        setViewMatrix(projMatrix);
+        
         kmMat4 viewMatrix;
         cam->getViewMatrix(viewMatrix);
+        setViewMatrix(viewMatrix);
+        
         setViewPort(cam->getViewPort());
         clearBg();
-        setViewMatrix(viewMatrix);
         updateSceneGraph();
         findVisibleObjects(cam);
         renderVisibleObjects();
@@ -113,12 +118,35 @@ namespace Tiny
     {
         TinyRenderOperation ro;
         renderable->getRenderOperation(&ro);
+        
+        kmMat4 modelMatrix;
+        renderable->getModelMatrix(modelMatrix);
+        setModelMatrix(modelMatrix);
+        
+        //update parameters
+        TinyGPUProgram* program = ro.mProgram;
+        TinyGPUProgramParameters* params = program->getGPUProgramParameters();
+        params->updateAutoParams(&mAutoParamDataSource);
+        
         mDestRenderSystem->render(&ro);
+    }
+    
+    void TinySceneManager::setProjectionMatrix(kmMat4& matrix)
+    {
+        mDestRenderSystem->setProjectionMatrix(matrix);
+        mAutoParamDataSource.setProjectionMatrix(matrix);
     }
     
     void TinySceneManager::setViewMatrix(kmMat4& matrix)
     {
         mDestRenderSystem->setViewMatrix(matrix);
+        mAutoParamDataSource.setViewMatrix(matrix);
+    }
+    
+    void TinySceneManager::setModelMatrix(kmMat4& matrix)
+    {
+        mDestRenderSystem->setModelMatrix(matrix);
+        mAutoParamDataSource.setModelMatrix(matrix);
     }
     
     TinyRenderQueue* TinySceneManager::getRenderQueue()

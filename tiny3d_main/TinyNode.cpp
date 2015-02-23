@@ -155,6 +155,15 @@ namespace Tiny
     {
         mParent = parent;
     }
+    
+    void TinyNode::getModelMatrix(kmMat4& matrix)
+    {
+        kmMat4RotationQuaternion(&matrix, &mDerivedOrientation);
+        matrix.mat[12] = mDerivedPosition.x;
+        matrix.mat[13] = mDerivedPosition.y;
+        matrix.mat[14] = mDerivedPosition.z;
+        matrix.mat[15] = 1.0f;
+    }
 }
 
 

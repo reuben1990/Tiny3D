@@ -43,6 +43,7 @@ namespace Tiny
         std::string& getName();
         TinyNode* getParent();
         void setParent(TinyNode* parent);
+        void getModelMatrix(kmMat4& matrix);
     protected:
         kmVec3 mPosition;
         kmVec3 mDerivedPosition;

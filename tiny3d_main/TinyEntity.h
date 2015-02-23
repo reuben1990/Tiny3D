@@ -21,6 +21,7 @@ namespace Tiny
     class TinySubEntity;
     class TinyMesh;
     class TinyMaterial;
+    class TinyNode;
     
     class TinyEntity : public TinyMovableObject
     {
@@ -34,6 +35,7 @@ namespace Tiny
         void setRenderPriority(uint8 priority);
         void setMaterial(TinyMaterial* material);
         void buildSubEntityList(TinyMesh* mesh, SubEntityList* list);
+        void getModelMatrix(kmMat4& mat);
     protected:
         SubEntityList mSubEntitys;
         uint8 mRenderQueueGroupID;

@@ -15,14 +15,17 @@
 
 namespace Tiny
 {
+    class TinyEntity;
     class TinySubEntity : public TinyRenderable
     {
     public:
-        TinySubEntity(TinySubMesh* subMesh);
+        TinySubEntity(TinyEntity* parent, TinySubMesh* subMesh);
         virtual ~TinySubEntity();
         virtual void getRenderOperation(TinyRenderOperation* ro);
+        virtual void getModelMatrix(kmMat4& mat);
     protected:
         TinySubMesh* mSubMesh;
+        TinyEntity* mParentEntity;
     };
 }
 

@@ -20,6 +20,14 @@ namespace Tiny
         void setViewMatrix(kmMat4& mat);
         void setModelMatrix(kmMat4& mat);
         void setProjectionMatrix(kmMat4& mat);
+        
+        const kmMat4& getViewMatrix();
+        const kmMat4& getModelMatrix();
+        const kmMat4& getProjectionMatrix();
+    protected:
+        kmMat4 mProjMatrix;
+        kmMat4 mViewMatrix;
+        kmMat4 mModelMatrix;
     };
 }
 

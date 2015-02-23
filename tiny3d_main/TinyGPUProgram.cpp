@@ -103,6 +103,11 @@ namespace Tiny
         mParams->setParameter(value);
     }
     
+    TinyGPUProgramParameters* TinyGPUProgram::getGPUProgramParameters()
+    {
+        return mParams;
+    }
+    
     GLuint TinyGPUProgram::getHandler()
     {
         return mHandler;
@@ -125,7 +130,14 @@ namespace Tiny
     
     void TinyGPUProgramParameters::updateAutoParams(TinyAutoParamDataSource* autoPram)
     {
-        //TODO
+        const kmMat4& projMatrix = autoPram->getProjectionMatrix();
+        setParameter(TinyGPUProgramParameter("ProjMatrix", GP_MATRIX_4X4, &projMatrix));
+        
+        const kmMat4& viewMatrix = autoPram->getViewMatrix();
+        setParameter(TinyGPUProgramParameter("viewMatrix", GP_MATRIX_4X4, &viewMatrix));
+        
+        const kmMat4& modelMatrix = autoPram->getModelMatrix();
+        setParameter(TinyGPUProgramParameter("modelMatrix", GP_MATRIX_4X4, &modelMatrix));
     }
     
     void TinyGPUProgramParameters::bindParametersToProgram(GLuint program)
@@ -216,12 +228,12 @@ namespace Tiny
     
     TinyGPUProgramParameter::TinyGPUProgramParameter()
     {
-        TINYLOG("DAMN");
+        
     }
     
     TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name,
                                                      TinyGPUProgramParameterType type,
-                                                     void* data)
+                                                     const void* data)
     {
         mName = type;
         mType = GP_INT1;

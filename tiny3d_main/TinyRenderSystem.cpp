@@ -66,9 +66,19 @@ namespace Tiny
         }
     }
     
+    void TinyRenderSystem::setProjectionMatrix(kmMat4& matrix)
+    {
+        mProjMatrix = matrix;
+    }
+    
     void TinyRenderSystem::setViewMatrix(kmMat4& matrix)
     {
         mViewMatrix = matrix;
+    }
+    
+    void TinyRenderSystem::setModelMatrix(kmMat4& matrix)
+    {
+        mModelMatrix = matrix;
     }
     
     void TinyRenderSystem::updateAllRenderTargets()

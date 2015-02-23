@@ -15,6 +15,7 @@
 #include "TinyRenderTarget.h"
 #include "TinySceneNode.h"
 #include "TinyRenderQueue.h"
+#include "TinyAutoParamDataSource.h"
 
 namespace Tiny
 {
@@ -32,7 +33,9 @@ namespace Tiny
         void renderObjects(TinyRenderableCollection* collection);
         void renderSingleObject(TinyRenderable* renderable);
         void setViewPort(TinyViewPort *vp);
+        void setProjectionMatrix(kmMat4& matrix);
         void setViewMatrix(kmMat4& matrix);
+        void setModelMatrix(kmMat4& matrix);
         TinySceneNode* getRootSceneNode();
         TinyRenderQueue* getRenderQueue();
         void clearBg();
@@ -42,6 +45,7 @@ namespace Tiny
         TinySceneNode* mSceneRoot;
         TinyRenderSystem* mDestRenderSystem;
         TinyRenderQueue* mRenderQueue;
+        TinyAutoParamDataSource mAutoParamDataSource;
     };
 }
 

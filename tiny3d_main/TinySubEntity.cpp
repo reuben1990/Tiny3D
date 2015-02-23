@@ -7,12 +7,14 @@
 //
 
 #include "TinySubEntity.h"
+#include "TinyEntity.h"
 
 namespace Tiny
 {
-    TinySubEntity::TinySubEntity(TinySubMesh* subMesh)
+    TinySubEntity::TinySubEntity(TinyEntity* parent, TinySubMesh* subMesh)
     {
         mSubMesh = subMesh;
+        mParentEntity = parent;
     }
     
     TinySubEntity::~TinySubEntity()
@@ -28,4 +30,11 @@ namespace Tiny
         TinyGPUProgram* program = ro->mMaterial->getProgram();
         ro->mProgram = program;
     }
+    
+    void TinySubEntity::getModelMatrix(kmMat4& mat)
+    {
+        return mParentEntity->getModelMatrix(mat);
+    }
 }
+
+

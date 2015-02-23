@@ -13,6 +13,7 @@
 #include "TinySubEntity.h"
 #include "TinyMesh.h"
 #include "TinyMemoryAlloc.h"
+#include "TinyNode.h"
 
 namespace Tiny
 {
@@ -44,7 +45,7 @@ namespace Tiny
         while (iter.hasMoreElements())
         {
             TinySubMesh* subMesh = iter.getNext();
-            mSubEntitys.push_back(TINY_NEW TinySubEntity(subMesh));
+            mSubEntitys.push_back(TINY_NEW TinySubEntity(this, subMesh));
         }
         
     }
@@ -76,6 +77,14 @@ namespace Tiny
         {
             TinySubEntity* subEnt = *iter;
             subEnt->setMaterial(mMaterial);
+        }
+    }
+    
+    void TinyEntity::getModelMatrix(kmMat4& mat)
+    {
+        if (mParentNode)
+        {
+            mParentNode->getModelMatrix(mat);
         }
     }
 }

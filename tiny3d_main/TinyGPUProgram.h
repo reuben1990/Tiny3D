@@ -40,7 +40,7 @@ namespace Tiny
     public:
         TinyGPUProgramParameter(std::string name,
                                 TinyGPUProgramParameterType type,
-                                void* data);
+                                const void* data);
         TinyGPUProgramParameter();
         virtual ~TinyGPUProgramParameter();
         uint32 getDataSizeByType(TinyGPUProgramParameterType type);
@@ -72,6 +72,7 @@ namespace Tiny
         void load();
         void useProgram();
         void setParameter(const TinyGPUProgramParameter& value);
+        TinyGPUProgramParameters* getGPUProgramParameters();
         GLuint getHandler();
     protected:
         TinyGPUProgramParameters* mParams;
