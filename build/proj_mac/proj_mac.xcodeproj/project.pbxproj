@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2307881A9A567C008FC97D /* OceanApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B2307861A9A567C008FC97D /* OceanApplication.cpp */; };
+		1B23078B1A9AEF70008FC97D /* TinyAutoParamDataSource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B2307891A9AEF70008FC97D /* TinyAutoParamDataSource.cpp */; };
 		1B4F26121A7FEAD200DABC42 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F260A1A7FEAD200DABC42 /* Contents.json */; };
 		1B4F26131A7FEAD200DABC42 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F260B1A7FEAD200DABC42 /* Info.plist */; };
 		1B4F26151A7FEAD200DABC42 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F260D1A7FEAD200DABC42 /* MainMenu.xib */; };
@@ -103,6 +105,10 @@
 		1B0760C21A7F66E4007103F3 /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec3.h; sourceTree = "<group>"; };
 		1B0760C31A7F66E4007103F3 /* vec4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vec4.c; sourceTree = "<group>"; };
 		1B0760C41A7F66E4007103F3 /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec4.h; sourceTree = "<group>"; };
+		1B2307861A9A567C008FC97D /* OceanApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OceanApplication.cpp; sourceTree = "<group>"; };
+		1B2307871A9A567C008FC97D /* OceanApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OceanApplication.h; sourceTree = "<group>"; };
+		1B2307891A9AEF70008FC97D /* TinyAutoParamDataSource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TinyAutoParamDataSource.cpp; sourceTree = "<group>"; };
+		1B23078A1A9AEF70008FC97D /* TinyAutoParamDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TinyAutoParamDataSource.h; sourceTree = "<group>"; };
 		1B4F26081A7FEAD200DABC42 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1B4F26091A7FEAD200DABC42 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = SOURCE_ROOT; };
 		1B4F260A1A7FEAD200DABC42 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = SOURCE_ROOT; };
@@ -265,6 +271,8 @@
 				1B9FE4321A965D4700496A2A /* TinyCamera.cpp */,
 				1B9FE4331A965D4700496A2A /* TinyCamera.h */,
 				1B9FE4341A965D4700496A2A /* TinyCommon.h */,
+				1B2307891A9AEF70008FC97D /* TinyAutoParamDataSource.cpp */,
+				1B23078A1A9AEF70008FC97D /* TinyAutoParamDataSource.h */,
 				1B9FE4351A965D4700496A2A /* TinyDelegate.cpp */,
 				1B9FE4361A965D4700496A2A /* TinyDelegate.h */,
 				1B9FE4371A965D4700496A2A /* TinyEntity.cpp */,
@@ -417,6 +425,8 @@
 				1B9FE4B01A98D3FD00496A2A /* first_demo.material */,
 				1B9FE4B11A98D3FD00496A2A /* first_demo.vs */,
 				1B9FE3731A96518700496A2A /* OceanDelegate.cpp */,
+				1B2307861A9A567C008FC97D /* OceanApplication.cpp */,
+				1B2307871A9A567C008FC97D /* OceanApplication.h */,
 			);
 			path = sample_ocean;
 			sourceTree = "<group>";
@@ -505,6 +515,7 @@
 				1B9FE49A1A965D4700496A2A /* TinyMovableObjectFactory.cpp in Sources */,
 				1B9FE4971A965D4700496A2A /* TinyMeshManager.cpp in Sources */,
 				1B9FE48E1A965D4700496A2A /* TinyImage.cpp in Sources */,
+				1B23078B1A9AEF70008FC97D /* TinyAutoParamDataSource.cpp in Sources */,
 				1B9FE4231A965B8A00496A2A /* mat3.c in Sources */,
 				1B9FE4991A965D4700496A2A /* TinyMovableObject.cpp in Sources */,
 				1B9FE4981A965D4700496A2A /* TinyMouse.cpp in Sources */,
@@ -517,6 +528,7 @@
 				1B9FE4251A965B8A00496A2A /* plane.c in Sources */,
 				1B9FE48A1A965D4700496A2A /* TinyEntityFactory.cpp in Sources */,
 				1B9FE48F1A965D4700496A2A /* TinyInputManager.cpp in Sources */,
+				1B2307881A9A567C008FC97D /* OceanApplication.cpp in Sources */,
 				1B9FE4261A965B8A00496A2A /* quaternion.c in Sources */,
 				1B9FE4AC1A965D4700496A2A /* TinyTextureManager.cpp in Sources */,
 				1B9FE4951A965D4700496A2A /* TinyMath.cpp in Sources */,

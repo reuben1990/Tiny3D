@@ -313,22 +313,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../sample/sample_ocean/OceanDelegate.cpp"
-            timestampString = "446211487.682168"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "TinyDelegate::initialize()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyEntity.cpp"
             timestampString = "446196691.80812"
             startingColumnNumber = "9223372036854775807"
@@ -352,22 +336,6 @@
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../sample/sample_ocean/OceanDelegate.cpp"
-            timestampString = "446220493.523037"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "TinyDelegate::initialize()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -717,22 +685,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../sample/sample_ocean/OceanDelegate.cpp"
-            timestampString = "446223704.788052"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "TinyDelegate::initialize()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TinyResourceManager_mac.mm"
             timestampString = "446223732.841142"
             startingColumnNumber = "9223372036854775807"
@@ -1028,22 +980,6 @@
             startingLineNumber = "101"
             endingLineNumber = "101"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../sample/sample_ocean/OceanDelegate.cpp"
-            timestampString = "446283910.803242"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "TinyDelegate::initialize()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

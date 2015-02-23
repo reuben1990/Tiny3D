@@ -15,6 +15,7 @@
 #include <map>
 #include "TinyObject.h"
 #include "TinyPlatform.h"
+#include "TinyAutoParamDataSource.h"
 
 namespace Tiny
 {
@@ -38,6 +39,9 @@ namespace Tiny
     class TinyGPUProgramParameter : public TinyObject
     {
     public:
+        TinyGPUProgramParameter(std::string mName,
+                                TinyGPUProgramParameterType mType,
+                                void* mBindData);
         void calcLocation(GLuint program);
         std::string mName;
         TinyGPUProgramParameterType mType;
@@ -52,6 +56,7 @@ namespace Tiny
         ~TinyGPUProgramParameters();
         void setParameter(const TinyGPUProgramParameter& value);
         void bindParametersToProgram(GLuint program);
+        void updateAutoParams(TinyAutoParamDataSource* autoPram);
     protected:
         std::map<std::string, TinyGPUProgramParameter> mParams;
     };

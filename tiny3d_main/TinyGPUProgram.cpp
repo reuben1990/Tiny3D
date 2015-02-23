@@ -123,6 +123,11 @@ namespace Tiny
         mParams[value.mName] = value;
     }
     
+    void TinyGPUProgramParameters::updateAutoParams(TinyAutoParamDataSource* autoPram)
+    {
+        
+    }
+    
     void TinyGPUProgramParameters::bindParametersToProgram(GLuint program)
     {
         auto iter = mParams.begin();
@@ -212,6 +217,16 @@ namespace Tiny
                     break;
             }
         }
+    }
+    
+    TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name,
+                            TinyGPUProgramParameterType type,
+                            void* bindData)
+    {
+        mName = name;
+        mType = type;
+        mBindData = bindData;
+        mLocation = 0;
     }
     
     void TinyGPUProgramParameter::calcLocation(GLuint program)
