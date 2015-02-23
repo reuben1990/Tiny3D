@@ -73,8 +73,8 @@ void OceanApplication::initialize()
     
     //Create a gpu program, set diffuse texture to our program as parameter.
     TinyGPUProgram* program = TinyGPUProgramManager::getSingleton()->load("first_demo.vs", "first_demo.fs");
-    TinyGPUProgramParameter param("MVP", GP_FLOAT4, nullptr);
-    program->setParameter(param);
+    //TinyGPUProgramParameter param("MVP", GP_FLOAT4, NULL);
+    //program->setParameter(param);
     
     //Create material with gpu program. TODO assemble program form script.
     TinyMaterial* material = TinyMaterialManager::getSingleton()->load("first_demo.material");

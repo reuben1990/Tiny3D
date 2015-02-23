@@ -7,3 +7,8 @@
 //
 
 #include "TinyAutoParamDataSource.h"
+
+namespace Tiny
+{
+    //TODO
+}

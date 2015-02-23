@@ -29,7 +29,6 @@ namespace Tiny
         GP_INT2,
         GP_INT3,
         GP_INT4,
-        GP_MATRIX_2X2,
         GP_MATRIX_3X3,
         GP_MATRIX_4X4,
         GP_SAMPLER,
@@ -39,14 +38,18 @@ namespace Tiny
     class TinyGPUProgramParameter : public TinyObject
     {
     public:
-        TinyGPUProgramParameter(std::string mName,
-                                TinyGPUProgramParameterType mType,
-                                void* mBindData);
+        TinyGPUProgramParameter(std::string name,
+                                TinyGPUProgramParameterType type,
+                                void* data);
+        TinyGPUProgramParameter();
+        virtual ~TinyGPUProgramParameter();
+        uint32 getDataSizeByType(TinyGPUProgramParameterType type);
         void calcLocation(GLuint program);
-        std::string mName;
+        
         TinyGPUProgramParameterType mType;
-        GLint mLocation;
+        std::string mName;
         void* mBindData;
+        GLint mLocation;
     };
     
     class TinyGPUProgramParameters : public TinyObject

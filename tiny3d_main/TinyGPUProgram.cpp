@@ -125,7 +125,7 @@ namespace Tiny
     
     void TinyGPUProgramParameters::updateAutoParams(TinyAutoParamDataSource* autoPram)
     {
-        
+        //TODO
     }
     
     void TinyGPUProgramParameters::bindParametersToProgram(GLuint program)
@@ -178,11 +178,6 @@ namespace Tiny
                     glUniform4iv(location, 1, (GLint*)iter->second.mBindData);
                     break;
                 }
-                case GP_MATRIX_2X2:
-                {
-                    glUniformMatrix2fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
-                    break;
-                }
                 case GP_MATRIX_3X3:
                 {
                     glUniformMatrix3fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
@@ -219,14 +214,75 @@ namespace Tiny
         }
     }
     
-    TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name,
-                            TinyGPUProgramParameterType type,
-                            void* bindData)
+    TinyGPUProgramParameter::TinyGPUProgramParameter()
     {
-        mName = name;
-        mType = type;
-        mBindData = bindData;
+        TINYLOG("DAMN");
+    }
+    
+    TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name,
+                                                     TinyGPUProgramParameterType type,
+                                                     void* data)
+    {
+        mName = type;
+        mType = GP_INT1;
+        if (data)
+        {
+            uint32 size = getDataSizeByType(type);
+            mBindData = malloc(size);
+            memcpy(mBindData, data, size);
+        }
         mLocation = 0;
+    }
+    
+    TinyGPUProgramParameter::~TinyGPUProgramParameter()
+    {
+        free(mBindData);
+    }
+    
+    uint32 TinyGPUProgramParameter::getDataSizeByType(TinyGPUProgramParameterType type)
+    {
+        uint32 ret = 0;
+        switch (type) {
+            case GP_FLOAT1:
+                ret = sizeof(float);
+                break;
+            case GP_FLOAT2:
+                ret = sizeof(float) * 2;
+                break;
+            case GP_FLOAT3:
+                ret = sizeof(float) * 3;
+                break;
+            case GP_FLOAT4:
+                ret = sizeof(float) * 4;
+                break;
+            case GP_INT1:
+                ret = sizeof(int32) * 1;
+                break;
+            case GP_INT2:
+                ret = sizeof(int32) * 2;
+                break;
+            case GP_INT3:
+                ret = sizeof(int32) * 3;
+                break;
+            case GP_INT4:
+                ret = sizeof(int32) * 4;
+                break;
+            case GP_MATRIX_3X3:
+                ret = sizeof(float) * 9;
+                break;
+            case GP_MATRIX_4X4:
+                ret = sizeof(float) * 16;
+                break;
+            case GP_SAMPLER:
+                ret = sizeof(int32);
+                break;
+            case GP_SAMPLERCUBE:
+                ret = sizeof(int32);
+                break;
+            default:
+                break;
+        }
+        return ret;
     }
     
     void TinyGPUProgramParameter::calcLocation(GLuint program)

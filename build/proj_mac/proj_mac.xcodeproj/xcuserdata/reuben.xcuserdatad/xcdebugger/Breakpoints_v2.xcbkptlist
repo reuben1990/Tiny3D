@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446226047.977798"
+            timestampString = "446401929.85236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "TinyGPUProgramParameters::bindParametersToProgram(GLuint program)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1316,6 +1316,22 @@
             startingLineNumber = "131"
             endingLineNumber = "131"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
+            timestampString = "446401920.750828"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
