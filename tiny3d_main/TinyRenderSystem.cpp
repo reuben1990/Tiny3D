@@ -38,15 +38,12 @@ namespace Tiny
             setRenderTarget(renderTarget);
             kmVec2 vpPosition = vp->geViewPortLeftBottom();
             kmVec2 vpSize = vp->getViewPortSize();
-            uint32 width = renderTarget->getSize().x;
-            uint32 height = renderTarget->getSize().y;
-            uint32 actualX = vpPosition.x * width;
-            uint32 actualY = vpPosition.y * height;
-            uint32 actualWidth = vpSize.x * width;
-            uint32 actualHeight = vpSize.y * height;
+            uint32 actualX = vpPosition.x;
+            uint32 actualY = vpPosition.y;
+            uint32 actualWidth = vpSize.x;
+            uint32 actualHeight = vpSize.y;
             glViewport(actualX, actualY, actualWidth, actualHeight);
             glScissor(actualX, actualY, actualWidth, actualHeight);
-            //TODO
             TINYLOG("glViewport (%d, %d) (%d, %d)", actualX, actualY, actualWidth, actualHeight);
         }
     }

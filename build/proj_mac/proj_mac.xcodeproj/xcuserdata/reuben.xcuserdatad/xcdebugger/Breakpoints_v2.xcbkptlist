@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446309337.749767"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "TinyRenderSystem::setRenderTarget(TinyRenderTarget *target)"
             landmarkType = "5">
          </BreakpointContent>
@@ -146,11 +146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83">
+            startingLineNumber = "80"
+            endingLineNumber = "80">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "TinyRenderSystem::updateAllRenderTargets()"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "TinyRenderSystem::detachRenderTarget(TinyRenderTarget *target)"
             landmarkType = "5">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "TinyRenderSystem::attachRenderTarget(TinyRenderTarget *target)"
             landmarkType = "5">
          </BreakpointContent>
@@ -878,11 +878,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
             landmarkType = "5">
          </BreakpointContent>
@@ -974,11 +974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1086,11 +1086,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446309337.749767"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "TinyRenderSystem::setRenderTarget(TinyRenderTarget *target)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1102,11 +1102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446309337.749767"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "TinyRenderSystem::setRenderTarget(TinyRenderTarget *target)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1230,11 +1230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446309337.749767"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "TinyRenderSystem::setViewPort(TinyViewPort *vp)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1246,39 +1246,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -1294,11 +1262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1310,11 +1278,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446410984.305727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
+            timestampString = "446410984.305727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyRenderSystem.cpp"
+            timestampString = "446410984.305727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "TinyRenderSystem::render(TinyRenderOperation* ro)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1348,6 +1348,134 @@
             startingLineNumber = "127"
             endingLineNumber = "127"
             landmarkName = "TinySceneManager::renderSingleObject(TinyRenderable* renderable)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
+            timestampString = "446408091.701524"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "TinyGPUProgramParameters::bindParametersToProgram(GLuint program)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinySceneManager.cpp"
+            timestampString = "446408154.735066"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "TinySceneManager::renderSingleObject(TinyRenderable* renderable)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
+            timestampString = "446408197.520091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "TinyGPUProgramParameters::setParameter(const TinyGPUProgramParameter&amp; value)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
+            timestampString = "446408276.933802"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "TinyGPUProgramParameters::updateAutoParams(TinyAutoParamDataSource* autoPram)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyCamera.cpp"
+            timestampString = "446408416.413043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "TinyCamera::getProjectionMatrix(kmMat4&amp; ret)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyCamera.cpp"
+            timestampString = "446408471.447052"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "TinyCamera::notifyViewPort(TinyViewPort *vp)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyCamera.cpp"
+            timestampString = "446408473.249529"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "TinyCamera::notifyViewPort(TinyViewPort *vp)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
+            timestampString = "446409070.435373"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "TinyGPUProgramParameters::updateAutoParams(TinyAutoParamDataSource* autoPram)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

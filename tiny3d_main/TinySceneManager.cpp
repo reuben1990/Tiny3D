@@ -36,7 +36,7 @@ namespace Tiny
     {
         kmMat4 projMatrix;
         cam->getProjectionMatrix(projMatrix);
-        setViewMatrix(projMatrix);
+        setProjectionMatrix(projMatrix);
         
         kmMat4 viewMatrix;
         cam->getViewMatrix(viewMatrix);

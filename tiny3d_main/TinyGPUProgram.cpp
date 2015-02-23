@@ -131,7 +131,7 @@ namespace Tiny
     void TinyGPUProgramParameters::updateAutoParams(TinyAutoParamDataSource* autoPram)
     {
         const kmMat4& projMatrix = autoPram->getProjectionMatrix();
-        setParameter(TinyGPUProgramParameter("ProjMatrix", GP_MATRIX_4X4, &projMatrix));
+        setParameter(TinyGPUProgramParameter("projMatrix", GP_MATRIX_4X4, &projMatrix));
         
         const kmMat4& viewMatrix = autoPram->getViewMatrix();
         setParameter(TinyGPUProgramParameter("viewMatrix", GP_MATRIX_4X4, &viewMatrix));

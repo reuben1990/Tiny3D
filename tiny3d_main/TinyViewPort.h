@@ -29,7 +29,9 @@ namespace Tiny
         kmVec2 getViewPortSize();
     protected:
         kmVec2 mLeftBottomPosition;
+        kmVec2 mRealLeftBottomPosition;
         kmVec2 mSize;
+        kmVec2 mRealSize;
         TinyCamera *mCamera;
         int mZorder;
         TinyRenderTarget* mTarget;

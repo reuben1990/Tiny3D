@@ -17,10 +17,17 @@ namespace Tiny
         , mTarget(target)
         , mZorder(zOrder)
     {
-        mLeftBottomPosition.x = left;
-        mLeftBottomPosition.y = bottom;
+        kmVec2 targetSize = target->getSize();
+
         mSize.x = width;
         mSize.y = height;
+        mRealSize.x = targetSize.x * width;
+        mRealSize.y = targetSize.y * height;
+        
+        mLeftBottomPosition.x = left;
+        mLeftBottomPosition.y = bottom;
+        mRealLeftBottomPosition.x = left * targetSize.x;
+        mRealLeftBottomPosition.y = bottom * targetSize.y;
         
         updateDimensions();
         cam->notifyViewPort(this);
@@ -51,11 +58,11 @@ namespace Tiny
     
     kmVec2 TinyViewPort::geViewPortLeftBottom()
     {
-        return mLeftBottomPosition;
+        return mRealLeftBottomPosition;
     }
     
     kmVec2 TinyViewPort::getViewPortSize()
     {
-        return mSize;
+        return mRealSize;
     }
 }
