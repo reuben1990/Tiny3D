@@ -28,10 +28,11 @@ namespace Tiny
             NSData *fileData = [[NSData alloc] initWithContentsOfFile:fullPath];
             uint32 dataLength = (uint32)[fileData length];
             length = dataLength;
-            *data = (uint8*)malloc(dataLength);
+            *data = (uint8*)malloc(dataLength + 2);
             uint8* bytes = (uint8*)[fileData bytes];
             memcpy(*data, bytes, dataLength);
-            //*data[dataLength] = '\0';
+            const void* endChar = "\0";
+            memcpy(*data + dataLength, endChar, 1);
         }
     }
 }

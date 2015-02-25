@@ -33,6 +33,8 @@ namespace Tiny
         
         std::string vStrData = std::string((char*)vData);
         std::string fStrData = std::string((char*)fData);
+        //TINYLOG("willrm %s", vData);
+        //TINYLOG("willrm %s", fData);
         auto program = TINY_NEW TinyGPUProgram(vStrData, fStrData);
         program->load();
         return program;
