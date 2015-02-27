@@ -29,15 +29,22 @@ namespace Tiny
     {
         //TODO
         float scaler = 1;
-        kmVec3 vdata[] =
+        kmVec3 vData[] =
         {
-            {0, scaler, -scaler},
-            {0, 0, -scaler},
-            {scaler, 0, -scaler}
+            {0, scaler, 0},
+            {0, 0, 0},
+            {scaler, 0, 0}
         };
-        GLushort idata[] = {0, 1, 2};
-        mVertexObject->loadVertexElement((uint8*)vdata, sizeof(vdata), 3, VERTEX_LOCATION_POSITION);
-        mVertexObject->loadIndexElement((uint8*)idata, sizeof(idata), 3);
+        kmVec2 uvData[] =
+        {
+            {0, 0},
+            {0, 1},
+            {1, 1}
+        };
+        GLushort iData[] = {0, 1, 2};
+        mVertexObject->loadVertexElement((uint8*)vData, sizeof(vData), 3, VERTEX_LOCATION_POSITION);
+        mVertexObject->loadVertexElement((uint8*)uvData, sizeof(uvData), 2, VERTEX_LOCATION_UV);
+        mVertexObject->loadIndexElement((uint8*)iData, sizeof(iData), 3);
         return 0;
     }
 }

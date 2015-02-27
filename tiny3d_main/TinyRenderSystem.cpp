@@ -127,8 +127,8 @@ namespace Tiny
                 TINYLOG("glBindBuffer vertex %d", hardwareBuffer->getHandler());
                 glEnableVertexAttribArray(location);
                 TINYLOG("glEnableVertexAttribArray %d", location);
-                glVertexAttribPointer(location, element->mVecSizePerElement, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
-                TINYLOG("glVertexAttribPointer %d, %d", location, element->mVecSizePerElement);
+                glVertexAttribPointer(location, element->mVectorSizePerElement, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+                TINYLOG("glVertexAttribPointer %d, %d", location, element->mVectorSizePerElement);
             }
             
             //bind index

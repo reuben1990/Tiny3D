@@ -52,7 +52,7 @@ void OceanApplication::initialize()
     std::string entityFactoryNameStr("Entity");
     TinyEntityFactory* factory = dynamic_cast<TinyEntityFactory*>(root->getMovableObjectFactory(entityFactoryNameStr));
     TinyNameValuePairList params;
-    const int8* meshName = "first_mesh.obj";
+    const int8* meshName = "assets/first_mesh.obj";
     params["mesh"] = meshName;
     std::string entityNameStr("first_entity");
     TinyEntity* entity = dynamic_cast<TinyEntity*>(factory->createInstance(entityNameStr, params));
@@ -65,16 +65,15 @@ void OceanApplication::initialize()
     cameraNode->attachObject(mCamera);
     
     //Create a diffuse texture.
-    //std::string textureName("first_demo.png");
-    //TinyTexture* texture = TinyTextureManager::getSingleton()->load(textureName);
+    std::string textureName("assets/first_demo.png");
+    TinyTexture* texture = TinyTextureManager::getSingleton()->load(textureName);
     
     //Create a gpu program, set diffuse texture to our program as parameter.
-    TinyGPUProgram* program = TinyGPUProgramManager::getSingleton()->load("first_demo.vs", "first_demo.fs");
-    //TinyGPUProgramParameter param("MVP", GP_FLOAT4, NULL);
-    //program->setParameter(param);
+    TinyGPUProgram* program = TinyGPUProgramManager::getSingleton()->load("assets/first_demo.vs", "assets/first_demo.fs");
+    program->setParameter(TinyGPUProgramParameter("diffuse_sampler", GP_SAMPLER, &texture->getHandler()));
     
-    //Create material with gpu program. TODO assemble program form script.
-    TinyMaterial* material = TinyMaterialManager::getSingleton()->load("first_demo.material");
+    //Create material with gpu program.
+    TinyMaterial* material = TinyMaterialManager::getSingleton()->load("assets/first_demo.material");
     material->setProgram(program);
     
     //Set the material to entity.

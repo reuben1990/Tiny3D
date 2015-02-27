@@ -125,13 +125,8 @@ namespace Tiny
         }
     }
     
-    GLuint TinyTexture::getHandler()
+    const GLuint& TinyTexture::getHandler()
     {
         return mHandler;
-    }
-    
-    GLuint* TinyTexture::getHandlerPtr()
-    {
-        return &mHandler;
     }
 }

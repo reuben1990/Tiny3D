@@ -26,8 +26,7 @@ namespace Tiny
         void load(std::vector<uint8*>& datas, std::vector<uint32>& lengths);
         void initWithImage(TinyImage* image);
         void initWithImages(std::vector<TinyImage*>& images);
-        GLuint getHandler();
-        GLuint* getHandlerPtr();
+        const GLuint& getHandler();
     protected:
         GLuint mHandler;
     };
