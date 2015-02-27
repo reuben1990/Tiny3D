@@ -44,6 +44,10 @@ namespace Tiny
         TinyNode* getParent();
         void setParent(TinyNode* parent);
         void getModelMatrix(kmMat4& matrix);
+        void roll(float radian);
+        void pitch(float radian);
+        void yaw(float radian);
+        void rotate(kmVec3& axis, float radian);
     protected:
         kmVec3 mPosition;
         kmVec3 mDerivedPosition;

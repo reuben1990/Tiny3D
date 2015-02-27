@@ -123,12 +123,17 @@ namespace Tiny
         renderable->getModelMatrix(modelMatrix);
         setModelMatrix(modelMatrix);
         
-        //update parameters
+        updateGpuProgramParameters(ro);
+        
+        mDestRenderSystem->render(&ro);
+    }
+    
+    void TinySceneManager::updateGpuProgramParameters(TinyRenderOperation& ro)
+    {
+        //update auto parameters
         TinyGPUProgram* program = ro.mProgram;
         TinyGPUProgramParameters* params = program->getGPUProgramParameters();
         params->updateAutoParams(&mAutoParamDataSource);
-        
-        mDestRenderSystem->render(&ro);
     }
     
     void TinySceneManager::setProjectionMatrix(kmMat4& matrix)

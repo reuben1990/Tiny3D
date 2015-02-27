@@ -85,7 +85,7 @@
 
 - (void)keyDown:(NSEvent *)theEvent
 {
-    //[super keyDown:theEvent];
+    [super keyDown:theEvent];
     NSString *characters = [theEvent characters];
     std::string keys;
     for (NSUInteger i = 0; i < [characters length]; ++i)
@@ -100,7 +100,7 @@
 
 - (void)keyUp:(NSEvent *)theEvent
 {
-    //[super keyUp:theEvent];
+    [super keyUp:theEvent];
     NSString *characters = [theEvent characters];
     std::string keys;
     for (NSUInteger i = 0; i < [characters length]; ++i)
@@ -115,7 +115,7 @@
 
 - (void)mouseMoved:(NSEvent *)theEvent
 {
-    //[super mouseMoved:theEvent];
+    [super mouseMoved:theEvent];
     
     Tiny::TinyMouseEvent event;
     event.state.deltaX = [theEvent deltaX];
@@ -131,7 +131,7 @@
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    //[super mouseDown:theEvent];
+    [super mouseDown:theEvent];
     NSPoint location = [theEvent locationInWindow];
     Tiny::TinyMouseEvent event;
     kmVec2 vec2 = Tiny::kmVec2Make(location.x, location.y);
@@ -142,7 +142,7 @@
 
 - (void)mouseUp:(NSEvent *)theEvent
 {
-    //[super mouseUp:theEvent];
+    [super mouseUp:theEvent];
     NSPoint location = [theEvent locationInWindow];
     Tiny::TinyMouseEvent event;
     kmVec2 vec2 = Tiny::kmVec2Make(location.x, location.y);
@@ -169,11 +169,18 @@
 
 - (void)mouseDragged:(NSEvent *)theEvent
 {
-    //[super mouseDragged:theEvent];
-//    CGFloat x = [theEvent deltaX];
-//    CGFloat y = [theEvent deltaY];
-//    [[TinyInputManager sharedInputController] mouseLeftDragWithX:x andY:y];
-    //NSLog(@"mouseDragged: x:%f y:%f", x, y);
+    [super mouseDragged:theEvent];
+    
+    Tiny::TinyMouseEvent event;
+    event.state.deltaX = [theEvent deltaX];
+    event.state.deltaY = [theEvent deltaY];
+    
+    NSPoint location = [theEvent locationInWindow];;
+    kmVec2 vec2 = Tiny::kmVec2Make(location.x, location.y);
+    
+    mMouse->setLocation(&vec2);
+    mMouse->mouseDraged(&event);
+    //NSLog(@"mouseDragd: x:%f y:%f", x, y);
 }
 
 - (void)rightMouseDragged:(NSEvent *)theEvent

@@ -44,6 +44,7 @@ namespace Tiny
         TinyMouseListener();
         virtual ~TinyMouseListener();
         virtual void mouseMoved(TinyMouseEvent* event) = 0;
+        virtual void mouseDraged(TinyMouseEvent* event) = 0;
         virtual void mousePressed(TinyMouseEvent* event, TinyMouseButtonID id) = 0;
         virtual void mouseReleased(TinyMouseEvent* event, TinyMouseButtonID id) = 0;
         void markForRemove(bool isRemove);
@@ -61,6 +62,7 @@ namespace Tiny
         void addEventCallBack(TinyMouseListener* listener);
         void removeEventCallBack(TinyMouseListener* listener);
         void mouseMoved(TinyMouseEvent* event);
+        void mouseDraged(TinyMouseEvent* event);
         void mousePressed(TinyMouseEvent* event, TinyMouseButtonID id);
         void mouseReleased(TinyMouseEvent* event, TinyMouseButtonID id);
         void setLocation(kmVec2 *location);

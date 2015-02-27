@@ -9,10 +9,26 @@
 #ifndef __proj_mac__OceanApplication__
 #define __proj_mac__OceanApplication__
 
-class OceanApplication
+#include "TinyMouse.h"
+#include "TinyKeyboard.h"
+#include "TinyCamera.h"
+
+using namespace Tiny;
+
+class OceanApplication : public TinyKeyListener, public TinyMouseListener
 {
 public:
     void initialize();
+    virtual void keyPressed(TinyKeyEvent* event);
+    virtual void keyReleased(TinyKeyEvent* event);
+    virtual void mouseMoved(TinyMouseEvent* event);
+    virtual void mouseDraged(TinyMouseEvent* event);
+    virtual void mousePressed(TinyMouseEvent* event, TinyMouseButtonID id);
+    virtual void mouseReleased(TinyMouseEvent* event, TinyMouseButtonID id);
+protected:
+    TinyMouse* mMouse;
+    TinyKeyboard* mKeyBoard;
+    Tiny::TinyCamera* mCamera;
 };
 
 #endif /* defined(__proj_mac__OceanApplication__) */

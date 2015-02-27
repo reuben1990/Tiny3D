@@ -32,7 +32,8 @@ namespace Tiny
         GP_MATRIX_3X3,
         GP_MATRIX_4X4,
         GP_SAMPLER,
-        GP_SAMPLERCUBE
+        GP_SAMPLERCUBE,
+        GP_UNDEFINE
     };
     
     class TinyGPUProgramParameter : public TinyObject
@@ -43,6 +44,7 @@ namespace Tiny
                                 const void* data);
         TinyGPUProgramParameter();
         virtual ~TinyGPUProgramParameter();
+        TinyGPUProgramParameter& operator = (const TinyGPUProgramParameter& param);
         uint32 getDataSizeByType(TinyGPUProgramParameterType type);
         void calcLocation(GLuint program);
         

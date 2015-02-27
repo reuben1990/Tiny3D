@@ -46,4 +46,14 @@ namespace Tiny
         ret.w = w;
         return ret;
     }
+    
+    float degreeToRadian(float degree)
+    {
+        return degree * kTinyPI / 180.0f;
+    }
+    
+    float radianToDegree(float radian)
+    {
+        return radian * 180.0f / kTinyPI;
+    }
 }

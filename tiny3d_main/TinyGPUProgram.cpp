@@ -51,6 +51,7 @@ namespace Tiny
             glGetShaderInfoLog(vertexShader, infoLogLength, NULL, shaderInfoMessage);
             TINYLOG("vertex shder info: %s", shaderInfoMessage);
             free(shaderInfoMessage);
+            assert(false && "vertex shader error");
         }
         
         // Compile Fragment Shader
@@ -67,6 +68,7 @@ namespace Tiny
             glGetShaderInfoLog(fragmentShader, infoLogLength, NULL, shaderInfoMessage);
             TINYLOG("fragment shder info: %s", shaderInfoMessage);
             free(shaderInfoMessage);
+            assert(false && "fragment shader error");
         }
         
         // Link the program
@@ -83,6 +85,7 @@ namespace Tiny
             glGetProgramInfoLog(program, infoLogLength, NULL, programInfoMessage);
             TINYLOG("program info: %s", programInfoMessage);
             free(programInfoMessage);
+            assert(false && "shader link error");
         }
         
         glDeleteShader(vertexShader);
@@ -191,12 +194,16 @@ namespace Tiny
                 }
                 case GP_MATRIX_3X3:
                 {
-                    glUniformMatrix3fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
+                    glUniformMatrix3fv(location, 1, GL_TRUE, (GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_MATRIX_4X4:
                 {
-                    glUniformMatrix4fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
+                    //TODO
+                    #include "kazmath/kazmath.h"
+                    kmMat4* mat;
+                    mat = (kmMat4*)iter->second.mBindData;
+                    glUniformMatrix4fv(location, 1, GL_TRUE, (const GLfloat*)iter->second.mBindData);
                     break;
                 }
                 case GP_SAMPLER:
@@ -226,6 +233,9 @@ namespace Tiny
     }
     
     TinyGPUProgramParameter::TinyGPUProgramParameter()
+        : mBindData(nullptr)
+        , mType(GP_UNDEFINE)
+        , mLocation(0)
     {
         
     }
@@ -234,8 +244,8 @@ namespace Tiny
                                                      TinyGPUProgramParameterType type,
                                                      const void* data)
     {
-        mName = type;
-        mType = GP_INT1;
+        mName = name;
+        mType = type;
         if (data)
         {
             uint32 size = getDataSizeByType(type);
@@ -247,7 +257,21 @@ namespace Tiny
     
     TinyGPUProgramParameter::~TinyGPUProgramParameter()
     {
-        free(mBindData);
+        if (mBindData)
+        {
+            free(mBindData);
+        }
+    }
+    
+    TinyGPUProgramParameter& TinyGPUProgramParameter::operator = (const TinyGPUProgramParameter& param)
+    {
+        mType = param.mType;
+        mName = param.mName;
+        mLocation = param.mLocation;
+        uint32 length = getDataSizeByType(mType);
+        mBindData = malloc(length);
+        memcpy(mBindData, param.mBindData, length);
+        return *this;
     }
     
     uint32 TinyGPUProgramParameter::getDataSizeByType(TinyGPUProgramParameterType type)

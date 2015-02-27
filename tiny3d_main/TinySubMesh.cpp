@@ -28,11 +28,12 @@ namespace Tiny
     uint32 TinySubMesh::load(uint8* data, uint32 offset)
     {
         //TODO
+        float scaler = 1;
         kmVec3 vdata[] =
         {
-            {0, 1, -1},
-            {0, 0, -1},
-            {1, 0, -1}
+            {0, scaler, -scaler},
+            {0, 0, -scaler},
+            {scaler, 0, -scaler}
         };
         GLushort idata[] = {0, 1, 2};
         mVertexObject->loadVertexElement((uint8*)vdata, sizeof(vdata), 3, VERTEX_LOCATION_POSITION);

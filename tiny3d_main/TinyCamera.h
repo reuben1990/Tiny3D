@@ -31,6 +31,11 @@ namespace Tiny
         void getViewMatrix(kmMat4& ret);
         void getProjectionMatrix(kmMat4& ret);
         void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue);
+        void roll(float radian);
+        void pitch(float radian);
+        void yaw(float radian);
+        void rotate(kmVec3& axis, float radian);
+        const kmQuaternion& getOrientation();
     private:
         TinyViewPort *mLastViewPort;
         TinySceneManager *mSceneMgr;
@@ -39,6 +44,11 @@ namespace Tiny
         float mAspect;
         float mNear;
         float mFar;
+        kmVec3 mPosition;
+        kmQuaternion mOrientation;
+        kmVec3 mLocalUpDir;
+        kmVec3 mLocalFrontDir;
+        kmVec3 mLocalSideDir;
     };
 }
 

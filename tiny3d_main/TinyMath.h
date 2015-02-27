@@ -20,6 +20,8 @@ namespace Tiny
     kmVec3 kmVec3Make(float x, float y, float z);
     kmVec2 kmVec2Make(float x, float y);
     const float kTinyPI = 4 * atan(1);
+    float degreeToRadian(float degree);
+    float radianToDegree(float radian);
 }
 
 #endif /* defined(__proj_mac__TinyMath__) */

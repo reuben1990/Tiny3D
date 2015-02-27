@@ -20,6 +20,8 @@
 namespace Tiny
 {
     class TinyRenderSystem;
+    class TinyRenderOperation;
+    
     class TinySceneManager : public TinyObject
     {
     public:
@@ -32,6 +34,7 @@ namespace Tiny
         void renderQueueGroupObjects(TinyRenderQueueGroup* group);
         void renderObjects(TinyRenderableCollection* collection);
         void renderSingleObject(TinyRenderable* renderable);
+        void updateGpuProgramParameters(TinyRenderOperation& ro);
         void setViewPort(TinyViewPort *vp);
         void setProjectionMatrix(kmMat4& matrix);
         void setViewMatrix(kmMat4& matrix);

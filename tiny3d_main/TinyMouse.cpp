@@ -71,6 +71,15 @@ namespace Tiny
         }
     }
     
+    void TinyMouse::mouseDraged(TinyMouseEvent* event)
+    {
+        std::set<TinyMouseListener *>::iterator listenerIter;
+        for (listenerIter = mListeners.begin(); listenerIter != mListeners.end(); listenerIter ++)
+        {
+            (*listenerIter)->mouseDraged(event);
+        }
+    }
+    
     void TinyMouse::mousePressed(TinyMouseEvent* event, TinyMouseButtonID id)
     {
         std::set<TinyMouseListener *>::iterator listenerIter;

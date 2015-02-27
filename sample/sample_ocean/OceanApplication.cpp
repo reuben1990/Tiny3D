@@ -23,8 +23,6 @@
 #include "TinyInputManager.h"
 #include "OceanApplication.h"
 
-using namespace Tiny;
-
 void OceanApplication::initialize()
 {
 
@@ -43,7 +41,7 @@ void OceanApplication::initialize()
     TinySceneNode* rootNode = sceneMgr->getRootSceneNode();
     //Entity node.
     TinySceneNode* entityNode = rootNode->createChildSceneNode();
-    kmVec3 entityNodePosition = kmVec3Make(0, 0, -0.5);
+    kmVec3 entityNodePosition = kmVec3Make(0, 0, -1);
     entityNode->setPosition(entityNodePosition);
     //Camera node.
     TinySceneNode* cameraNode = rootNode->createChildSceneNode();
@@ -62,10 +60,9 @@ void OceanApplication::initialize()
     
     //Create camera.
     std::string cameraNameStr("camera");
-    Tiny::TinyCamera* camera = TINY_NEW Tiny::TinyCamera(cameraNameStr, sceneMgr);
-    mainWindow->addViewPort(camera, 0, 0, 0, 1, 1);
-    cameraNode->attachObject(camera);
-    
+    mCamera = TINY_NEW Tiny::TinyCamera(cameraNameStr, sceneMgr);
+    mainWindow->addViewPort(mCamera, 0, 0, 0, 1, 1);
+    cameraNode->attachObject(mCamera);
     
     //Create a diffuse texture.
     //std::string textureName("first_demo.png");
@@ -82,5 +79,52 @@ void OceanApplication::initialize()
     
     //Set the material to entity.
     entity->setMaterial(material);
-
+    
+    TinyInputObject *inputObject_mouse = Tiny::TinyInputManager::getSingleton()->getInputObject(Tiny::InputDevice::Mouse);
+    mMouse = (Tiny::TinyMouse *)inputObject_mouse;
+    TinyInputObject *inputObject_keyboard = Tiny::TinyInputManager::getSingleton()->getInputObject(Tiny::InputDevice::Keyboard);
+    mKeyBoard = (Tiny::TinyKeyboard *)inputObject_keyboard;
+    
+    mMouse->addEventCallBack(this);
 }
+
+void OceanApplication::keyPressed(TinyKeyEvent* event)
+{
+    
+}
+
+void OceanApplication::keyReleased(TinyKeyEvent* event)
+{
+    
+}
+
+void OceanApplication::mouseDraged(TinyMouseEvent* event)
+{
+    float sensity = 0.01f;
+    TinyMouseState& state = event->state;
+    if (state.deltaX != 0)
+    {
+        mCamera->yaw(state.deltaX * sensity);
+    }
+    if (state.deltaY != 0)
+    {
+        mCamera->roll(state.deltaY * sensity);
+    }
+}
+
+void OceanApplication::mouseMoved(TinyMouseEvent* event)
+{
+    
+}
+
+void OceanApplication::mousePressed(TinyMouseEvent* event, TinyMouseButtonID id)
+{
+    
+}
+
+void OceanApplication::mouseReleased(TinyMouseEvent* event, TinyMouseButtonID id)
+{
+    
+}
+
+

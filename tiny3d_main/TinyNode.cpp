@@ -164,6 +164,26 @@ namespace Tiny
         matrix.mat[14] = mDerivedPosition.z;
         matrix.mat[15] = 1.0f;
     }
+    
+    void TinyNode::roll(float radian)
+    {
+        //TODO
+    }
+    
+    void TinyNode::pitch(float radian)
+    {
+        //TODO
+    }
+    
+    void TinyNode::yaw(float radian)
+    {
+        //TODO
+    }
+    
+    void TinyNode::rotate(kmVec3& axis, float radian)
+    {
+        //TODO
+    }
 }
 
 
