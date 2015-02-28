@@ -13,8 +13,13 @@ namespace Tiny
 {
     TinyMesh* TinyMeshManager::load(std::string& fileName)
     {
-        auto ret = TINY_NEW TinyMesh(fileName);
-        ret->load();
+        uint8* data;
+        uint32 length;
+        getFileData(fileName, &data, length);
+        
+        auto ret = TINY_NEW TinyMesh();
+        ret->load(data);
+        free(data);
         return ret;
     }
 }

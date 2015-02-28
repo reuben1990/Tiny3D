@@ -51,8 +51,8 @@ namespace Tiny
             glGetShaderInfoLog(vertexShader, infoLogLength, NULL, shaderInfoMessage);
             TINYLOG("vertex shder info: %s", shaderInfoMessage);
             free(shaderInfoMessage);
-            assert(false && "vertex shader error");
         }
+        assert(result && "vertex shader error");
         
         // Compile Fragment Shader
         const char* fSourceStr = mFragmentShaderSource.c_str();
@@ -68,8 +68,8 @@ namespace Tiny
             glGetShaderInfoLog(fragmentShader, infoLogLength, NULL, shaderInfoMessage);
             TINYLOG("fragment shder info: %s", shaderInfoMessage);
             free(shaderInfoMessage);
-            assert(false && "fragment shader error");
         }
+        assert(result && "fragment shader error");
         
         // Link the program
         GLuint program = glCreateProgram();
@@ -85,9 +85,8 @@ namespace Tiny
             glGetProgramInfoLog(program, infoLogLength, NULL, programInfoMessage);
             TINYLOG("program info: %s", programInfoMessage);
             free(programInfoMessage);
-            assert(false && "shader link error");
         }
-        
+        assert(result && "shader link error");
         glDeleteShader(vertexShader);
         glDeleteShader(fragmentShader);
         

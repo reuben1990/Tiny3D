@@ -11,8 +11,7 @@
 
 namespace Tiny
 {
-    TinyMesh::TinyMesh(std::string& fileName)
-        : mFileName(fileName)
+    TinyMesh::TinyMesh()
     {
         
     }
@@ -27,10 +26,8 @@ namespace Tiny
         }
     }
     
-    void TinyMesh::load()
+    void TinyMesh::load(uint8* data)
     {
-        uint8* data = nullptr;//TODO load from file
-        
         TinySubMesh* subMesh = TINY_NEW TinySubMesh();
         uint32 offset = 0;
         for (int i = 0; i < 1; i ++)

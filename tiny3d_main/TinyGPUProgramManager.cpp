@@ -37,6 +37,8 @@ namespace Tiny
         //TINYLOG("willrm %s", fData);
         auto program = TINY_NEW TinyGPUProgram(vStrData, fStrData);
         program->load();
+        free(vData);
+        free(fData);
         return program;
     }
 }

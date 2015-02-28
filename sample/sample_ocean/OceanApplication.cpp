@@ -41,7 +41,7 @@ void OceanApplication::initialize()
     TinySceneNode* rootNode = sceneMgr->getRootSceneNode();
     //Entity node.
     TinySceneNode* entityNode = rootNode->createChildSceneNode();
-    kmVec3 entityNodePosition = kmVec3Make(0, 0, -1);
+    kmVec3 entityNodePosition = kmVec3Make(0, 0, -5);
     entityNode->setPosition(entityNodePosition);
     //Camera node.
     TinySceneNode* cameraNode = rootNode->createChildSceneNode();
@@ -52,7 +52,7 @@ void OceanApplication::initialize()
     std::string entityFactoryNameStr("Entity");
     TinyEntityFactory* factory = dynamic_cast<TinyEntityFactory*>(root->getMovableObjectFactory(entityFactoryNameStr));
     TinyNameValuePairList params;
-    const int8* meshName = "assets/first_mesh.obj";
+    const int8* meshName = "assets/suzanne.obj";
     params["mesh"] = meshName;
     std::string entityNameStr("first_entity");
     TinyEntity* entity = dynamic_cast<TinyEntity*>(factory->createInstance(entityNameStr, params));
@@ -65,7 +65,7 @@ void OceanApplication::initialize()
     cameraNode->attachObject(mCamera);
     
     //Create a diffuse texture.
-    std::string textureName("assets/first_demo.png");
+    std::string textureName("assets/uvmap.tga");
     TinyTexture* texture = TinyTextureManager::getSingleton()->load(textureName);
     
     //Create a gpu program, set diffuse texture to our program as parameter.

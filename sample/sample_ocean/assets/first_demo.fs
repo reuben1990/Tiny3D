@@ -6,4 +6,5 @@ in vec2 uv_vs;
 
 void main() {
     color = texture(diffuse_sampler, uv_vs);
+    //color = vec4(1, 1, 1, 1);
 }

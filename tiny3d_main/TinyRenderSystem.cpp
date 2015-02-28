@@ -144,7 +144,7 @@ namespace Tiny
         
         //draw
         uint32 vertexNum = indexData->getVertexNum();
-        glDrawElements(GL_TRIANGLES, vertexNum, GL_UNSIGNED_SHORT, 0);
+        glDrawElements(GL_TRIANGLES, vertexNum, GL_UNSIGNED_INT, 0);
         TINYLOG("glDrawElements vertexNum = %d", vertexNum);
         
     }

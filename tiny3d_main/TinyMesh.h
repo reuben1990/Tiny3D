@@ -22,13 +22,13 @@ namespace Tiny
     {
     public:
         typedef std::vector<TinySubMesh*> SubMeshList;
-        TinyMesh(std::string& fileName);
+        TinyMesh();
         virtual ~TinyMesh();
-        void load();
+        void load(uint8* data);
         VectorIteratorWrapper<SubMeshList, SubMeshList::iterator > getSubmeshIterator();
     public:
         SubMeshList mSubMeshs;
-        std::string mFileName;
+        uint8* mData;
     };
 }
 
