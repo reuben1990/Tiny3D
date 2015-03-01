@@ -22,12 +22,14 @@ namespace Tiny
     class TinyMesh;
     class TinyMaterial;
     class TinyNode;
+    class TinyNameGenerator;
     
     class TinyEntity : public TinyMovableObject
     {
     public:
         typedef std::vector<TinySubEntity*> SubEntityList;
-        TinyEntity(std::string& name, TinyMesh* mesh);
+        TinyEntity(const std::string& name, TinyMesh* mesh);
+        TinyEntity(TinyMesh* mesh);
         ~TinyEntity();
         void initialize();
         void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue);
@@ -36,12 +38,14 @@ namespace Tiny
         void setMaterial(TinyMaterial* material);
         void buildSubEntityList(TinyMesh* mesh, SubEntityList* list);
         void getModelMatrix(kmMat4& mat);
+        TinySubEntity* getSubEntity(uint32 index);
     protected:
         SubEntityList mSubEntitys;
         uint8 mRenderQueueGroupID;
         uint8 mRenderPriority;
         TinyMesh* mMesh;
         TinyMaterial* mMaterial;
+        static TinyNameGenerator mNameGenerator;
     };
 }
 

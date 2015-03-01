@@ -54,6 +54,9 @@ namespace Tiny
         //add Time to scheduler.
         Tiny::TinyScheduleManager::getSingleton()->timeStep(timeInterval);
         
+        //fire render event
+        fireRenderStartEvent();
+        
         //update all render targets, include render window, render texture, etc.
         updateAllRenderTargets();
     }
@@ -73,7 +76,7 @@ namespace Tiny
         mMovableObjectFactoryMap[factory->getType()] = factory;
     }
     
-    TinyMovableObjectFactory* TinyRoot::getMovableObjectFactory(std::string& name)
+    TinyMovableObjectFactory* TinyRoot::getMovableObjectFactory(const std::string& name)
     {
         TinyMovableObjectFactory* ret = nullptr;
         auto iter = mMovableObjectFactoryMap.find(name);
@@ -82,6 +85,38 @@ namespace Tiny
             ret = iter->second;
         }
         return ret;
+    }
+    
+    void TinyRoot::addFrameListener(TinyFrameListener* listener)
+    {
+        auto iter = mRemovedListenerSet.find(listener);
+        if (iter != mRemovedListenerSet.end())
+            mRemovedListenerSet.erase(*iter);
+        else
+            mListenerSet.insert(listener);
+    }
+    
+    void TinyRoot::removeFrameListener(TinyFrameListener* listener)
+    {
+        if (mRemovedListenerSet.find(listener) != mRemovedListenerSet.end())
+            mRemovedListenerSet.insert(listener);
+    }
+    
+    void TinyRoot::fireRenderStartEvent()
+    {
+        auto removedIter = mRemovedListenerSet.begin();
+        for (; removedIter != mRemovedListenerSet.end(); removedIter ++)
+        {
+            mListenerSet.erase(*removedIter);
+        }
+        mRemovedListenerSet.clear();
+        
+        
+        auto iter = mListenerSet.begin();
+        for (; iter != mListenerSet.end(); iter ++)
+        {
+            (*iter)->onFrameStarted();
+        }
     }
 }
 

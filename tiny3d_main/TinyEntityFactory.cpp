@@ -20,14 +20,19 @@ namespace Tiny
         return mType;
     }
     
-    TinyMovableObject* TinyEntityFactory::createInstanceImpl(std::string& name, TinyNameValuePairList& params)
+    TinyMovableObject* TinyEntityFactory::createInstanceImpl(const std::string& name, const TinyNameValuePairList& params)
     {
         auto iter = params.find("mesh");
         if (iter != params.end())
         {
             auto nameStr = std::string((char*)iter->second);
             TinyMesh* mesh = TinyMeshManager::getSingleton()->load(nameStr);
-            return TINY_NEW TinyEntity(name, mesh);
+            TinyMovableObject* ret;
+            if (name == "")
+                ret = TINY_NEW TinyEntity(mesh);
+            else
+                ret = TINY_NEW TinyEntity(name, mesh);
+            return ret;
         }
         else
         {

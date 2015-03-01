@@ -23,11 +23,11 @@ namespace Tiny
     class TinyMovableObject : public TinyObject
     {
     public:
-        TinyMovableObject(std::string& name);
+        TinyMovableObject(const std::string& name);
         ~TinyMovableObject();
         bool isAttached();
         std::string& getName();
-        void setName(std::string& name);
+        void setName(const std::string& name);
         void notifyAttached(TinyNode* node);
         virtual void updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue) = 0;
     protected:

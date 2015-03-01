@@ -13,7 +13,7 @@
 
 namespace Tiny
 {
-    TinyMovableObject::TinyMovableObject(std::string& name)
+    TinyMovableObject::TinyMovableObject(const std::string& name)
         : mParentNode(nullptr)
         , mName(name)
     {
@@ -35,7 +35,7 @@ namespace Tiny
         return mName;
     }
     
-    void TinyMovableObject::setName(std::string& name)
+    void TinyMovableObject::setName(const std::string& name)
     {
         mName = name;
     }

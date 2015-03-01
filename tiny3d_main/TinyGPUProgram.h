@@ -39,7 +39,7 @@ namespace Tiny
     class TinyGPUProgramParameter : public TinyObject
     {
     public:
-        TinyGPUProgramParameter(std::string name,
+        TinyGPUProgramParameter(const std::string& name,
                                 TinyGPUProgramParameterType type,
                                 const void* data);
         TinyGPUProgramParameter();
@@ -69,7 +69,7 @@ namespace Tiny
     class TinyGPUProgram : public TinyObject
     {
     public:
-        TinyGPUProgram(std::string& vs, std::string& fs);
+        TinyGPUProgram(const std::string& vs, const std::string& fs);
         ~TinyGPUProgram();
         void load();
         void useProgram();
@@ -79,8 +79,8 @@ namespace Tiny
     protected:
         TinyGPUProgramParameters* mParams;
         GLuint mHandler;
-        std::string& mVertexShaderSource;
-        std::string& mFragmentShaderSource;
+        const std::string& mVertexShaderSource;
+        const std::string& mFragmentShaderSource;
     };
 }
 

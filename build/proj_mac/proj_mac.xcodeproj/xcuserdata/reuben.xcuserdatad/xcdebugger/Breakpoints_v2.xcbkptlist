@@ -250,12 +250,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyEntityFactory.cpp"
-            timestampString = "446192157.727939"
+            timestampString = "446895694.394712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "TinyEntityFactory::createInstanceImpl(std::string&amp; name, TinyNameValuePairList&amp; params)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "TinyEntityFactory::createInstanceImpl(const std::string&amp; name, const TinyNameValuePairList&amp; params)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyEntity.cpp"
-            timestampString = "446405480.223367"
+            timestampString = "446895694.394712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "TinyEntity::setMaterial(TinyMaterial* material)"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyEntity.cpp"
-            timestampString = "446405480.223367"
+            timestampString = "446895694.394712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "TinyEntity::setMaterial(TinyMaterial* material)"
             landmarkType = "5">
          </BreakpointContent>
@@ -659,7 +659,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "TinyGPUProgramManager::load(std::string vFileName, std::string fFileName)"
+            landmarkName = "TinyGPUProgramManager::load(const std::string&amp; vFileName, const std::string&amp; fFileName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -675,7 +675,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "TinyResourceManager::getFileData(std::string&amp; fileName, uint8** data, uint32&amp; length)"
+            landmarkName = "TinyResourceManager::getFileData(const std::string&amp; fileName, uint8** data, const uint32&amp; length)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -862,11 +862,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinySceneManager.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446904362.570583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "TinySceneManager::renderVisibleObjects()"
             landmarkType = "5">
          </BreakpointContent>
@@ -878,11 +878,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinySceneManager.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446904362.570583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "TinySceneManager::renderObjects(TinyRenderableCollection* collection)"
             landmarkType = "5">
          </BreakpointContent>
@@ -894,11 +894,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyEntity.cpp"
-            timestampString = "446405480.223367"
+            timestampString = "446895694.394712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "TinyEntity::updateRenderQueue(TinyCamera* cam, TinyRenderQueue* queue)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1102,11 +1102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinySceneManager.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446904362.570583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "TinySceneManager::renderScene(TinyCamera *cam)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1118,11 +1118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinySceneManager.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446904362.570583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "TinySceneManager::findVisibleObjects(TinyCamera *cam)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1134,11 +1134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinySceneManager.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446904362.570583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "TinySceneManager::renderScene(TinyCamera *cam)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1150,11 +1150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinySceneManager.cpp"
-            timestampString = "446404559.257274"
+            timestampString = "446904362.570583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "TinySceneManager::renderScene(TinyCamera *cam)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1294,11 +1294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1310,11 +1310,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "TinyGPUProgramParameters::bindParametersToProgram(GLuint program)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1342,11 +1342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "TinyGPUProgramParameters::updateAutoParams(TinyAutoParamDataSource* autoPram)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1358,11 +1358,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "TinyCamera::getProjectionMatrix(kmMat4&amp; ret)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1374,11 +1374,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "TinyCamera::notifyViewPort(TinyViewPort *vp)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1390,11 +1390,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "TinyCamera::notifyViewPort(TinyViewPort *vp)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1411,7 +1411,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
             endingLineNumber = "40"
-            landmarkName = "TinyGPUProgramManager::load(std::string vFileName, std::string fFileName)"
+            landmarkName = "TinyGPUProgramManager::load(const std::string&amp; vFileName, const std::string&amp; fFileName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1427,7 +1427,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "TinyGPUProgramManager::load(std::string vFileName, std::string fFileName)"
+            landmarkName = "TinyGPUProgramManager::load(const std::string&amp; vFileName, const std::string&amp; fFileName)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1454,12 +1454,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name, TinyGPUProgramParameterType type, const void* data)"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter(const std::string&amp; name, TinyGPUProgramParameterType type, const void* data)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1475,7 +1475,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "TinyResourceManager::getFileData(std::string&amp; fileName, uint8** data, uint32&amp; length)"
+            landmarkName = "TinyResourceManager::getFileData(const std::string&amp; fileName, uint8** data, const uint32&amp; length)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1534,12 +1534,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name, TinyGPUProgramParameterType type, const void* data)"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter(const std::string&amp; name, TinyGPUProgramParameterType type, const void* data)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1550,12 +1550,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name, TinyGPUProgramParameterType type, const void* data)"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter(const std::string&amp; name, TinyGPUProgramParameterType type, const void* data)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1566,11 +1566,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "TinyGPUProgramParameter::~TinyGPUProgramParameter()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1582,11 +1582,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "TinyGPUProgramParameter::TinyGPUProgramParameter()"
             landmarkType = "5">
             <Locations>
@@ -1628,11 +1628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "TinyGPUProgramParameter::operator = (const TinyGPUProgramParameter&amp; param)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1644,11 +1644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../sample/sample_ocean/OceanApplication.cpp"
-            timestampString = "446699017.041307"
+            timestampString = "446895994.291739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "OceanApplication::initialize()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1660,11 +1660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "TinyCamera::getViewMatrix(kmMat4&amp; ret)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1676,11 +1676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "TinyCamera::getViewMatrix(kmMat4&amp; ret)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1692,11 +1692,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "TinyCamera::roll(float radian)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1708,11 +1708,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "TinyCamera::rotate(kmVec3&amp; axis, float radian)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1724,25 +1724,25 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
-            endingLineNumber = "114"
+            endingLineNumber = "114">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyCamera.cpp"
+            timestampString = "446905059.634199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "TinyCamera::rotate(kmVec3&amp; axis, float radian)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1754,11 +1754,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "TinyCamera::rotate(kmVec3&amp; axis, float radian)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1770,11 +1770,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128">
+            startingLineNumber = "140"
+            endingLineNumber = "140">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1784,23 +1784,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "TinyCamera::getViewMatrix(kmMat4&amp; ret)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -1816,11 +1800,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyCamera.cpp"
-            timestampString = "446892067.794259"
+            timestampString = "446905059.634199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "TinyCamera::getViewMatrix(kmMat4&amp; ret)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../tiny3d_main/TinyCamera.cpp"
+            timestampString = "446905059.634199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "TinyCamera::getViewMatrix(kmMat4&amp; ret)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1832,11 +1832,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../sample/sample_ocean/OceanApplication.cpp"
-            timestampString = "446820986.242692"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "OceanApplication::mouseDraged(TinyMouseEvent* event)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1896,11 +1896,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../sample/sample_ocean/OceanApplication.cpp"
-            timestampString = "446820986.242692"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "OceanApplication::mouseDraged(TinyMouseEvent* event)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1912,11 +1912,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../sample/sample_ocean/OceanApplication.cpp"
-            timestampString = "446820986.242692"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "OceanApplication::initialize()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2184,7 +2184,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../sample/sample_ocean/OceanApplication.cpp"
-            timestampString = "446820986.242692"
+            timestampString = "446904110.613498"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "OceanApplication::keyPressed(TinyKeyEvent* event)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../sample/sample_ocean/OceanApplication.cpp"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -2199,28 +2215,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../sample/sample_ocean/OceanApplication.cpp"
-            timestampString = "446820986.242692"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "OceanApplication::keyPressed(TinyKeyEvent* event)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinySceneManager.cpp"
-            timestampString = "446821732.793301"
+            timestampString = "446904362.570583"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "TinySceneManager::setModelMatrix(kmMat4&amp; matrix)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2232,11 +2232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "TinyGPUProgramParameters::bindParametersToProgram(GLuint program)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2248,11 +2248,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "TinyGPUProgramParameter::calcLocation(GLuint program)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2264,11 +2264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
             landmarkName = "TinyGPUProgramParameter::calcLocation(GLuint program)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2280,11 +2280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446823395.109425"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "TinyGPUProgramParameter::calcLocation(GLuint program)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2296,11 +2296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../tiny3d_main/TinyGPUProgram.cpp"
-            timestampString = "446886388.638046"
+            timestampString = "446904110.613498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "TinyGPUProgramParameters::bindParametersToProgram(GLuint program)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2318,6 +2318,22 @@
             startingLineNumber = "165"
             endingLineNumber = "165"
             landmarkName = "TinyNode::getModelMatrix(kmMat4&amp; matrix)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../sample/sample_ocean/OceanApplication.cpp"
+            timestampString = "446904259.540306"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "OceanApplication::initialize()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

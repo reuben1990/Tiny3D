@@ -34,6 +34,8 @@ namespace Tiny
     
     void TinySceneManager::renderScene(TinyCamera *cam)
     {
+        mCameraInProgress = cam;
+        
         kmMat4 projMatrix;
         cam->getProjectionMatrix(projMatrix);
         setProjectionMatrix(projMatrix);
@@ -123,6 +125,14 @@ namespace Tiny
         renderable->getModelMatrix(modelMatrix);
         setModelMatrix(modelMatrix);
         
+        const kmVec3& cameraPositionWorld = mCameraInProgress->getDerivedPosition();
+        kmVec3 cameraPositionModel;
+        kmMat4 modelMatrixTranspose;
+        kmMat4Transpose(&modelMatrixTranspose, &modelMatrix);
+        kmVec3MultiplyMat4(&cameraPositionModel, &cameraPositionWorld, &modelMatrixTranspose);
+        setEyePositionModelSpace(cameraPositionModel);
+        
+        
         updateGpuProgramParameters(ro);
         
         mDestRenderSystem->render(&ro);
@@ -152,6 +162,11 @@ namespace Tiny
     {
         mDestRenderSystem->setModelMatrix(matrix);
         mAutoParamDataSource.setModelMatrix(matrix);
+    }
+    
+    void TinySceneManager::setEyePositionModelSpace(const kmVec3& position)
+    {
+        mAutoParamDataSource.setEyePositionModelSpace(position);
     }
     
     TinyRenderQueue* TinySceneManager::getRenderQueue()

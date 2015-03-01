@@ -11,7 +11,7 @@
 
 namespace Tiny
 {
-    TinyCamera::TinyCamera(std::string &name, TinySceneManager *mgr)
+    TinyCamera::TinyCamera(const std::string &name, TinySceneManager *mgr)
         : TinyMovableObject(name)
         , mSceneMgr(mgr)
         , mName(name)
@@ -21,7 +21,9 @@ namespace Tiny
         , mNear(0.1)
         , mFar(1000)
         , mPosition(kmVec3Make(0, 0, 0))
+        , mDerivedPosition(kmVec3Make(0, 0, 0))
         , mOrientation(kmQuaternionMake(0, 0, 0, 1))
+        , mDerivedOrientation(kmQuaternionMake(0, 0, 0, 1))
         , mLocalUpDir(kmVec3Make(0, 1, 0))
         , mLocalFrontDir(kmVec3Make(0, 0, -1))
         , mLocalSideDir(kmVec3Make(1, 0, 0))
@@ -57,12 +59,8 @@ namespace Tiny
     {
         if (mParentNode)
         {
-            auto parentNodeDerivedOrientation = mParentNode->getDerivedOrientation();
-            auto parentNodeDerivedPosition = mParentNode->getDerivedPosition();
-            kmQuaternion derivedOrientation;
-            kmVec3 derivedPosition;
-            kmQuaternionMultiply(&derivedOrientation, &parentNodeDerivedOrientation, &mOrientation);
-            kmVec3Add(&derivedPosition, &parentNodeDerivedPosition, &mPosition);
+            const kmVec3& derivedPosition = getDerivedPosition();
+            const kmQuaternion& derivedOrientation = getDerivedOrientation();
             
             kmVec3 worldFrontDir, worldUpDir, worldCenter;
             kmQuaternionMultiplyVec3(&worldFrontDir, &derivedOrientation, &mLocalFrontDir);
@@ -124,6 +122,20 @@ namespace Tiny
         kmVec3 diff;
         kmQuaternionMultiplyVec3(&diff, &mOrientation, &vec);
         kmVec3Add(&mPosition, &mPosition, &diff);
+    }
+    
+    const kmVec3& TinyCamera::getDerivedPosition()
+    {
+        auto parentNodeDerivedPosition = mParentNode->getDerivedPosition();
+        kmVec3Add(&mDerivedPosition, &parentNodeDerivedPosition, &mPosition);
+        return mDerivedPosition;
+    }
+    
+    const kmQuaternion& TinyCamera::getDerivedOrientation()
+    {
+        auto parentNodeDerivedOrientation = mParentNode->getDerivedOrientation();
+        kmQuaternionMultiply(&mDerivedOrientation, &parentNodeDerivedOrientation, &mOrientation);
+        return mDerivedOrientation;
     }
 }
 

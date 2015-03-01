@@ -13,7 +13,7 @@
 
 namespace Tiny
 {
-    void TinyResourceManager::getFileData(std::string& fileName, uint8** data, uint32& length)
+    void TinyResourceManager::getFileData(const std::string& fileName, uint8** data, uint32& length)
     {
         NSString *nsFileName = [[NSString alloc] initWithUTF8String:fileName.c_str()];
         NSString *fullPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:nsFileName];

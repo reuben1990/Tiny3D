@@ -17,17 +17,20 @@ namespace Tiny
     class TinyAutoParamDataSource : public TinyObject
     {
     public:
-        void setViewMatrix(kmMat4& mat);
-        void setModelMatrix(kmMat4& mat);
-        void setProjectionMatrix(kmMat4& mat);
+        void setViewMatrix(const kmMat4& mat);
+        void setModelMatrix(const kmMat4& mat);
+        void setProjectionMatrix(const kmMat4& mat);
+        void setEyePositionModelSpace(const kmVec3& vec);
         
         const kmMat4& getViewMatrix();
         const kmMat4& getModelMatrix();
         const kmMat4& getProjectionMatrix();
+        const kmVec3& getEyePositionModelSpace();
     protected:
         kmMat4 mProjMatrix;
         kmMat4 mViewMatrix;
         kmMat4 mModelMatrix;
+        kmVec3 mEyePositionModelSpace;
     };
 }
 

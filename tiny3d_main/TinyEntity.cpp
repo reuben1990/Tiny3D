@@ -17,8 +17,17 @@
 
 namespace Tiny
 {
-    TinyEntity::TinyEntity(std::string& name, TinyMesh* mesh)
+    TinyNameGenerator TinyEntity::mNameGenerator("entity");
+    
+    TinyEntity::TinyEntity(const std::string& name, TinyMesh* mesh)
         : TinyMovableObject(name)
+    {
+        mMesh = mesh;
+        initialize();
+    }
+    
+    TinyEntity::TinyEntity(TinyMesh* mesh)
+    : TinyMovableObject(mNameGenerator.generate())
     {
         mMesh = mesh;
         initialize();
@@ -86,6 +95,13 @@ namespace Tiny
         {
             mParentNode->getModelMatrix(mat);
         }
+    }
+    
+    TinySubEntity* TinyEntity::getSubEntity(uint32 index)
+    {
+        if (index >= mSubEntitys.size())
+            assert(false && "subentity index out of range");
+        return mSubEntitys[index];
     }
 }
 

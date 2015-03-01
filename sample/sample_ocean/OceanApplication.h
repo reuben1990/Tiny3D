@@ -12,10 +12,12 @@
 #include "TinyMouse.h"
 #include "TinyKeyboard.h"
 #include "TinyCamera.h"
+#include "TinyFrameListener.h"
+#include "TinyEntity.h"
 
 using namespace Tiny;
 
-class OceanApplication : public TinyKeyListener, public TinyMouseListener
+class OceanApplication : public TinyKeyListener, public TinyMouseListener, public TinyFrameListener
 {
 public:
     void initialize();
@@ -25,10 +27,19 @@ public:
     virtual void mouseDraged(TinyMouseEvent* event);
     virtual void mousePressed(TinyMouseEvent* event, TinyMouseButtonID id);
     virtual void mouseReleased(TinyMouseEvent* event, TinyMouseButtonID id);
+    virtual void onFrameStarted();
 protected:
     TinyMouse* mMouse;
     TinyKeyboard* mKeyBoard;
     Tiny::TinyCamera* mCamera;
+    TinyEntity* mEntity;
+    
+    kmVec3 light_direction;
+    kmVec3 light_color;
+    float light_ambient_power;
+    float light_diffuse_power;
+    float light_specular_power;
+    float material_shininess;
 };
 
 #endif /* defined(__proj_mac__OceanApplication__) */

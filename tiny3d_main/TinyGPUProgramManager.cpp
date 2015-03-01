@@ -22,7 +22,7 @@ namespace Tiny
 
     }
     
-    TinyGPUProgram* TinyGPUProgramManager::load(std::string vFileName, std::string fFileName)
+    TinyGPUProgram* TinyGPUProgramManager::load(const std::string& vFileName, const std::string& fFileName)
     {
         uint8* vData;
         uint8* fData;

@@ -10,19 +10,24 @@
 
 namespace Tiny
 {
-    void TinyAutoParamDataSource::setProjectionMatrix(kmMat4& matrix)
+    void TinyAutoParamDataSource::setProjectionMatrix(const kmMat4& matrix)
     {
         mProjMatrix = matrix;
     }
     
-    void TinyAutoParamDataSource::setViewMatrix(kmMat4& matrix)
+    void TinyAutoParamDataSource::setViewMatrix(const kmMat4& matrix)
     {
         mViewMatrix = matrix;
     }
     
-    void TinyAutoParamDataSource::setModelMatrix(kmMat4& matrix)
+    void TinyAutoParamDataSource::setModelMatrix(const kmMat4& matrix)
     {
         mModelMatrix = matrix;
+    }
+    
+    void TinyAutoParamDataSource::setEyePositionModelSpace(const kmVec3 &vec)
+    {
+        mEyePositionModelSpace = vec;
     }
     
     const kmMat4& TinyAutoParamDataSource::getViewMatrix()
@@ -38,5 +43,10 @@ namespace Tiny
     const kmMat4& TinyAutoParamDataSource::getProjectionMatrix()
     {
         return mProjMatrix;
+    }
+    
+    const kmVec3& TinyAutoParamDataSource::getEyePositionModelSpace()
+    {
+        return mEyePositionModelSpace;
     }
 }

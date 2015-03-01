@@ -23,8 +23,8 @@ namespace Tiny
         TinyMovableObjectFactory();
         virtual ~TinyMovableObjectFactory();
         virtual std::string& getType() = 0;
-        virtual TinyMovableObject* createInstance(std::string& name, TinyNameValuePairList& params);
-        virtual TinyMovableObject* createInstanceImpl(std::string& name, TinyNameValuePairList& params) = 0;
+        virtual TinyMovableObject* createInstance(const std::string& name, const TinyNameValuePairList& params);
+        virtual TinyMovableObject* createInstanceImpl(const std::string& name, const TinyNameValuePairList& params) = 0;
     protected:
     };
 }

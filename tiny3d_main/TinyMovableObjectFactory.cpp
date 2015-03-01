@@ -20,7 +20,7 @@ namespace Tiny
         
     }
     
-    TinyMovableObject* TinyMovableObjectFactory::createInstance(std::string& name, TinyNameValuePairList& params)
+    TinyMovableObject* TinyMovableObjectFactory::createInstance(const std::string& name, const TinyNameValuePairList& params)
     {
         return createInstanceImpl(name, params);
     }

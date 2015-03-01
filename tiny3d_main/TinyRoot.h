@@ -16,7 +16,7 @@
 #include "TinySceneManager.h"
 #include "TinyRenderWindow.h"
 #include "TinyMovableObjectFactory.h"
-
+#include "TinyFrameListener.h"
 
 namespace Tiny
 {
@@ -29,13 +29,19 @@ namespace Tiny
         void updateAllRenderTargets();
         TinySceneManager *createSceneManager();
         void addMovableObjectFactory(TinyMovableObjectFactory* factory);
-        TinyMovableObjectFactory* getMovableObjectFactory(std::string& name);
+        TinyMovableObjectFactory* getMovableObjectFactory(const std::string& name);
         void attachRenderTarget(TinyRenderTarget* target);
+        void addFrameListener(TinyFrameListener* listener);
+        void removeFrameListener(TinyFrameListener* listener);
+        void fireRenderStartEvent();
     protected:
         typedef std::map<std::string, TinyMovableObjectFactory*> MovableObjectFactoryMap;
+        typedef std::set<TinyFrameListener*> FrameListenerSet;
         TinyRenderSystem *mRenderSystem;
         TinySceneManager *mSceneMgr;
         MovableObjectFactoryMap mMovableObjectFactoryMap;
+        FrameListenerSet mListenerSet;
+        FrameListenerSet mRemovedListenerSet;
     };
 }
 

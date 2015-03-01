@@ -11,7 +11,7 @@
 
 namespace Tiny
 {
-    TinyMaterial* TinyMaterialManager::load(std::string fileName)
+    TinyMaterial* TinyMaterialManager::load(const std::string& fileName)
     {
         //TODO
         return TINY_NEW TinyMaterial();

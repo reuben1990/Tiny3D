@@ -23,7 +23,7 @@ namespace Tiny
     public:
         TinyGPUProgramManager();
         ~TinyGPUProgramManager();
-        TinyGPUProgram* load(std::string vFileName, std::string fFileName);
+        TinyGPUProgram* load(const std::string& vFileName, const std::string& fFileName);
     protected:
     };
 }

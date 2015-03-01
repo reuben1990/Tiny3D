@@ -39,6 +39,7 @@ namespace Tiny
         void setProjectionMatrix(kmMat4& matrix);
         void setViewMatrix(kmMat4& matrix);
         void setModelMatrix(kmMat4& matrix);
+        void setEyePositionModelSpace(const kmVec3& position);
         TinySceneNode* getRootSceneNode();
         TinyRenderQueue* getRenderQueue();
         void clearBg();

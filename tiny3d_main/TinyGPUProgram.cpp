@@ -12,7 +12,7 @@
 
 namespace Tiny
 {
-    TinyGPUProgram::TinyGPUProgram(std::string& vs, std::string& fs)
+    TinyGPUProgram::TinyGPUProgram(const std::string& vs, const std::string& fs)
         : mParams(TINY_NEW TinyGPUProgramParameters())
         , mHandler(0)
         , mVertexShaderSource(vs)
@@ -139,6 +139,9 @@ namespace Tiny
         
         const kmMat4& modelMatrix = autoPram->getModelMatrix();
         setParameter(TinyGPUProgramParameter("modelMatrix", GP_MATRIX_4X4, &modelMatrix));
+        
+        const kmVec3& eyePositionModelSpace = autoPram->getEyePositionModelSpace();
+        setParameter(TinyGPUProgramParameter("eyePositionModelSpace", GP_FLOAT3, &eyePositionModelSpace));
     }
     
     void TinyGPUProgramParameters::bindParametersToProgram(GLuint program)
@@ -242,7 +245,7 @@ namespace Tiny
         
     }
     
-    TinyGPUProgramParameter::TinyGPUProgramParameter(std::string name,
+    TinyGPUProgramParameter::TinyGPUProgramParameter(const std::string& name,
                                                      TinyGPUProgramParameterType type,
                                                      const void* data)
     {

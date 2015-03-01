@@ -21,8 +21,8 @@ namespace Tiny
     public:
         TinyTextureManager();
         virtual ~TinyTextureManager();
-        TinyTexture* load(std::string& fileName);
-        TinyTexture* load(std::vector<std::string>& fileNames);
+        TinyTexture* load(const std::string& fileName);
+        TinyTexture* load(const std::vector<std::string>& fileNames);
         
     };
 }

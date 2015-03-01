@@ -20,7 +20,7 @@ namespace Tiny
     class TinyMaterialManager : public TinyResourceManager, public TinySingleton<TinyMaterialManager>
     {
     public:
-        TinyMaterial* load(std::string fileName);
+        TinyMaterial* load(const std::string& fileName);
     };
 }
 

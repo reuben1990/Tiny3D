@@ -24,7 +24,7 @@ namespace Tiny
     public:
         virtual std::string& getType();
         static std::string mType;
-        virtual TinyMovableObject* createInstanceImpl(std::string& name, TinyNameValuePairList& params);
+        virtual TinyMovableObject* createInstanceImpl(const std::string& name, const TinyNameValuePairList& params);
     protected:
         typedef std::vector<TinySubEntity*> SubEntityArray;
         SubEntityArray mSubEntitys;
