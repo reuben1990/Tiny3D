@@ -36,6 +36,7 @@ namespace Tiny
         void yaw(float radian);
         void rotate(kmVec3& axis, float radian);
         const kmQuaternion& getOrientation();
+        void moveRelative(const kmVec3& vec);
     private:
         TinyViewPort *mLastViewPort;
         TinySceneManager *mSceneMgr;

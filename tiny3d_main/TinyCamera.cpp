@@ -11,8 +11,6 @@
 
 namespace Tiny
 {
-    
-
     TinyCamera::TinyCamera(std::string &name, TinySceneManager *mgr)
         : TinyMovableObject(name)
         , mSceneMgr(mgr)
@@ -20,7 +18,7 @@ namespace Tiny
         , mLastViewPort(nullptr)
         , mFov(kTinyPI / 4)
         , mAspect(4 / 3)
-        , mNear(10)
+        , mNear(0.1)
         , mFar(1000)
         , mPosition(kmVec3Make(0, 0, 0))
         , mOrientation(kmQuaternionMake(0, 0, 0, 1))
@@ -119,6 +117,13 @@ namespace Tiny
     const kmQuaternion& TinyCamera::getOrientation()
     {
         return mOrientation;
+    }
+    
+    void TinyCamera::moveRelative(const kmVec3& vec)
+    {
+        kmVec3 diff;
+        kmQuaternionMultiplyVec3(&diff, &mOrientation, &vec);
+        kmVec3Add(&mPosition, &mPosition, &diff);
     }
 }
 

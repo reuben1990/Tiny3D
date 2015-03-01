@@ -41,7 +41,7 @@ void OceanApplication::initialize()
     TinySceneNode* rootNode = sceneMgr->getRootSceneNode();
     //Entity node.
     TinySceneNode* entityNode = rootNode->createChildSceneNode();
-    kmVec3 entityNodePosition = kmVec3Make(0, 0, -5);
+    kmVec3 entityNodePosition = kmVec3Make(0, 0, -0.5);
     entityNode->setPosition(entityNodePosition);
     //Camera node.
     TinySceneNode* cameraNode = rootNode->createChildSceneNode();
@@ -65,7 +65,7 @@ void OceanApplication::initialize()
     cameraNode->attachObject(mCamera);
     
     //Create a diffuse texture.
-    std::string textureName("assets/uvmap.tga");
+    std::string textureName("assets/first_demo.png");
     TinyTexture* texture = TinyTextureManager::getSingleton()->load(textureName);
     
     //Create a gpu program, set diffuse texture to our program as parameter.
@@ -85,11 +85,45 @@ void OceanApplication::initialize()
     mKeyBoard = (Tiny::TinyKeyboard *)inputObject_keyboard;
     
     mMouse->addEventCallBack(this);
+    mKeyBoard->addEventCallBack(this);
 }
 
 void OceanApplication::keyPressed(TinyKeyEvent* event)
 {
-    
+    uint8 keyCode = event->mKeyCode;
+    float sensity = 0.5;
+    switch (keyCode) {
+        case 'w':
+        {
+            kmVec3 vec;
+            kmVec3Fill(&vec, 0, 0, -sensity);
+            mCamera->moveRelative(vec);
+            break;
+        }
+        case 's':
+        {
+            kmVec3 vec;
+            kmVec3Fill(&vec, 0, 0, sensity);
+            mCamera->moveRelative(vec);
+            break;
+        }
+        case 'a':
+        {
+            kmVec3 vec;
+            kmVec3Fill(&vec, -sensity, 0, 0);
+            mCamera->moveRelative(vec);
+            break;
+        }
+        case 'd':
+        {
+            kmVec3 vec;
+            kmVec3Fill(&vec, sensity, 0, 0);
+            mCamera->moveRelative(vec);
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 void OceanApplication::keyReleased(TinyKeyEvent* event)

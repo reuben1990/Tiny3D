@@ -149,84 +149,87 @@ namespace Tiny
         {
             iter->second.calcLocation(program);
             GLint location = iter->second.mLocation;
-            switch (iter->second.mType)
+            if (location >= 0)
             {
-                case GP_FLOAT1:
+                switch (iter->second.mType)
                 {
-                    glUniform1fv(location, 1, (GLfloat*)iter->second.mBindData);
-                    break;
+                    case GP_FLOAT1:
+                    {
+                        glUniform1fv(location, 1, (GLfloat*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_FLOAT2:
+                    {
+                        glUniform2fv(location, 1, (GLfloat*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_FLOAT3:
+                    {
+                        glUniform3fv(location, 1, (GLfloat*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_FLOAT4:
+                    {
+                        glUniform4fv(location, 1, (GLfloat*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_INT1:
+                    {
+                        glUniform1iv(location, 1, (GLint*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_INT2:
+                    {
+                        glUniform2iv(location, 1, (GLint*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_INT3:
+                    {
+                        glUniform3iv(location, 1, (GLint*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_INT4:
+                    {
+                        glUniform4iv(location, 1, (GLint*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_MATRIX_3X3:
+                    {
+                        glUniformMatrix3fv(location, 1, GL_FALSE, (GLfloat*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_MATRIX_4X4:
+                    {
+                        //TODO
+                        #include "kazmath/kazmath.h"
+                        kmMat4* mat;
+                        mat = (kmMat4*)iter->second.mBindData;
+                        glUniformMatrix4fv(location, 1, GL_FALSE, (const GLfloat*)iter->second.mBindData);
+                        break;
+                    }
+                    case GP_SAMPLER:
+                    {
+                        glActiveTexture(GL_TEXTURE0 + textureCnter);
+                        glEnable(GL_TEXTURE_2D);
+                        auto textureID = *(GLuint*)iter->second.mBindData;
+                        glBindTexture(GL_TEXTURE_2D, textureID);
+                        glUniform1i(location, textureCnter);
+                        ++ textureCnter;
+                        break;
+                    }
+                    case GP_SAMPLERCUBE:
+                    {
+                        glActiveTexture(GL_TEXTURE0 + textureCnter);
+                        glEnable(GL_TEXTURE_CUBE_MAP);
+                        auto textureID = *(GLuint*)iter->second.mBindData;
+                        glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
+                        glUniform1i(location, textureCnter);
+                        ++ textureCnter;
+                        break;
+                    }
+                    default:
+                        break;
                 }
-                case GP_FLOAT2:
-                {
-                    glUniform2fv(location, 1, (GLfloat*)iter->second.mBindData);
-                    break;
-                }
-                case GP_FLOAT3:
-                {
-                    glUniform3fv(location, 1, (GLfloat*)iter->second.mBindData);
-                    break;
-                }
-                case GP_FLOAT4:
-                {
-                    glUniform4fv(location, 1, (GLfloat*)iter->second.mBindData);
-                    break;
-                }
-                case GP_INT1:
-                {
-                    glUniform1iv(location, 1, (GLint*)iter->second.mBindData);
-                    break;
-                }
-                case GP_INT2:
-                {
-                    glUniform2iv(location, 1, (GLint*)iter->second.mBindData);
-                    break;
-                }
-                case GP_INT3:
-                {
-                    glUniform3iv(location, 1, (GLint*)iter->second.mBindData);
-                    break;
-                }
-                case GP_INT4:
-                {
-                    glUniform4iv(location, 1, (GLint*)iter->second.mBindData);
-                    break;
-                }
-                case GP_MATRIX_3X3:
-                {
-                    glUniformMatrix3fv(location, 1, GL_TRUE, (GLfloat*)iter->second.mBindData);
-                    break;
-                }
-                case GP_MATRIX_4X4:
-                {
-                    //TODO
-                    #include "kazmath/kazmath.h"
-                    kmMat4* mat;
-                    mat = (kmMat4*)iter->second.mBindData;
-                    glUniformMatrix4fv(location, 1, GL_TRUE, (const GLfloat*)iter->second.mBindData);
-                    break;
-                }
-                case GP_SAMPLER:
-                {
-                    glActiveTexture(GL_TEXTURE0 + textureCnter);
-                    glEnable(GL_TEXTURE_2D);
-                    auto textureID = *(GLuint*)iter->second.mBindData;
-                    glBindTexture(GL_TEXTURE_2D, textureID);
-                    glUniform1i(location, textureCnter);
-                    ++ textureCnter;
-                    break;
-                }
-                case GP_SAMPLERCUBE:
-                {
-                    glActiveTexture(GL_TEXTURE0 + textureCnter);
-                    glEnable(GL_TEXTURE_CUBE_MAP);
-                    auto textureID = *(GLuint*)iter->second.mBindData;
-                    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
-                    glUniform1i(location, textureCnter);
-                    ++ textureCnter;
-                    break;
-                }
-                default:
-                    break;
             }
         }
     }
