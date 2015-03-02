@@ -22,6 +22,8 @@
 #include "TinyMaterialManager.h"
 #include "TinyInputManager.h"
 #include "OceanApplication.h"
+#include "TinySceneNode.h"
+#include "TinyCamera.h"
 
 void OceanApplication::initialize()
 {
@@ -56,7 +58,7 @@ void OceanApplication::initialize()
     entityNode->attachObject(mEntity);
     
     //Create camera.
-    mCamera = TINY_NEW Tiny::TinyCamera("camera1", sceneMgr);
+    mCamera = sceneMgr->createCamera("main_camera");
     mainWindow->addViewPort(mCamera, 0, 0, 0, 1, 1);
     cameraNode->attachObject(mCamera);
     

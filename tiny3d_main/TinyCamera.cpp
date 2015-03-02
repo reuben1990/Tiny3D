@@ -8,6 +8,10 @@
 
 #include "TinyCamera.h"
 #include "TinyMath.h"
+#include "TinyObject.h"
+#include "TinySceneManager.h"
+#include "TinyViewPort.h"
+#include "TinyNode.h"
 
 namespace Tiny
 {

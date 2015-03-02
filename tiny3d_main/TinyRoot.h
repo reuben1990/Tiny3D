@@ -10,6 +10,7 @@
 #define proj_mac_TinyRoot_h
 
 #include <map>
+#include <set>
 #include "TinyObject.h"
 #include "TinyRenderSystem.h"
 #include "TinySingleton.h"

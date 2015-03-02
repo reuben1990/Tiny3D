@@ -11,6 +11,12 @@
 #include "TinyIteratorWrapper.h"
 #include "TinyRenderOperation.h"
 #include "TinyRenderSystem.h"
+#include "TinyObject.h"
+#include "TinyCamera.h"
+#include "TinyViewPort.h"
+#include "TinyRenderTarget.h"
+#include "TinySceneNode.h"
+#include "TinyRenderQueue.h"
 
 namespace Tiny
 {
@@ -26,10 +32,18 @@ namespace Tiny
     
     TinySceneManager::~TinySceneManager()
     {
+        //destroy renderqueue
         if (nullptr != mRenderQueue)
         {
             TINY_DELETE mRenderQueue;
         }
+        
+        //destroy cameras
+        for (TinyCamera* cam : mCameraList)
+        {
+            TINY_DELETE cam;
+        }
+        mCameraList.clear();
     }
     
     void TinySceneManager::renderScene(TinyCamera *cam)
@@ -176,6 +190,13 @@ namespace Tiny
             mRenderQueue = TINY_NEW TinyRenderQueue();
         }
         return mRenderQueue;
+    }
+    
+    TinyCamera* TinySceneManager::createCamera(const std::string& name)
+    {
+        auto cam = TINY_NEW TinyCamera(name, this);
+        mCameraList.push_back(cam);
+        return cam;
     }
 }
 

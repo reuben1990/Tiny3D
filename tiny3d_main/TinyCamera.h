@@ -10,16 +10,18 @@
 #define proj_mac_TinyCamera_h
 
 #include "kazmath/kazmath.h"
-#include "TinyObject.h"
-#include "TinySceneManager.h"
 #include "TinyMovableObject.h"
-#include "TinyViewPort.h"
 #include <string>
 
 class TinySceneManager;
 
 namespace Tiny
 {
+    class TinySceneManager;
+    class TinyObject;
+    class TinyViewPort;
+    class TinyRenderQueue;
+    
     class TinyCamera : public TinyMovableObject
     {
     public:

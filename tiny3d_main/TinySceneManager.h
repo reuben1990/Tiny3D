@@ -9,19 +9,15 @@
 #ifndef proj_mac_TinySceneManager_h
 #define proj_mac_TinySceneManager_h
 
+#include <vector>
+#include <string>
 #include "TinyObject.h"
-#include "TinyCamera.h"
-#include "TinyViewPort.h"
-#include "TinyRenderTarget.h"
-#include "TinySceneNode.h"
-#include "TinyRenderQueue.h"
+#include "kazmath/kazmath.h"
 #include "TinyAutoParamDataSource.h"
+#include "TinyPrerequisite.h"
 
 namespace Tiny
 {
-    class TinyRenderSystem;
-    class TinyRenderOperation;
-    
     class TinySceneManager : public TinyObject
     {
     public:
@@ -43,13 +39,16 @@ namespace Tiny
         TinySceneNode* getRootSceneNode();
         TinyRenderQueue* getRenderQueue();
         void clearBg();
+        TinyCamera* createCamera(const std::string& name);
     private:
+        typedef std::vector<TinyCamera*> CameraList;
         TinyViewPort *mCurrentViewPort;
         TinyCamera *mCameraInProgress;
         TinySceneNode* mSceneRoot;
         TinyRenderSystem* mDestRenderSystem;
         TinyRenderQueue* mRenderQueue;
         TinyAutoParamDataSource mAutoParamDataSource;
+        CameraList mCameraList;
     };
 }
 

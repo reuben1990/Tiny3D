@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "TinyViewPort.h"
 #include "TinyCamera.h"
+#include "TinyRenderTarget.h"
 
 namespace Tiny
 {
