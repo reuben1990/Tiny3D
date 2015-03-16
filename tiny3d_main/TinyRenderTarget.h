@@ -19,6 +19,7 @@
 #define TINY_NUM_RENDERTARGET_GROUPS 10
 #define TINY_DEFAULT_RT_GROUP 4
 #define TINY_REND_TO_TEX_RT_GROUP 2
+#define TINY_REND_TO_GBUFFER_RT_GROUP 2
 #endif
 
 namespace Tiny
@@ -42,6 +43,8 @@ namespace Tiny
         virtual void clearBg();
         
         virtual kmVec2 getSize();
+        
+        virtual void setSize(const kmVec2& size);
         
         //insert a viewport to viewport to viewport list.
         void addViewPort(TinyCamera *cam, int zOrder, float left, float bottom, float width, float height);

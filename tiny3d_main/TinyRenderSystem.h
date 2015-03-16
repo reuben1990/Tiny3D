@@ -17,6 +17,7 @@
 #include "TinyViewPort.h"
 #include "TinyRenderTarget.h"
 #include "TinyRenderOperation.h"
+#include "TinyPrerequisite.h"
 
 namespace Tiny
 {
@@ -46,6 +47,7 @@ namespace Tiny
         kmMat4 mProjMatrix;
         kmMat4 mViewMatrix;
         kmMat4 mModelMatrix;
+        TinyGBuffer* mGbuffer;
     };
 }
 

@@ -10,12 +10,15 @@
 #include "kazmath/kazmath.h"
 #include "TinyHardwareBuffer.h"
 #include "TinyPlatform.h"
+#include "TinyMemoryAlloc.h"
+#include "TinyGBuffer.h"
 
 namespace Tiny
 {
     TinyRenderSystem::TinyRenderSystem():
     mActiveViewPort(nullptr),
-    mActiveRenderTarget(nullptr)
+    mActiveRenderTarget(nullptr),
+    mGbuffer(nullptr)
     {
     }
     
@@ -58,8 +61,7 @@ namespace Tiny
         mActiveRenderTarget = target;
         if (target)
         {
-            TINYLOG("glBindFramebuffer %d", target->getFBO());
-            glBindFramebuffer(GL_FRAMEBUFFER, target->getFBO());
+            
         }
     }
     
@@ -83,7 +85,10 @@ namespace Tiny
         TinyRenderTargetMap::iterator iter = mPrioritisedRenderTargets.begin();
         for (; iter != mPrioritisedRenderTargets.end(); iter ++)
         {
-            iter->second->update(false);
+            auto target = iter->second;
+            TINYLOG("glBindFramebuffer %d", target->getFBO());
+            glBindFramebuffer(GL_FRAMEBUFFER, target->getFBO());
+            target->update(false);
         }
     }
     

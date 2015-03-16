@@ -21,6 +21,7 @@ namespace Tiny
     class TinyRenderQueueGroup;
     class TinyRenderable;
     class TinyRenderableCollection;
+    class TinyGBuffer;
 }
 
 #endif

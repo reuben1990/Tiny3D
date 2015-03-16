@@ -22,7 +22,11 @@ namespace Tiny
     
     TinyRenderTarget::~TinyRenderTarget()
     {
-        
+        auto iter = mViewPorts.begin();
+        for (; iter != mViewPorts.end(); iter ++)
+        {
+            TINY_DELETE iter->second;
+        }
     }
     
     GLuint TinyRenderTarget::getFBO()
@@ -44,6 +48,12 @@ namespace Tiny
         kmVec2 ret;
         kmVec2Fill(&ret, mWidth, mHeight);
         return ret;
+    }
+    
+    void TinyRenderTarget::setSize(const kmVec2 &size)
+    {
+        mWidth = size.x;
+        mHeight = size.y;
     }
     
     void TinyRenderTarget::updateImpl()

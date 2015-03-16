@@ -24,6 +24,7 @@
 #include "OceanApplication.h"
 #include "TinySceneNode.h"
 #include "TinyCamera.h"
+#include "TinyGBuffer.h"
 
 void OceanApplication::initialize()
 {
@@ -37,6 +38,10 @@ void OceanApplication::initialize()
     //Create render window.
     TinyRenderWindow* mainWindow = tinyCreateRenderWindow(800, 480);
     root->attachRenderTarget(mainWindow);
+    
+    //Create gbuffer.
+    TinyGBuffer* gBuffer = TINY_NEW TinyGBuffer(800, 480);
+    root->attachRenderTarget(gBuffer);
     
     //Init scene graph.
     Tiny::TinySceneManager* sceneMgr = root->createSceneManager();
